@@ -40,7 +40,7 @@ class Book():
 def ask_questions():
     pass   
 
-db = [1,2,3,4,5]
+db = [1,2,3,4,5,6]
 domain = ["a","b","c"]
 
 cbr = CBR(db,domain)
