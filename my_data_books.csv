@@ -1,0 +1,406 @@
+,titulo,contiene,formato,idioma,tema,largura_libro,valoracion
+0,harry potter and the philosopher's stone,"['fantasia', 'magia']","['papel', 'ebook']","['cat', 'eng', 'spa']","['ghosts', 'orphans']",normal,4.2720127
+1,a court of mist and fury,"['fantasia', 'magia']","['papel', 'ebook']","['spa', 'eng']",['adaptations'],largo,3.9375
+2,a game of thrones,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['seasons', 'wights', 'winter']",largo,4.245614
+3,harry potter and the deathly hallows,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['death', 'family', 'mort']",largo,4.291022
+4,harry potter and the chamber of secrets,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['cousins', 'family', 'internat']",normal,4.1690545
+5,twilight,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'amour', 'schools']",normal,3.6482759
+6,harry potter and the prisoner of azkaban,['fantasia'],"['papel', 'ebook']","['eng', 'cat', 'spa']","['family', 'hechiceros', 'orphans']",normal,4.2918553
+7,the cruel prince,['fantasia'],['papel'],['eng'],['princes'],normal,4.031579
+8,the hobbit,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['characters', 'classics', 'schultheater']",normal,4.2700534
+9,harry potter and the goblet of fire,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['family', 'hechiceros', 'school']",largo,4.398876
+10,the lightning thief,"['fantasia', 'magia']","['papel', 'ebook']","['eng', 'spa']","['adaptations', 'identity']",normal,4.355769
+11,the alchemist,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['expeditions', 'literary', 'shepherds']",corto,3.679558
+12,charlotte's web,"['fantasia', 'terror']","['papel', 'ebook']","['eng', 'spa']","['authors', 'english', 'swine']",corto,4.007752
+13,harry potter and the order of the phoenix,['fantasia'],"['papel', 'ebook']","['eng', 'cat', 'spa']","['family', 'hate', 'internat']",largo,4.352679
+14,harry potter and the half-blood prince,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['family', 'warlocks', 'orphans']",largo,4.4068966
+15,the handmaid's tale,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['women', 'brothels', 'theocracy']",normal,3.8783784
+16,charlie and the chocolate factory,"['fantasia', 'humor']","['papel', 'ebook']","['eng', 'spa']","['chocolate', 'conducta']",corto,4.004878
+17,the great gatsby,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'historical', 'literary']",corto,4.0
+18,the giver,['fantasia'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['ethics', 'individuality', 'memory']",corto,4.0381355
+19,le petit prince,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['princes', 'childhood', 'friendship']",corto,4.3931623
+20,the fellowship of the ring,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['fear'],normal,4.326241
+21,of mice and men,"['fantasia', 'ficcion_historica', 'suspense']","['papel', 'ebook']","['eng', 'cat', 'spa']","['cowboys', 'cowhands', 'examinations']",corto,3.9708738
+22,the lost hero,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['jason', 'olympians', 'the']",normal,4.5555553
+23,"the lion, the witch and the wardrobe","['fantasia', 'magia']","['papel', 'ebook']","['eng', 'spa']","['children', 'classics', 'christianity']",corto,4.1702127
+24,the invisible man,"['fantasia', 'terror']","['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'french']",corto,3.8333333
+25,the bfg,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['dreamcatcher', 'humour', 'story']",corto,4.2123895
+26,catching fire,"['fantasia', 'ciencia_ficcion']","['papel', 'ebook']","['eng', 'spa']","['competition', 'insurgency']",normal,4.112245
+27,foundation,"['fantasia', 'ciencia_ficcion']","['papel', 'ebook']","['eng', 'spa']","['historians', 'prophecy']",corto,4.086364
+28,a wrinkle in time,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'responsibility']",corto,3.9055119
+29,james and the giant peach,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['crystals', 'family', 'humorous']",corto,3.9514563
+30,fantastic mr fox,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['thieves'],corto,3.857143
+31,the sea of monsters,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'identity']",corto,4.495413
+32,alice's adventures in wonderland,"['fantasia', 'humor']","['papel', 'ebook']","['eng', 'spa', 'cat']","['courts', 'dreams', 'history']",corto,4.0666666
+33,the titan's curse,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['investigation'],normal,4.449541
+34,dracula,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'british', 'dictionaries']",normal,4.035398
+35,the cat in the hat,"['fantasia', 'humor']","['papel', 'ebook']","['eng', 'spa']","['american', 'chats', 'spanish']",corto,4.111111
+36,the wonderful wizard of oz,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['children', 'history']",corto,3.954023
+37,good omens,"['fantasia', 'terror']","['papel', 'ebook']","['eng', 'spa', 'cat']","['apocalypse', 'humorous', 'prophecies']",normal,4.4262295
+38,howl's moving castle (howl's moving castle #1),['fantasia'],"['papel', 'ebook']","['eng', 'cat']",['castles'],normal,4.4935064
+39,cien años de soledad,"['fantasia', 'ficcion_historica']","['papel', 'ebook']","['spa', 'eng']",['texts'],normal,3.9347825
+40,the midnight library,['fantasia'],['papel'],['eng'],['literary'],normal,4.0
+41,moby dick,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['chasse', 'prohibition', 'shipwrecks']",normal,3.71
+42,ignite me,"['fantasia', 'romance', 'ciencia_ficcion']","['papel', 'ebook']",['eng'],"['dictators', 'dictatorship']",normal,4.142857
+43,the two towers,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['hobbits'],normal,4.357143
+44,the son of neptune,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['prophecies', 'prophecy']",normal,4.230769
+45,the three-body problem,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['history'],normal,3.9213483
+46,the name of the wind,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['orphans'],largo,4.3116884
+47,the war of the worlds,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'earth', 'examinations']",corto,3.7407408
+48,throne of glass,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['investigation', 'princes', 'prisoners']",normal,4.219512
+49,percy jackson's greek gods,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['anthologies', 'classics', 'children']",normal,4.7
+50,the phantom tollbooth,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'orchestras', 'tollbooths']",corto,4.1573033
+51,northern lights,"['fantasia', 'terror']","['papel', 'ebook']","['eng', 'spa']",['children'],normal,3.9757576
+52,outlander,['fantasia'],"['papel', 'ebook']",['eng'],"['historical', 'history']",largo,4.151515
+53,the time machine,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'dictionaries', 'spanish']",corto,3.8695652
+54,the witches,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'grandmothers']",corto,4.2222223
+55,the school for good and evil,['fantasia'],"['papel', 'ebook']",['eng'],"['characters', 'schools']",normal,4.65
+56,the mark of athena,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['other', 'prophecy']",largo,4.5555553
+57,treasure island,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'classics', 'dictionaries']",corto,3.8307693
+58,american gods,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['americana'],normal,4.428571
+59,the metamorphosis,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['afforestation', 'chinese', 'dictionaries']",corto,3.9166667
+60,the gunslinger,"['fantasia', 'terror', 'magia']","['papel', 'ebook']","['eng', 'spa']",['thrillers'],corto,4.2647057
+61,the final empire,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['thieves'],largo,4.4444447
+62,circe,"['fantasia', 'ficcion_historica']",['papel'],['eng'],"['historical', 'literary', 'witchcraft']",normal,4.105263
+63,the battle of the labyrinth,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['labyrinthes', 'mothers', 'prophecies']",normal,4.4590163
+64,under the dome,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['thrillers'],largo,3.8636363
+65,gulliver's travels,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'biography', 'chinese']",corto,3.7049181
+66,new moon,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['schools'],normal,4.2340426
+67,breaking dawn,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['marriage'],largo,3.4
+68,into the wild,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['action'],corto,4.4603176
+69,the chronicles of narnia,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'english', 'princes']",largo,4.2
+70,a midsummer night's dream,"['fantasia', 'ficcion_historica', 'humor', 'romance']","['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'bibliography', 'comedy']",corto,3.6825397
+71,eragon,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['fighting'],normal,3.7594936
+72,alice's adventures in wonderland / through the looking glass,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['history', 'anthropomorphism', 'friendship']",corto,4.035714
+73,the prince,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['government', 'historiography', 'history']",corto,3.6333334
+74,the return of the king,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['fear', 'hope']",normal,4.338028
+75,the call of the wild,"['fantasia', 'suspense']","['papel', 'ebook']","['spa', 'eng']","['history', 'wolves']",corto,3.8113208
+76,a clash of kings,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']",['brothers'],largo,4.283784
+77,perfume,['fantasia'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['identity', 'olfactory']",corto,3.8
+78,nineteen eighty-four,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['authoritarianism', 'brainwashing', 'classics']",normal,4.25
+79,pride and prejudice,"['ficcion_historica', 'terror']","['papel', 'ebook']","['eng', 'spa']","['adaptations', 'courtship', 'emoticons']",normal,4.109091
+80,sapiens,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']","['historia', 'history']",normal,4.258929
+81,where the crawdads sing,['ficcion_historica'],['papel'],"['eng', 'spa']",['investigation'],normal,4.361111
+82,the song of achilles,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'thetis']",normal,4.34375
+83,the da vinci code,"['ficcion_historica', 'misterio', 'suspense']","['papel', 'ebook']","['eng', 'spa', 'cat']","['catholics', 'cryptographers', 'cryptography']",normal,3.894309
+84,the adventures of sherlock holmes [12 stories],"['ficcion_historica', 'misterio']","['papel', 'ebook']","['eng', 'spa', 'cat']","['bibliography', 'classics', 'conclusions']",normal,4.115044
+85,little women,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'american', 'children']",normal,4.065934
+86,wuthering heights,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'cousins', 'examinations']",normal,3.8119657
+87,the kite runner,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']",['competitions'],normal,4.111111
+88,"frankenstein; or, the modern prometheus",['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']","['authors', 'examinations', 'reincarnation']",corto,3.883871
+89,and then there were none,"['ficcion_historica', 'humor', 'misterio']","['papel', 'ebook']","['spa', 'eng']","['historical', 'islands', 'traditional']",corto,4.2970295
+90,beloved,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'literary', 'women']",normal,3.7818182
+91,hamlet,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'bibliography', 'britons']",corto,3.965812
+92,meditations,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['ethics', 'meditations', 'stoics']",corto,3.9404762
+93,things fall apart,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['british', 'christianity', 'classics']",corto,3.9807692
+94,catch-22,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['american'],normal,4.1633987
+95,the boy in the striped pyjamas,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['historical'],corto,3.9534883
+96,jane eyre,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'examinations', 'history']",normal,4.0970874
+97,a gentleman in moscow,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['history'],normal,3.8412697
+98,the help,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['afronorteamericanos', 'historia', 'historical']",normal,4.3333335
+99,all the light we cannot see,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['children', 'historia', 'historical']",normal,4.2909093
+100,esperanza rising,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['history'],corto,3.9655173
+101,the duke and i,['ficcion_historica'],"['papel', 'ebook']",['eng'],"['history', 'marriage']",normal,4.0
+102,the grapes of wrath,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']",['california'],normal,3.9324324
+103,macbeth,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'history', 'scotland']",corto,3.9666667
+104,heart of darkness,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'chinese', 'dictionaries']",corto,3.4791667
+105,the adventures of tom sawyer,"['ficcion_historica', 'humor']","['papel', 'ebook']","['eng', 'spa']","['adaptations', 'adventures', 'american']",corto,4.029126
+106,inside out & back again,['ficcion_historica'],"['papel', 'ebook']",['eng'],"['history', 'history']",corto,3.8695652
+107,anna karenina,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'history', 'literary']",largo,4.133333
+108,east of eden,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['brothers', 'history', 'twins']",largo,4.04
+109,the scarlet letter,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'examinations', 'history']",corto,3.1518986
+110,sense and sensibility,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['courtship', 'gentry', 'history']",normal,3.64
+111,siddhartha,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'dictionaries', 'french']",corto,3.9444444
+112,emma,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['courtship', 'humorous']",normal,3.9411764
+113,gone with the wind,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['historia', 'historical', 'plantations']",largo,3.4473684
+114,americanah,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'literary']",normal,3.8108108
+115,the count of monte cristo,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['historia', 'history', 'vengeance']",normal,4.350427
+116,the clan of the cave bear,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['neanderthals', 'women']",normal,4.105263
+117,the bluest eye,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['conformity', 'literary', 'flashback']",corto,4.181818
+118,death on the nile,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['braile', 'british', 'cruiseship']",corto,4.111111
+119,the crucible,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'witchcraft', 'theocracy']",corto,3.5833333
+120,the one and only ivan,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['friendship', 'treatment']",normal,4.4615383
+121,the iliad of homer,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['examinations', 'translations']",normal,3.935484
+122,the pillars of the earth,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['cathedrals', 'history', 'thrillers']",largo,4.142857
+123,the murder of roger ackroyd,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['investigation'],corto,4.2093024
+124,"bud, not buddy",['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['afronorteamericanos', 'depresiones', 'historical']",corto,4.64
+125,im westen nichts neues,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']","['history', 'westfront']",corto,4.230769
+126,oliver twist,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['children', 'customs', 'history']",normal,4.2058825
+127,the age of innocence,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['age', 'archer']",normal,3.5428572
+128,les misérables,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'freedom']",normal,4.4444447
+129,мастер и маргарита,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'atheism']",normal,4.212121
+130,flatland,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['examinations', 'geometry', 'mathematics']",corto,3.7972972
+131,for whom the bell tolls,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['americans', 'historia', 'history']",normal,3.3846154
+132,atonement,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['family', 'history']",normal,3.7941177
+133,don quixote,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']","['bibliography', 'biography', 'characters']",normal,3.85
+134,the lost symbol,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']","['cryptographers', 'cryptographes', 'freemasonry']",largo,3.5671642
+135,parable of the sower,['ficcion_historica'],"['papel', 'ebook']",['eng'],"['literary', 'women']",normal,4.5
+136,"the complete sherlock holmes [4 novels, 56 stories]",['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['americans', 'classics', 'english']",largo,4.5555553
+137,time traveler's wife,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['death', 'foreshadowing', 'frostbite']",normal,4.0454545
+138,el amor en los tiempos del cólera,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['courtship'],normal,4.051282
+139,kindred,['ficcion_historica'],"['papel', 'ebook']",['eng'],['historical'],corto,4.4545455
+140,il nome della rosa,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['historia', 'history', 'semiotics']",normal,4.127907
+141,refugee,['ficcion_historica'],"['papel', 'ebook']",['eng'],['historical'],normal,3.8846154
+142,the night circus,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['night'],normal,4.3714285
+143,lonesome dove,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['cowboys'],largo,4.3333335
+144,a farewell to arms,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['actors', 'biography', 'theater']",normal,3.642857
+145,the lost world,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['atlantis', 'children', 'youth']",corto,4.08
+146,war and peace,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'history']",largo,4.230769
+147,wide sargasso sea,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['british'],corto,4.0
+148,half of a yellow sun,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['history'],normal,4.32
+149,persuasion,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['gentry', 'officers']",corto,4.1538463
+150,the nightingale,['ficcion_historica'],"['papel', 'ebook']",['eng'],['history'],normal,4.7083335
+151,कामसूत्र,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['amor', 'nonfiction', 'sex']",corto,4.111111
+152,the jungle,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['chinese', 'dictionaries', 'french']",normal,3.8076923
+153,ulysses,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'photography']",largo,3.3636363
+154,little house on the prairie,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['children', 'english', 'family']",normal,4.3846154
+155,invisible man,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['classics'],normal,4.0
+156,johnny tremain,['ficcion_historica'],"['papel', 'ebook']",['eng'],['history'],corto,3.6666667
+157,it,['terror'],"['papel', 'ebook']","['spa', 'eng']","['clownrewolves', 'ghosts', 'homosexuality']",largo,4.131188
+158,fahrenheit 451,"['terror', 'ciencia_ficcion']","['papel', 'ebook']","['eng', 'spa', 'cat']","['censorship', 'education']",corto,3.960606
+159,the shining,['terror'],"['papel', 'ebook']","['eng', 'spa']","['family', 'ghosts', 'authors']",normal,4.1415095
+160,pet sematary,['terror'],"['papel', 'ebook']","['eng', 'spa']","['resurrection', 'death', 'flashback']",normal,4.031847
+161,misery,['terror'],"['papel', 'ebook']","['eng', 'spa']","['captives', 'literary', 'novelists']",normal,4.087912
+162,carrie,['terror'],"['papel', 'ebook']","['spa', 'eng']","['bullying', 'telepathy']",corto,4.0689654
+163,american psycho,['terror'],"['papel', 'ebook']","['eng', 'spa']","['psychopaths', 'sex', 'torture']",normal,3.8688524
+164,the green mile,['terror'],"['papel', 'ebook']","['eng', 'spa']","['penitentiary', 'arsonists', 'empathy']",normal,4.32
+165,the stand,['terror'],"['papel', 'ebook']","['eng', 'spa']","['thrillers', 'research']",largo,4.3333335
+166,flowers in the attic,['terror'],"['papel', 'ebook']","['eng', 'spa']","['children', 'doughnuts', 'gothic']",normal,3.9830508
+167,salem's lot,['terror'],"['papel', 'ebook']","['spa', 'eng']",['authors'],normal,4.1034484
+168,on writing,['terror'],"['papel', 'ebook']","['eng', 'spa']","['authorship', 'biographies', 'authors']",corto,4.160714
+169,the bazaar of bad dreams,['terror'],"['papel', 'ebook']",['eng'],['ethics'],largo,4.1
+170,fifty shades darker,"['terror', 'romance']","['papel', 'ebook']","['eng', 'spa']","['businesspeople', 'seduction']",normal,3.375
+171,the haunting of hill house,['terror'],"['papel', 'ebook']","['eng', 'spa']",['haunted'],corto,4.0
+172,red dragon,['terror'],"['papel', 'ebook']","['eng', 'spa']","['thrillers', 'homosexuality', 'psychiatrists']",normal,4.214286
+173,"full dark, no stars",['terror'],"['papel', 'ebook']","['eng', 'spa']","['retribution', 'vengeance', 'pyorrhea']",normal,4.075
+174,the graveyard book,['terror'],"['papel', 'ebook']",['eng'],"['death', 'family', 'ghosts']",normal,4.2528734
+175,miss peregrine's home for peculiar children,['terror'],"['papel', 'ebook']","['eng', 'spa']","['grandfathers', 'islands']",normal,4.64
+176,night shift,['terror'],"['papel', 'ebook']","['spa', 'eng']","['heroin', 'psychiatrists', 'witchcraft']",normal,4.4545455
+177,mr. mercedes,['terror'],"['papel', 'ebook']","['eng', 'spa']",['alcoholics'],normal,4.081081
+178,the ocean at the end of the lane,['terror'],"['papel', 'ebook']","['eng', 'spa']",['memory'],corto,4.120482
+179,gerald's game,['terror'],"['papel', 'ebook']","['eng', 'spa']","['fear', 'incest']",normal,3.8076923
+180,the dead zone,['terror'],"['papel', 'ebook']","['spa', 'eng']","['psychics', 'thrillers']",normal,4.1764708
+181,we have always lived in the castle,['terror'],"['papel', 'ebook']",['eng'],['investigation'],corto,4.3513513
+182,different seasons,['terror'],"['papel', 'ebook']","['eng', 'spa']","['atrocities', 'christmas', 'blackmail']",normal,4.5333333
+183,firestarter,['terror'],"['papel', 'ebook']","['eng', 'spa']",['children'],normal,3.9473684
+184,four past midnight,['terror'],"['papel', 'ebook']",['eng'],"['diction', 'speechwriting']",largo,3.9444444
+185,christine,['terror'],"['papel', 'ebook']","['eng', 'spa']",['greasers'],normal,4.0571427
+186,doctor sleep,['terror'],"['papel', 'ebook']","['spa', 'eng']","['alcoholism', 'psychics']",normal,4.214286
+187,the witching hour,['terror'],"['papel', 'ebook']","['eng', 'spa']",['witchcraft'],largo,4.3
+188,bunnicula,['terror'],"['papel', 'ebook']","['eng', 'spa']",['cartoons'],corto,4.5333333
+189,just after sunset,['terror'],"['papel', 'ebook']",['eng'],['mort'],normal,4.0833335
+190,annihilation,['terror'],"['papel', 'ebook']",['eng'],"['exploration', 'literary', 'secrecy']",corto,3.6153846
+191,the stepford wives,['terror'],"['papel', 'ebook']","['eng', 'spa']",['photographers'],corto,3.5555556
+192,needful things,['terror'],"['papel', 'ebook']","['eng', 'spa']",['consumers'],largo,4.0666666
+193,the island of dr. moreau,['terror'],"['papel', 'ebook']","['eng', 'spa']",['ethics'],corto,3.75
+194,the subtle knife,['terror'],"['papel', 'ebook']","['eng', 'spa']","['children', 'classics']",normal,3.9879518
+195,hearts in atlantis,['terror'],"['papel', 'ebook']","['eng', 'spa']","['hearts', 'thrillers']",largo,3.96
+196,the bachman books,['terror'],"['papel', 'ebook']",['eng'],"['competition', 'outlaws', 'roads']",largo,3.642857
+197,everything's eventual,['terror'],"['papel', 'ebook']","['spa', 'eng']","['fishing', 'ghosts', 'headstones']",normal,3.8181818
+198,the eyes of the dragon,['terror'],"['papel', 'ebook']","['eng', 'spa']",['princes'],normal,4.521739
+199,stuart little,['terror'],"['papel', 'ebook']","['eng', 'spa']","['adoption', 'souris', 'family']",corto,3.409091
+200,jaws,['terror'],"['papel', 'ebook']","['eng', 'spa']",['thrillers'],normal,4.470588
+201,the drawing of the three,['terror'],"['papel', 'ebook']","['eng', 'spa']","['heroin', 'sociopaths']",normal,4.1594205
+202,the amber spyglass,['terror'],"['papel', 'ebook']","['eng', 'spa']",['children'],normal,3.8481014
+203,dreamcatcher,['terror'],"['papel', 'ebook']","['eng', 'spa']","['fear', 'friendship', 'telepathy']",largo,3.5333333
+204,wizard and glass,['terror'],"['papel', 'ebook']","['eng', 'spa']","['friendship', 'thrillers']",largo,4.1454544
+205,goosebumps - say cheese and die!,['terror'],"['papel', 'ebook']","['eng', 'spa']","['camera', 'scary']",corto,4.0
+206,goosebumps - welcome to dead house,['terror'],"['papel', 'ebook']","['eng', 'spa']",['scary'],corto,4.08
+207,duma key,['terror'],"['papel', 'ebook']","['eng', 'spa']","['investigation', 'painters']",largo,4.022222
+208,bag of bones,['terror'],"['papel', 'ebook']","['eng', 'spa']","['authors', 'grandfathers', 'novelists']",largo,3.8181818
+209,wolves of the calla,['terror'],"['papel', 'ebook']","['spa', 'eng']","['snitches', 'thrillers']",largo,4.25
+210,the girl who loved tom gordon,['terror'],"['papel', 'ebook']","['spa', 'eng']",['thrillers'],corto,3.8636363
+211,the illustrated man,['terror'],"['papel', 'ebook']","['eng', 'spa']",['children'],corto,4.107143
+212,the outsider,['terror'],"['papel', 'ebook']",['eng'],"['children', 'investigation']",normal,4.2727275
+213,petals on the wind,['terror'],"['papel', 'ebook']","['eng', 'spa']","['doughnuts', 'incest']",normal,3.8
+214,the passage,['terror'],"['papel', 'ebook']","['eng', 'spa']","['thrillers', 'apocalyptic']",largo,3.8888888
+215,le fantôme de l'opéra,['terror'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'chinese', 'composers']",corto,3.8125
+216,northanger abbey,['terror'],"['papel', 'ebook']","['eng', 'cat', 'spa']","['courtship', 'cousins', 'gentry']",corto,3.7391305
+217,rosemary's baby,['terror'],"['papel', 'ebook']","['eng', 'spa']","['luther', 'witchcraft']",corto,4.0
+218,my sweet audrina,['terror'],"['papel', 'ebook']","['eng', 'spa']","['secrecy', 'honeymoons']",normal,3.3333333
+219,the amityville horror,['terror'],"['papel', 'ebook']","['eng', 'spa']","['biography', 'ghosts']",corto,2.7142856
+220,diary of a wimpy kid,['humor'],"['papel', 'ebook']","['eng', 'spa']","['child', 'family']",corto,4.1959186
+221,matilda,['humor'],"['papel', 'ebook']","['eng', 'spa']",['schools'],corto,4.399061
+222,dog days,['humor'],"['papel', 'ebook']","['eng', 'spa']","['bullying', 'theft', 'vacations']",corto,4.479675
+223,double down,['humor'],"['papel', 'ebook']","['eng', 'spa']","['comedy', 'halloween', 'schools']",corto,4.4712644
+224,rodrick rules,['humor'],"['papel', 'ebook']","['eng', 'cat', 'spa']","['brothers', 'child', 'friendship']",corto,4.401786
+225,cabin fever,['humor'],"['papel', 'ebook']","['eng', 'spa']","['behavior', 'christmas', 'fear']",corto,4.53125
+226,adventures of huckleberry finn,['humor'],"['papel', 'ebook']","['eng', 'spa']","['courtship', 'dictionaries', 'examinations']",normal,3.751773
+227,in cold blood,['humor'],"['papel', 'ebook']","['eng', 'spa']","['american', 'investigation']",normal,3.96875
+228,green eggs and ham,['humor'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'english', 'food']",corto,4.084112
+229,the a.b.c. murders,['humor'],"['papel', 'ebook']","['eng', 'spa']","['british', 'detective', 'humorous']",corto,4.139535
+230,the long haul,['humor'],"['papel', 'ebook']","['eng', 'spa']",['vacations'],corto,4.3943663
+231,the deep end,['humor'],"['papel', 'ebook']","['eng', 'spa']",['family'],corto,4.6486487
+232,hard luck,['humor'],"['papel', 'ebook']","['eng', 'spa']","['bullying', 'chance']",corto,4.032787
+233,don't let the pigeon drive the bus!,['humor'],"['papel', 'ebook']","['eng', 'spa']","['bribery', 'frustration', 'pleading']",corto,4.3188405
+234,guess how much i love you,['humor'],"['papel', 'ebook']","['eng', 'spa']","['amor', 'amour', 'classics']",corto,4.387097
+235,the third wheel,['humor'],"['papel', 'ebook']","['eng', 'spa']",['schools'],corto,4.1578946
+236,the deal,['humor'],"['papel', 'ebook']",['eng'],"['humorous', 'steamy']",normal,4.4210525
+237,the ugly truth,['humor'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['bullying', 'vacations']",corto,4.203704
+238,the twits,['humor'],"['papel', 'ebook']","['eng', 'spa']","['children', 'treatment']",corto,3.8636363
+239,the last straw,['humor'],"['papel', 'ebook']","['eng', 'spa']","['brothers', 'schools', 'vacations']",corto,4.106383
+240,as good as dead,['humor'],['papel'],['eng'],['swears'],normal,4.6363635
+241,snow crash,['humor'],"['papel', 'ebook']",['eng'],['cyberspace'],normal,4.138158
+242,the colour of magic,['humor'],"['papel', 'ebook']","['spa', 'eng']","['dollhouses', 'rincewind']",corto,4.009901
+243,the adventures of captain underpants,['humor'],"['papel', 'ebook']","['eng', 'spa', 'cat']",['schools'],corto,4.1764708
+244,the getaway,['humor'],"['papel', 'ebook']","['eng', 'spa']",['vacations'],corto,4.5945945
+245,george's marvelous medicine,['humor'],"['papel', 'ebook']","['eng', 'spa']","['behaviour', 'children', 'grandmothers']",corto,3.5714285
+246,"one fish, two fish, red fish, blue fish",['humor'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'concepts']",corto,3.8297873
+247,crazy rich asians,['humor'],"['papel', 'ebook']","['eng', 'spa']","['americans', 'fiancees']",normal,4.133333
+248,en man som heter ove,['humor'],"['papel', 'ebook']","['eng', 'spa']","['neighborhoods', 'neighbors', 'translation']",normal,4.1136365
+249,fox in socks,['humor'],"['papel', 'ebook']","['eng', 'spa']","['children', 'concepts', 'recordings']",corto,3.9583333
+250,the giving tree,['humor'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'family', 'generosity']",corto,4.2077923
+251,through the looking-glass,['humor'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['chess', 'children', 'chinese']",corto,3.925
+252,tales of a fourth grade nothing,['humor'],"['papel', 'ebook']",['eng'],"['brothers', 'family']",corto,4.0833335
+253,winnie-the-pooh,"['humor', 'misterio']","['papel', 'ebook']","['eng', 'spa']","['swine', 'toys', 'bears']",corto,4.0666666
+254,"no, david!",['humor'],"['papel', 'ebook']","['eng', 'spa']",['children'],corto,4.0
+255,the wind in the willows,['humor'],"['papel', 'ebook']","['eng', 'spa']","['christmas', 'ethics', 'friendship']",corto,4.029412
+256,where the sidewalk ends,['humor'],"['papel', 'ebook']","['eng', 'spa']",['classics'],corto,4.1076922
+257,big nate in the zone,['humor'],"['papel', 'ebook']","['eng', 'spa']",['schools'],corto,4.3333335
+258,mort,['humor'],"['papel', 'ebook']","['eng', 'spa']",['death'],corto,4.22
+259,a confederacy of dunces,['humor'],"['papel', 'ebook']","['eng', 'spa']","['character', 'housing', 'mothers']",normal,3.75
+260,candide,['humor'],"['papel', 'ebook']","['eng', 'spa']","['chinese', 'classics', 'dictionaries']",corto,3.9285715
+261,bridget jones's diary,['humor'],"['papel', 'ebook']","['spa', 'eng']","['humour', 'publishing']",normal,3.6875
+262,superfudge,['humor'],"['papel', 'ebook']","['eng', 'spa']","['behavior', 'family']",corto,4.3
+263,how the grinch stole christmas!,['humor'],"['papel', 'ebook']","['eng', 'spa']",['christmas'],corto,4.205128
+264,infinite jest,['humor'],"['papel', 'ebook']",['eng'],['addicts'],largo,4.214286
+265,"danny, the champion of the world",['humor'],"['papel', 'ebook']","['eng', 'spa']",['fathers'],corto,4.34375
+266,a bad case of stripes,['humor'],"['papel', 'ebook']","['eng', 'spa']",['individuality'],corto,4.7
+267,a dog's purpose,['humor'],"['papel', 'ebook']","['eng', 'spa']","['family', 'protectiveness']",normal,4.5
+268,maniac magee,['humor'],"['papel', 'ebook']",['eng'],"['death', 'sports', 'athletes']",corto,4.117647
+269,dork diaries,['humor'],['papel'],['eng'],"['family', 'party']",normal,4.625
+270,big nate blasts off!,['humor'],"['papel', 'ebook']",['eng'],"['behavior', 'friendship']",corto,4.2727275
+271,"life, the universe and everything",['humor'],"['papel', 'ebook']","['eng', 'spa']",['sofas'],corto,4.1473684
+272,big nate strikes again,['humor'],"['papel', 'ebook']","['eng', 'spa']","['schools', 'sports']",corto,3.952381
+273,the merchant of venice,['humor'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['bibliography', 'comedies', 'comedy']",corto,3.8823528
+274,new kid,['humor'],"['papel', 'ebook']",['eng'],"['comics', 'humour', 'schools']",corto,3.7
+275,the mouse and the motorcycle,['humor'],"['papel', 'ebook']","['eng', 'spa']","['motorcycles', 'motorcycling', 'friendship']",corto,3.8214285
+276,frog and toad together,['humor'],"['papel', 'ebook']","['eng', 'spa']","['toads', 'friendship', 'toads']",corto,4.071429
+277,sideways stories from wayside school,['humor'],"['papel', 'ebook']",['eng'],['schools'],corto,4.047619
+278,henry huggins,['humor'],"['papel', 'ebook']","['eng', 'spa']","['dictionaries', 'friendship', 'terminology']",corto,3.6
+279,ella minnow pea,['humor'],"['papel', 'ebook']",['eng'],['islands'],corto,3.642857
+280,"e natale, stilton! (#12)","['humor', 'misterio']","['papel', 'ebook']",['eng'],"['christmas', 'earmuffs', 'merry']",corto,4.2352943
+281,keeper of the lost cities (keeper of the lost cities #1),['magia'],"['papel', 'ebook']",['eng'],"['identity', 'memory']",normal,4.7272725
+282,the girl who drank the moon,['magia'],"['papel', 'ebook']","['eng', 'spa']",['family'],normal,3.8095238
+283,red queen,['magia'],"['papel', 'ebook']",['eng'],['princesses'],normal,4.142857
+284,the sword of summer,['magia'],"['papel', 'ebook']","['eng', 'spa']",['action'],normal,4.25
+285,prince caspian,['magia'],"['papel', 'ebook']","['eng', 'spa']",['princes'],corto,4.0
+286,the red pyramid,['magia'],"['papel', 'ebook']","['eng', 'spa']","['other', 'secrecy']",normal,4.1764708
+287,the waste lands,['magia'],"['papel', 'ebook']","['eng', 'spa']",['thrillers'],normal,4.2272725
+288,midnight's children,['magia'],"['papel', 'ebook']","['eng', 'spa']","['history', 'relations', 'telepathy']",normal,3.875
+289,harry potter (series) 1-7,['magia'],['papel'],['eng'],['schools'],largo,4.75
+290,heir of fire,['magia'],"['papel', 'ebook']","['spa', 'eng']",['identity'],normal,4.125
+291,fantastic beasts and where to find them,['magia'],"['papel', 'ebook']","['eng', 'spa']",['characters'],corto,3.8372092
+292,the silver chair,['magia'],"['papel', 'ebook']","['eng', 'spa']","['captives', 'princes']",corto,4.0
+293,como agua para chocolate,['magia'],"['papel', 'ebook']","['spa', 'eng']","['family', 'food']",corto,3.4545455
+294,the great hunt,['magia'],"['papel', 'ebook']","['eng', 'spa']",['prophecies'],largo,4.114286
+295,queen of shadows,['magia'],"['papel', 'ebook']","['eng', 'spa']","['homecoming', 'identity', 'insurgency']",largo,4.8333335
+296,children of blood and bone,['magia'],['papel'],"['eng', 'spa']","['princes', 'princesses']",normal,4.1666665
+297,the poppy war,['magia'],['papel'],['eng'],['historical'],normal,3.7307692
+298,the tales of beedle the bard,['magia'],"['papel', 'ebook']","['spa', 'eng']",['warlocks'],corto,3.9
+299,artemis fowl,['magia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'children', 'computers']",corto,4.071429
+300,die unendliche geschichte,['magia'],"['papel', 'ebook']","['spa', 'eng']","['wishes', 'wolves']",normal,4.2777777
+301,nightfall (keeper of the lost cities #6),['magia'],['papel'],['eng'],"['memory', 'identity']",largo,4.8333335
+302,heartless,"['magia', 'ciencia_ficcion']","['papel', 'ebook']",['eng'],"['characters', 'courtship', 'schools']",normal,3.875
+303,carry on,"['magia', 'romance']","['papel', 'ebook']",['eng'],"['colocataires', 'schools']",normal,4.5
+304,the secret history,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['classicists'],largo,3.9574468
+305,the curious incident of the dog in the night-time,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['curious', 'night', 'swindon']",corto,4.0511365
+306,angels & demons,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['cryptographers', 'educators', 'freemasons']",normal,3.5932202
+307,murder on the orient express,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['detective', 'humour', 'investigation']",corto,4.0365853
+308,thirteen reasons why,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['death', 'schools']",normal,3.71875
+309,gone girl,"['misterio', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['marriage', 'thrillers', 'wives']",normal,3.680851
+310,преступление и наказание,['misterio'],"['papel', 'ebook']","['spa', 'eng']","['literary', 'remorse']",normal,4.2
+311,paper towns,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['friendship', 'investigation', 'neighbors']",normal,3.875
+312,atlas shrugged,['misterio'],"['papel', 'ebook']",['eng'],"['individuality', 'objectivity']",largo,3.2808988
+313,the mysterious affair at styles,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['investigation'],corto,3.9791667
+314,inferno,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['cryptographers', 'cryptography', 'employees']",normal,3.6862745
+315,the hound of the baskervilles,['misterio'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['tombs', 'tors']",corto,3.9411764
+316,a study in scarlet,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'detectives']",corto,3.857143
+317,the secret garden,['misterio'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['children', 'chinese', 'cousins']",corto,4.0
+318,everything i never told you,['misterio'],"['papel', 'ebook']",['eng'],"['chagrin', 'death', 'literary']",corto,4.0
+319,the price of salt,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['mothers'],corto,4.55
+320,deception point,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['americans', 'thrillers']",normal,3.2564104
+321,stormbreaker,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['computers'],corto,3.9629629
+322,the boxcar children,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['cars', 'children', 'railroads']",corto,4.206897
+323,a time to kill,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['vengeance', 'investigation', 'thrillers']",normal,3.9
+324,memoirs of sherlock holmes [11 stories],['misterio'],"['papel', 'ebook']","['eng', 'spa']","['english', 'ancestors', 'asphyxiation']",corto,4.5
+325,the red house mystery,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['investigation'],corto,4.25
+326,the girl on the train,['misterio'],"['papel', 'ebook']",['eng'],"['alcoholics', 'railroads']",normal,3.5357144
+327,the murder on the links,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['identity', 'investigation']",corto,3.5
+328,the body in the library,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['british', 'detective', 'humour']",corto,3.7857144
+329,flickan som lekte med elden,['misterio'],"['papel', 'ebook']",['eng'],"['investigation', 'journalists']",largo,3.9733334
+330,the moonstone,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'collins', 'death']",normal,4.0588236
+331,dark places,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['children', 'family', 'thrillers']",normal,4.178571
+332,the house with a clock in its walls,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['clocks', 'tombs']",corto,4.428571
+333,amulet,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['charms'],corto,4.714286
+334,grosso guaio a new york,['misterio'],"['papel', 'ebook']",['eng'],"['arson', 'brothers']",corto,4.1153846
+335,the secret adversary,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['youth'],corto,3.6666667
+336,if tomorrow comes,['misterio'],"['papel', 'ebook']",['eng'],"['american', 'detectives', 'hardcover']",normal,4.230769
+337,the enemy,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['americans'],normal,4.0
+338,shatter me,['romance'],"['papel', 'ebook']",['eng'],"['dictators', 'dictatorship']",normal,4.052174
+339,fifty shades of grey,['romance'],"['papel', 'ebook']","['eng', 'spa']",['businesspeople'],normal,3.8723404
+340,the seven husbands of evelyn hugo,['romance'],['papel'],"['eng', 'spa']","['authorship', 'biographers', 'biography']",normal,4.181818
+341,november 9,['romance'],"['papel', 'ebook']",['eng'],['novelists'],normal,4.328125
+342,lolita,['romance'],"['papel', 'ebook']","['eng', 'spa']","['pedophilia', 'stepfathers']",normal,4.0
+343,they both die at the end,['romance'],['papel'],['eng'],['death'],normal,4.152174
+344,romeo and juliet,['romance'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'bibliography', 'examinations']",corto,3.5891473
+345,if he had been with me,['romance'],"['papel', 'ebook']",['eng'],['family'],normal,4.051282
+346,you've reached sam,['romance'],['papel'],['eng'],"['family', 'friendship', 'healing']",normal,4.032787
+347,to all the boys i've loved before,['romance'],"['papel', 'ebook']",['eng'],"['amor', 'family', 'scandals']",normal,4.44
+348,divergent,['romance'],"['papel', 'ebook']",['eng'],"['family', 'identity', 'individuality']",normal,3.971831
+349,i fell in love with hope,['romance'],['papel'],['eng'],['transformation'],normal,4.4736843
+350,confess,['romance'],"['papel', 'ebook']",['eng'],['secrecy'],normal,4.232143
+351,better than the movies,['romance'],['papel'],['eng'],"['family', 'friendship']",normal,3.8666666
+352,me before you,['romance'],"['papel', 'ebook']","['eng', 'spa']","['contemporary', 'emotions', 'paralytics']",normal,4.18
+353,twisted games,['romance'],['papel'],['eng'],['steamy'],normal,4.05
+354,the god of small things,['romance'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['catholicism', 'cousins', 'family']",normal,3.7735848
+355,all the bright places,['romance'],"['papel', 'ebook']",['eng'],"['bullying', 'death']",normal,4.265306
+356,all your perfects,['romance'],['papel'],['eng'],"['marriage', 'secrecy']",normal,4.137931
+357,call me by your name,['romance'],"['papel', 'ebook']",['eng'],"['authors', 'fear']",corto,4.0
+358,"heartstopper, volume 2",['romance'],"['papel', 'ebook']","['eng', 'spa']",['schools'],normal,3.9642856
+359,l'étranger,['romance'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'death', 'history']",corto,4.075
+360,eleanor & park,['romance'],"['papel', 'ebook']","['eng', 'spa']","['bullying', 'family', 'history']",normal,4.1153846
+361,archer's voice,['romance'],['papel'],['eng'],['healing'],normal,3.7916667
+362,a clockwork orange,['romance'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['brainwashing', 'metafiction']",corto,4.05
+363,the sun is also a star,['romance'],"['papel', 'ebook']",['eng'],"['deportation', 'newexperience']",normal,3.7142856
+364,the selection (the selection #1),['romance'],"['papel', 'ebook']","['eng', 'spa']","['marriage', 'princes']",normal,4.2941175
+365,simon vs. the homo sapiens agenda,['romance'],"['papel', 'ebook']",['eng'],"['extortion', 'homosexuality', 'secrecy']",normal,4.4054055
+366,black ties and white lies,['romance'],['papel'],['eng'],['heartwarming'],normal,3.5454545
+367,destroy me,['romance'],['papel'],['eng'],"['healing', 'redemption']",corto,4.4
+368,rebecca,['romance'],"['papel', 'ebook']","['eng', 'spa']",['wives'],normal,4.4074073
+369,the elite (the selection #2),['romance'],"['papel', 'ebook']","['eng', 'spa']","['marriage', 'princes']",normal,4.142857
+370,brutal prince,['romance'],['papel'],['eng'],['redemption'],normal,3.9333334
+371,giovanni's room,['romance'],"['papel', 'ebook']","['spa', 'eng']","['americans', 'classics', 'homosexuality']",corto,4.2222223
+372,restore me,['romance'],['papel'],['eng'],['dictatorship'],normal,4.5
+373,brave new world,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['brainwashing', 'classics', 'collectivism']",corto,3.915408
+374,the art of war,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'competition', 'eastern']",corto,4.081081
+375,the maze runner,['ciencia_ficcion'],"['papel', 'ebook']",['eng'],"['cooperation', 'memory']",normal,4.1752577
+376,"i, robot",['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['hyperspace', 'morality']",corto,4.225564
+377,unravel me,['ciencia_ficcion'],"['papel', 'ebook']",['eng'],"['dictators', 'dictatorship']",normal,3.9642856
+378,jurassic park,"['ciencia_ficcion', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['procompsognathus', 'cloning']",normal,4.032787
+379,flowers for algernon,['ciencia_ficcion'],"['papel', 'ebook']","['spa', 'eng']",['brain'],corto,4.2985077
+380,contact,['ciencia_ficcion'],"['papel', 'ebook']","['spa', 'eng']","['astronomy', 'cosmology', 'exploration']",normal,4.181818
+381,mockingjay,['ciencia_ficcion'],"['papel', 'ebook']","['spa', 'eng']",['insurgency'],normal,3.6666667
+382,the road,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'cat']","['apocalypse', 'ethics']",corto,3.8636363
+383,neuromancer,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']",['cyberspace'],normal,4.0
+384,cinder,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['cybernetics', 'overpopulation', 'wealth']",normal,4.117647
+385,never let me go,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['clonage', 'cloning', 'literary']",corto,3.6470587
+386,the martian chronicles,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']",['bibliography'],corto,4.025
+387,fight club,['ciencia_ficcion'],"['papel', 'ebook']",['eng'],['boxing'],corto,4.027027
+388,2001,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['computers', 'jupiter']",corto,4.1559634
+389,1984 (adaptation),['ciencia_ficcion'],"['papel', 'ebook']",['eng'],['textbooks'],corto,4.6666665
+390,la nuit,['ciencia_ficcion'],"['papel', 'ebook']",['eng'],"['autobiography', 'biography', 'children']",corto,4.681818
+391,the glass castle,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['alcoholism', 'biographies', 'biography']",normal,4.3636365
+392,scythe,['ciencia_ficcion'],['papel'],['eng'],"['competition', 'death']",normal,4.5
+393,lord of the flies,['suspense'],"['papel', 'ebook']","['eng', 'spa']","['death', 'ethics', 'islands']",corto,3.6254418
+394,the silent patient,['suspense'],['papel'],['eng'],['marriage'],normal,4.117647
+395,if we were villains,['suspense'],"['papel', 'ebook']",['eng'],['actors'],normal,4.2727275
+396,behind closed doors,['suspense'],"['papel', 'ebook']",['eng'],"['marriage', 'secrecy', 'wives']",normal,3.4166667
+397,sharp objects,['suspense'],"['papel', 'ebook']","['eng', 'spa']","['children', 'investigation', 'journalists']",normal,3.65
+398,dark matter,['suspense'],"['papel', 'ebook']",['eng'],"['reality', 'technological', 'thrillers']",normal,4.1960783
+399,the andromeda strain,['suspense'],"['papel', 'ebook']","['eng', 'spa']",['hyperventilation'],corto,3.7636364
+400,white fang,['suspense'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['history', 'wolves']",corto,4.0
+401,voyage au centre de la terre,['suspense'],"['papel', 'ebook']","['eng', 'spa']","['core', 'earth']",corto,4.0
+402,the pearl,['suspense'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['children', 'family', 'fishers']",corto,3.4827585
+403,origin,['suspense'],"['papel', 'ebook']","['eng', 'spa']",['cryptographers'],largo,3.52
+404,digital fortress,['suspense'],"['papel', 'ebook']","['spa', 'eng']","['cryptographers', 'cryptographes', 'thrillers']",normal,3.4615386
