@@ -41,7 +41,9 @@ def ask_questions():
     pass   
 
 db = [1,2,3,4,5,6]
+print(db)
 domain = ["a","b","c","d","f"]
+print(domain)
 
 cbr = CBR(db,domain)
 
