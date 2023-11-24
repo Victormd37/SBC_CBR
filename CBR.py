@@ -17,7 +17,7 @@ class CBR():
         pass
 
     def _similarity(self,new_case):
-        pass
+        
 
 class User():
 
