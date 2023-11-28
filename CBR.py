@@ -1,4 +1,5 @@
 import pandas as pd
+
 from index_tree import Tree
 
 class CBR():
@@ -35,6 +36,7 @@ class CBR():
     def retain(self):
         pass
 
+
     def _build_index_tree(self):
         """
         Aquest métode obte les diferents variables i modalitats del perfil d'usuari.
@@ -46,7 +48,6 @@ class CBR():
             if col != 'User_id':
                 char[col] = self.users[col].unique()
         return Tree(char,self.cases,self.users)
-
 
     def _jaccard_similarity(self,set1, set2):
         '''
@@ -164,11 +165,11 @@ users_db = {
 
 users_db = pd.DataFrame(users_db)
 
+
 users_db = pd.read_csv("Usuarios.csv")
 # Definir books_db (propies instancies usuaris)
 
 print(cases_db)
-
 print(users_db)
 
 cbr = CBR(db,domain, cases_db, users_db)
