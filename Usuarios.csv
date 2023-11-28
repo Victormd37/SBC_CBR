@@ -1,0 +1,34 @@
+Usuario_ID,Genero,Edad,Clase social,Trabajo,Horas de lectura a la semana,Musica,Tarde libre,Vacaciones
+1,Mujer,Joven,Media,Estudiane,Muchas,Pop,Terraza,Moderno
+2,Mujer,Adulto,Baja,Nada,Normal,Techno,Montaña,Aventura
+3,Hombre,Adulto,Media,Trabajador,Pocas,Reggeaton,Terraza,Moderno
+4,Mujer,Adulto,Baja,Trabajador,Pocas,Reggeaton,Sofa,Clasico
+5,Hombre,Joven,Baja,Nada,Muchas,Reggae,Playa,Clasico
+6,Hombre,Joven,Alta,Trabajador,Pocas,Techno,Sofa,Moderno
+7,Hombre,Adulto,Media,Trabajador,Normal,Clasica,Montaña,Aventura
+8,Hombre,Joven,Media,Estudiane,Muchas,Rap,Playa,Clasico
+9,Mujer,Adulto,Alta,Trabajador,Normal,Clasica,Montaña,Aventura
+10,Hombre,Joven,Baja,Estudiane,Pocas,Reggeaton,Terraza,Moderno
+11,Mujer,Joven,Alta,Estudiane,Muchas,Pop,Sofa,Clasico
+12,Mujer,Joven,Alta,Trabajador,Muchas,Pop,Playa,Aventura
+13,Mujer,Adulto,Media,Jubilado,Muchas,Clasica,Montaña,Clasico
+14,Hombre,Joven,Baja,Estudiane,Pocas,Rap,Montaña,Moderno
+15,Hombre,Adulto,Media,Trabajador,Normal,Clasica,Sofa,Aventura
+16,Hombre,Joven,Alta,Trabajador,Normal,Rap,Terraza,Moderno
+17,Hombre,Joven,Baja,Estudiane,Muchas,Reggeaton,Playa,Moderno
+18,Mujer,Adulto,Media,Trabajador,Pocas,Techno,Sofa,Clasico
+19,Hombre,Adulto,Alta,Jubilado,Muchas,Clasica,Montaña,Aventura
+20,Prefiero no decirlo,Joven,Baja,Nada,Muchas,Techno,Terraza,Moderno
+21,Hombre,Adulto,Alta,Trabajador,Normal,Pop,Montaña,Aventura
+22,Mujer,Joven,Media,Estudiane,Pocas,Pop,Playa,Clasico
+23,Prefiero no decirlo,Joven,Baja,Estudiane,Muchas,Techno,Terraza,Clasico
+24,Mujer,Adulto,Alta,Jubilado,Muchas,Clasica,Sofa,Moderno
+25,Mujer,Adulto,Baja,Trabajador,Pocas,Reggeaton,Playa,Aventura
+26,Hombre,Joven,Media,Estudiane,Normal,Rap,Terraza,Moderno
+27,Mujer,Adulto,Alta,Trabajador,Muchas,Techno,Montaña,Aventura
+28,Hombre,Joven,Media,Estudiane,Normal,Rap,Sofa,Moderno
+29,Hombre,Adulto,Media,Jubilado,Muchas,Pop,Playa,Clasico
+30,Prefiero no decirlo,Joven,Media,Estudiane,Muchas,Clasica,Playa,Clasico
+31,Hombre,Joven,Baja,Estudiane,Pocas,Reggeaton,Montaña,Aventura
+32,Mujer,Adulto,Media,Jubilado,Muchas,Pop,Terraza,Aventura
+33,Mujer,Adulto,Alta,Trabajador,Normal,Clasica,Sofa,Moderno
