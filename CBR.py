@@ -1,13 +1,12 @@
 import pandas as pd
-
 from index_tree import Tree
 
 class CBR():
 
-    def __init__(self, db, domain, case_db, users_db):
-        self.cases = case_db #Base de Dades? Arbre jerarquic?
-        self.users = users_db #Base de dades d'usuaris
-        self.domain = domain #Arbre?
+    def __init__(self, domain, case_db, users_db):
+        self.cases = case_db 
+        self.users = users_db 
+        self.domain = domain 
         self.index_tree = self._build_index_tree()
 
     def retrieve(self, new_case):
@@ -27,8 +26,20 @@ class CBR():
             # cridem self._jaccard_similarity(set1, set2) per calcular la similaritat entre 2 usuaris
         pass
 
-    def reuse(self):
-        pass
+    # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
+    def reuse(self, most_similar_cases, actual_case): 
+        ideal_book = list(actual_case.get_user_preferences())
+        book_similarities = []
+        # We compute the similarity between ideal_book with books 
+        # characteristics recomended in the most similar cases retrieved 
+        # by user's profile
+        for case in most_similar_cases:
+            book_atributes = list(case.get_book().get_book_features())
+            similarity = self._custom_similarity_books(ideal_book, book_atributes)
+            book_similarities.append((similarity, case))
+        sorted_books = sorted(book_similarities, key=lambda x: x[0], reverse=True)
+        return sorted_books[0:3]
+
     
     def revise(self):
         pass
@@ -49,19 +60,7 @@ class CBR():
                 char[col] = self.users[col].unique()
         return Tree(char,self.cases,self.users)
 
-    def _jaccard_similarity(self,set1, set2):
-        '''
-        En aquest mètode calcularem la metrica de similitud que 
-        utilitzarem per determinar com de similars són dos usuaris. 
-        De moment només utilitzarem el User Profile i el User preferences.
-        Donat que es són vectors de strings utilitzarem Jaccard Similarity.
-        '''
-        
-        intersection = len(set1.intersection(set2))
-        union = len(set1.union(set2))
-        return intersection / union
-
-    def _custom_similarity(self,user1, user2):
+    def _custom_similarity_users(self,case1, case2):
         '''
         Calculem custom similarity otorgant pesos a aquelles 
         caracteristiques que considerem més importants. 
@@ -69,130 +68,61 @@ class CBR():
         weighted_similarity=0
         total_weight = 0
 
-        # Listas de profile + preferences (atributos multislot son listas)
-        features1 = user1.get_user_profile()
-        features1.extend(user1.get_user_preferences())
-        features2 = user2.get_user_profile()
-        features2.extend(user2.get_user_preferences())
+        # Listas de profile features
+        features1 = case1.get_user().get_user_profile()
+        features2 = case2.get_user().get_user_profile()
 
         # Definimos pesos de los atributos
-        weights = {'Genero':1, 'Edad': 1, 'Vacaciones': 2,
-                    'Genero_literario':3}
+        # Ajustar pesos en función de los resultados
+        weights = {'Genero':1, 'Edad': 1, 'Classe social': 2, 
+                   'Trabajo': 2, 'Horas de lectura a la semana' : 3,	
+                   'Musica': 1,'Tarde libre':1, 'Vacaciones':1}  
         
         # Calculamos jaccard similarity con pesos
         for i, feature in enumerate(weights.items()):
-            if isinstance(features1[i],list): # Cas especial per atributs multislot
-                set1 = set(features1[i])
-                set2 = set(features2[i])
-            else:
-                set1 = set([features1[i]])
-                set2 = set([features2[i]])
-
+            ele1 = features1[i]
+            ele2 = features2[i]
             weight = feature[1] # Extraemos el peso de la tupla feature
-            similarity = self._jaccard_similarity(set1, set2)
-            weighted_similarity += weight * similarity
+            if ele1 == ele2:
+                weighted_similarity += weight
             total_weight += weight
+        
+        # Normalizamos el resultado 
+        if total_weight != 0:
+            weighted_similarity /= total_weight
 
+        return weighted_similarity
+    
+    def _custom_similarity_books(self, ideal_features, book_features):
+        '''
+        Calculem custom similarity otorgant pesos a aquelles 
+        caracteristiques que considerem més importants. 
+        '''
+        weighted_similarity=0
+        total_weight = 0
+        # Definimos pesos de los atributos
+        # Ajustar pesos en función de los resultados
+        weights = {'Genero':3, 'Largura': 2, 'Formato': 1, 'Idioma': 1}  
+        for i, feature in enumerate(weights.items()):
+            ele1 = ideal_features[i]
+            ele2 = book_features[i]
+        
+            # Calculamos similarity con pesos
+            attr = feature[0]
+            weight = feature[1] # Extraemos el peso de la tupla feature
+            if attr == 'Largura':
+                if ele1 == ele2:
+                    weighted_similarity += weight
+            else:
+                if ele1 in ele2:
+                    weighted_similarity += weight
+            total_weight += weight
+        
         # Normalizamos el resultado 
         if total_weight != 0:
             weighted_similarity /= total_weight
 
         return weighted_similarity
 
-
-class User():
-
-    def __init__(self,atributes_prof, atributes_pref):
-        self.atributes_prof = atributes_prof
-        self.atributes_pref = atributes_pref
-    
-    def get_user_profile(self):
-        '''
-        Devuelve una lista con los atributos del perfil del usuario.
-        Los atributos multislot seran sublistas.
-        '''
-        return self.atributes_prof
-
-    def get_user_preferences(self):
-        '''
-        Devuelve una lista con los atributos de las preferencias del usuario.
-        Los atributos multislot seran sublistas.
-        '''
-        return self.atributes_pref
-
-class Book():
-
-    def __init__(self,atributes):
-        self.a1 = atributes[0]
-        self.a2 = atributes[1]
-        self.a3 = atributes[2]
-        self.a4 = atributes[3]
-        self.a5 = atributes[4]
-    
-
 def ask_questions():
     pass   
-
-db = [1,2,3,4,5,6]
-#print(db)
-domain = ["a","b","c","d","k"]
-#print(domain)
-
-# Definir cases_db amb ids
-# Exemple (tindrà aquesta forma) emplenar a partir de csv drive:
-cases_db = {
-    'Case_id': [1,2,3,4,5,6,7,8],
-    'User_id': [1,1,2,2,3,2,3,4], # Poden repetir-se
-    'Book_id': [0,0,0,0,0,0,0,0], # Poden repetir-se
-    'User_preferences': [0,0,0,0,0,0,0,0],
-    #'Comprado': [] ?
-    'Rating': [0,0,0,0,0,0,0,0], # Valoracions de l'1 al 5 (de moment)
-    #'Timestep': []
-}
-
-cases_db = pd.DataFrame(cases_db)
-
-cases_db = pd.read_csv("Casos.csv")
-
-# Això s'haurà d'emplenar a partir del csv drive, en el cas de users també al ask():
-# Definir users_db (propies instancies usuaris)
-users_db = {
-    'User_id': [1,2,3,4],
-    'Genero' : ['Hombre', 'Mujer', 'Hombre', 'Mujer'],
-    'Edad': ['Adulto','Adulto','Adulto','Adulto'],
-    'Hobbies': ['Playa', 'Montaña', 'Playa', 'Playa']
-}
-
-users_db = pd.DataFrame(users_db)
-
-
-users_db = pd.read_csv("Usuarios.csv")
-# Definir books_db (propies instancies usuaris)
-
-print(cases_db)
-print(users_db)
-
-cbr = CBR(db,domain, cases_db, users_db)
-
-'''
-if __name__ == '__main__':
-
-    ask_questions()
-'''
-
-#print(cbr.index_tree.tree.hijos['Hombre'].valores)
-
-#cbr.index_tree.insertar_caso(9,{'Genero': 'Mujer','Edad': 'Adulto','Hobbies': 'Playa'})
-
-#print(cbr.index_tree.tree.hijos['Hombre'].valores)
-#print(cbr.index_tree.tree.hijos['Mujer'].hijos['Playa'].valores)
-
-#print(cbr.index_tree.buscar_casos({'Genero': 'Hombre','Edad': 'Adulto','Hobbies': 'Montaña'}))
-
-print(cbr.index_tree)
-
-#sim_custom = cbr._custom_similarity(user_db.iat[0,1], user_db.iat[3,1])
-#sim_jaccard = cbr._jaccard_similarity(user_db.iat[0,1], user_db.iat[3,1])
-
-#print(sim_custom)
-#print(sim_jaccard)
