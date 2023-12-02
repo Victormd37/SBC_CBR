@@ -3,6 +3,10 @@ class User():
         self.user_id = user_id
         self.user_profile = user_profile
     
+    def get_username(self):
+
+        return self.user_id
+    
     def get_user_profile(self):
         '''
         Devuelve una lista con los atributos del perfil del usuario.
@@ -40,6 +44,13 @@ class Case():
         Los atributos multislot seran sublistas.
         '''
         return self.user
+
+    def get_caseid(self):
+        '''
+        Devuelve una lista con los atributos del perfil del usuario.
+        Los atributos multislot seran sublistas.
+        '''
+        return self.case_id
     
     def get_book(self):
         '''
@@ -57,5 +68,11 @@ class Case():
     
     def get_book_atributes(self):
         return self.book_atributes
+    
+    def set_book(self, book_inst):
+        '''
+        Permite añadir un libro al caso como solución
+        '''
+        self.book = book_inst
 
     

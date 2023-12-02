@@ -1,5 +1,5 @@
 import numpy as np
-
+from classes import Case, User, Book
 
 class Tree:
 
@@ -28,9 +28,11 @@ class Tree:
             """Retorna el fill que conté els casos amb el valor d'atribut indicat (carac)"""
             return self.hijos.get(carac)
     
-    def __init__(self, caracteristicas, casos, users):
+    def __init__(self, caracteristicas, casos, users, user_inst, book_inst):
         self.cases = casos
         self.users = users
+        self.user_instances = user_inst
+        self.book_instances = book_inst
         self.tree = self.crear_arbol(caracteristicas, self.users, self._get_numbercases())
         
 
@@ -62,12 +64,24 @@ class Tree:
                 arbol = self.TreeNode(valor, best_c, hijos)
             else:
                 l = users['Usuario_ID'].tolist()
-                casos = self.cases[self.cases['Usuario_ID'].isin(l)]['Caso_ID'].tolist()
-                arbol = self.TreeNode(casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
+                casos = self.cases[self.cases['Usuario_ID'].isin(l)]
+                lista_instancias_casos = []
+                for row in casos.index:
+                    row_elements = casos.loc[row]
+                    instance = Case(row_elements[0], self.user_instances[row_elements[1]-1] 
+                                    ,row_elements[2:6], self.book_instances[row_elements[6]])
+                    lista_instancias_casos.append(instance)
+                arbol = self.TreeNode(lista_instancias_casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
         else:
             l = users['Usuario_ID'].tolist()
-            casos = self.cases[self.cases['Usuario_ID'].isin(l)]['Caso_ID'].tolist()
-            arbol = self.TreeNode(casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
+            casos = self.cases[self.cases['Usuario_ID'].isin(l)]
+            lista_instancias_casos = []
+            for row in casos.index:
+                row_elements = casos.loc[row]
+                instance = Case(row_elements[0], self.user_instances[row_elements[1]-1] 
+                                ,row_elements[2:6], self.book_instances[row_elements[6]])
+                lista_instancias_casos.append(instance)
+            arbol = self.TreeNode(lista_instancias_casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
         return arbol
     
     def _choose_best_partition(self, char, users, n):
@@ -103,13 +117,13 @@ class Tree:
     def _get_numbercases(self):
         return self.cases.shape[0]
     
-    def insertar_caso(self, caso_id, user_atr):
-        """Donat l'id del cas que es vol insertar i els atributs de l'usuari d'aquell cas s'inserta en el node corresponent."""
+    def insertar_caso(self, caso, user_atr):
+        """Donat la INSTANCIA d'un cas que es vol insertar i els atributs de l'usuari d'aquell cas s'inserta en el node corresponent."""
         nodo = self.tree
         while not nodo.hijos == None:
             atr = nodo.get_feature() 
             nodo = nodo.get_hijo_valor(user_atr[atr])
-        nodo.add_valor(caso_id)
+        nodo.add_valor(caso)
         
     
     def buscar_casos(self, new_case_atr):
@@ -123,7 +137,7 @@ class Tree:
     def _crear_dict(self, nodo):
         """Crea un diccionari de l'arbre per poder-lo imprimir"""
         if nodo.hijos == None:
-            return nodo.valores
+            return  [instancia.get_caseid() for instancia in nodo.valores]
         diccionario = {'Feature': nodo.feature}
         for valor,hijo in nodo.hijos.items():
             diccionario[valor] = self._crear_dict(hijo)
