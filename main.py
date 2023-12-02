@@ -43,68 +43,74 @@ for column in columns_to_convert:
     books_db[column] = books_db[column].apply(convert_string_to_list)
 
 
-cbr = CBR(books_db, cases_db, users_db)
+cbr = CBR(cases_db, users_db, books_db)
 
-'''
-if __name__ == '__main__':
+print(cbr.index_tree)
 
-    ask_questions()
-'''
-# Creem instancies, ho posem en llistes tot per provar
-# Convertim bases de dades en llistes d'instancies
-lista_instancias_usuarios = []
+user = users_db.loc[4]
+print(user)
+case = cases_db.loc[24]
+caso = Case(51, User(user[0], user[1:]), case[2:6])
 
-for row in range(len(users_db)):
-    row_elements = users_db.loc[row]
-    instance = User(row_elements[0], row_elements[1:])
-    lista_instancias_usuarios.append(instance)
+s = cbr.retrieve(caso)
+s1 =[instancia.get_caseid() for instancia in s]
+print(s)
+print(s1)
+# # Creem instancies, ho posem en llistes tot per provar
+# # Convertim bases de dades en llistes d'instancies
+# lista_instancias_usuarios = []
 
-lista_instancias_libros = []
-for row in range(len(books_db)):
-    row_elements = books_db.loc[row]
-    instance = Book(row_elements[0], row_elements[1] ,row_elements[2:])
-    lista_instancias_libros.append(instance)
+# for row in range(len(users_db)):
+#     row_elements = users_db.loc[row]
+#     instance = User(row_elements[0], row_elements[1:])
+#     lista_instancias_usuarios.append(instance)
 
-lista_instancias_casos = []
-for row in range(len(cases_db)):
-    row_elements = cases_db.loc[row]
-    instance = Case(row_elements[0], lista_instancias_usuarios[row_elements[1]-1] 
-                    ,row_elements[2:6], lista_instancias_libros[row_elements[6]])
-    lista_instancias_casos.append(instance)
+# lista_instancias_libros = []
+# for row in range(len(books_db)):
+#     row_elements = books_db.loc[row]
+#     instance = Book(row_elements[0], row_elements[1] ,row_elements[2:])
+#     lista_instancias_libros.append(instance)
 
-# --------------------------------- Fem proves ------------------------------
-case1 = lista_instancias_casos[15]
-case2 = lista_instancias_casos[43]
+# lista_instancias_casos = []
+# for row in range(len(cases_db)):
+#     row_elements = cases_db.loc[row]
+#     instance = Case(row_elements[0], lista_instancias_usuarios[row_elements[1]-1] 
+#                     ,row_elements[2:6], lista_instancias_libros[row_elements[6]])
+#     lista_instancias_casos.append(instance)
 
-sim_users = cbr._custom_similarity_users(case1, case2)
-print('User 1:','\n', case1.get_user().get_user_profile())
-print('User 2:','\n',case2.get_user().get_user_profile())
-print('Similaritat Users',sim_users)
+# # --------------------------------- Fem proves ------------------------------
+# case1 = lista_instancias_casos[15]
+# case2 = lista_instancias_casos[43]
 
-case3 = lista_instancias_casos[0]
-case4 = lista_instancias_casos[20]
-case5 = lista_instancias_casos[25]
-case6 = lista_instancias_casos[18]
+# sim_users = cbr._custom_similarity_users(case1, case2)
+# print('User 1:','\n', case1.get_user().get_user_profile())
+# print('User 2:','\n',case2.get_user().get_user_profile())
+# print('Similaritat Users',sim_users)
+
+# case3 = lista_instancias_casos[0]
+# case4 = lista_instancias_casos[20]
+# case5 = lista_instancias_casos[25]
+# case6 = lista_instancias_casos[18]
 
 
-lis_most_similar_cases = [case1, case2, case3, case4, case5, case6]
-actual_case = lista_instancias_casos[33]
-three_most_similar_cases_by_books = cbr.reuse(lis_most_similar_cases, actual_case)
-print(three_most_similar_cases_by_books)
+# lis_most_similar_cases = [case1, case2, case3, case4, case5, case6]
+# actual_case = lista_instancias_casos[33]
+# three_most_similar_cases_by_books = cbr.reuse(lis_most_similar_cases, actual_case)
+# print(three_most_similar_cases_by_books)
 
-#print(cbr.index_tree.tree.hijos['Hombre'].valores)
+# #print(cbr.index_tree.tree.hijos['Hombre'].valores)
 
-#cbr.index_tree.insertar_caso(9,{'Genero': 'Mujer','Edad': 'Adulto','Hobbies': 'Playa'})
+# #cbr.index_tree.insertar_caso(9,{'Genero': 'Mujer','Edad': 'Adulto','Hobbies': 'Playa'})
 
-#print(cbr.index_tree.tree.hijos['Hombre'].valores)
-#print(cbr.index_tree.tree.hijos['Mujer'].hijos['Playa'].valores)
+# #print(cbr.index_tree.tree.hijos['Hombre'].valores)
+# #print(cbr.index_tree.tree.hijos['Mujer'].hijos['Playa'].valores)
 
-#print(cbr.index_tree.buscar_casos({'Genero': 'Hombre','Edad': 'Adulto','Hobbies': 'Montaña'}))
+# #print(cbr.index_tree.buscar_casos({'Genero': 'Hombre','Edad': 'Adulto','Hobbies': 'Montaña'}))
 
-#print(cbr.index_tree)
+# #print(cbr.index_tree)
 
-#sim_custom = cbr._custom_similarity(user_db.iat[0,1], user_db.iat[3,1])
-#sim_jaccard = cbr._jaccard_similarity(user_db.iat[0,1], user_db.iat[3,1])
+# #sim_custom = cbr._custom_similarity(user_db.iat[0,1], user_db.iat[3,1])
+# #sim_jaccard = cbr._jaccard_similarity(user_db.iat[0,1], user_db.iat[3,1])
 
-#print(sim_custom)
-#print(sim_jaccard)
+# #print(sim_custom)
+# #print(sim_jaccard)

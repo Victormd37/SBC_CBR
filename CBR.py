@@ -1,30 +1,41 @@
 import pandas as pd
 from index_tree import Tree
+from classes import User,Case,Book
 
 class CBR():
 
-    def __init__(self, domain, case_db, users_db):
+    def __init__(self, case_db, users_db, books_db):
         self.cases = case_db 
         self.users = users_db 
-        self.domain = domain 
+        self.users_inst = []
+        for row in range(len(users_db)):
+            row_elements = users_db.loc[row]
+            instance = User(row_elements[0], row_elements[1:])
+            self.users_inst.append(instance)
+
+        self.books_db = books_db
+        self.books_inst = []
+        for row in range(len(books_db)):
+            row_elements = books_db.loc[row]
+            instance = Book(row_elements[0], row_elements[1] ,row_elements[2:])
+            self.books_inst.append(instance)
+
+        self.number_cases = self.cases.shape[0] #Obtenim el nombre de casos actuals, anirem modificant si afegim o retirem casos
         self.index_tree = self._build_index_tree()
 
     def retrieve(self, new_case):
         """
-        New_case: diccionari que conté tots els atributs que composen un cas.
+        New_case: Instancia de Case (no te tots els atributs encara).
         Aquest new_case encara no esta a la base de casos pero pot ser que el Usuari si que es trobi a la base d'usuaris.
 
         En cas que al realitzar les preguntes no s'hagi trobat, es realitzaran les preguntes adients per trobar el perfil d'usuari
         i s'afegirà SEMPRE a la base d'usuaris.
         """
-        user_id = new_case['User_id'] # Obtenim user_id del cas nou
-        user = self.users[user_id] # Obtenim la instancia d'usuari guardat a users_db
+        user = new_case.get_user().get_user_profile()
 
-        similar_cases_id = self.index_tree.buscar_casos(user) #Recuperem els indexos dels n casos més similars
-        # Per els usuaris del cluster 
-            # Crear sets amb info del profile i preferences
-            # cridem self._jaccard_similarity(set1, set2) per calcular la similaritat entre 2 usuaris
-        pass
+        similar_cases= self.index_tree.buscar_casos(user) #Recuperem els indexos dels n casos més similars
+        
+        return similar_cases
 
     # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
     def reuse(self, most_similar_cases, actual_case): 
@@ -45,6 +56,7 @@ class CBR():
         pass
 
     def retain(self):
+        """ IMPORTANTE: Al añadir un caso sumar 1 a self.number_cases, si se quita un caso restar 1."""
         pass
 
 
@@ -58,7 +70,7 @@ class CBR():
         for col in self.users.columns:
             if col != 'User_id':
                 char[col] = self.users[col].unique()
-        return Tree(char,self.cases,self.users)
+        return Tree(char,self.cases,self.users, self.users_inst, self.books_inst)
 
     def _custom_similarity_users(self,case1, case2):
         '''
@@ -124,5 +136,15 @@ class CBR():
 
         return weighted_similarity
 
-def ask_questions():
-    pass   
+    def ask_questions(self):
+
+        """
+        Aquesta funció hauria de fer les preguntes necessaries per extreure:
+            1. En cas que l'usuario no es trobi (preguntar username), extreure el perfil de l'usuari.
+                1.1 Si l'usuari es troba a la llista d'instancies, retornar la posició a la llista.
+                1.2 Si no, crear el perfil d'usuari, crear la instancia, i afegirlo al final de la llista d'instancies.
+            2. Extreure les preferencies de l'usuari per aquest cas.
+        
+        Retorna una instancia de CASE on només tenim el perfil d'usuari i les seves preferencies: Case(self.number_cases + 1, User_instance, Diccionari d'atributs)
+        """
+        pass   
