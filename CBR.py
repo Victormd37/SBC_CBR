@@ -33,9 +33,17 @@ class CBR():
         """
         user = new_case.get_user().get_user_profile()
 
-        similar_cases= self.index_tree.buscar_casos(user) #Recuperem els indexos dels n casos més similars
+        similar_cases= self.index_tree.buscar_casos(user) #Recuperem els indexos dels n casos en una mateixa fulla
+
+        if len(similar_cases) > 10:
+            sim = []
+            for i in similar_cases:
+                sim.append(self._custom_similarity_users(new_case,i)) #Buscamos la similaridad entre nuestro caso y un caso similar
+            pares = zip(similar_cases,sim)
+            pares_ordenados = sorted(pares, key=lambda x: x[1]) #Ordenamos los casos ascendentemente
+            ordered_similar_cases,_=pares_ordenados[:10] #Cojemos los 10 casos más similares
         
-        return similar_cases
+        return ordered_similar_cases
 
     # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
     def reuse(self, most_similar_cases, actual_case): 

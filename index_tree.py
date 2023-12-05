@@ -51,7 +51,7 @@ class Tree:
         
         """
         if len(caracteristicas) != 0 and users[users.duplicated(subset= users.columns[1:],keep=False)].shape[0] != users.shape[0] and users.shape[0] > 1:
-            if n > 10:
+            if n > 50:
                 best_c = self._choose_best_partition(caracteristicas, users, n)
                 hijos = {}
                 for i in caracteristicas[best_c]:
