@@ -1,6 +1,7 @@
 import pandas as pd
 from index_tree import Tree
 from classes import User,Case,Book
+import numpy as np
 
 class CBR():
 
@@ -17,7 +18,7 @@ class CBR():
         self.books_inst = []
         for row in range(len(books_db)):
             row_elements = books_db.loc[row]
-            instance = Book(row_elements[0], row_elements[1] ,row_elements[2:])
+            instance = Book(row_elements[0], row_elements[2] ,row_elements[3:])
             self.books_inst.append(instance)
 
         self.number_cases = self.cases.shape[0] #Obtenim el nombre de casos actuals, anirem modificant si afegim o retirem casos
@@ -41,22 +42,22 @@ class CBR():
                 sim.append(self._custom_similarity_users(new_case,i)) #Buscamos la similaridad entre nuestro caso y un caso similar
             pares = zip(similar_cases,sim)
             pares_ordenados = sorted(pares, key=lambda x: x[1]) #Ordenamos los casos ascendentemente
-            ordered_similar_cases,_=pares_ordenados[:10] #Cojemos los 10 casos más similares
+            ordered_similar_cases=pares_ordenados[:10] #Cojemos los 10 casos más similares
         
         return ordered_similar_cases
 
     # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
     def reuse(self, most_similar_cases, actual_case): 
-        ideal_book = list(actual_case.get_user_preferences())
-        book_similarities = []
+        ideal_book = self._infer_user_preferences(actual_case.get_user())
+        final_similarities = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
         # by user's profile
-        for case in most_similar_cases:
+        for case,sim_users in most_similar_cases:
             book_atributes = list(case.get_book().get_book_features())
-            similarity = self._custom_similarity_books(ideal_book, book_atributes)
-            book_similarities.append((similarity, case))
-        sorted_books = sorted(book_similarities, key=lambda x: x[0], reverse=True)
+            similarity_book = self._custom_similarity_books(ideal_book, book_atributes)
+            final_similarities.append((similarity_book*sim_users, case, case.get_book().get_book_id()))
+        sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
     
@@ -76,7 +77,7 @@ class CBR():
         """
         char = {}
         for col in self.users.columns:
-            if col != 'User_id':
+            if col != 'Usuario':
                 char[col] = self.users[col].unique()
         return Tree(char,self.cases,self.users, self.users_inst, self.books_inst)
 
@@ -118,31 +119,96 @@ class CBR():
         Calculem custom similarity otorgant pesos a aquelles 
         caracteristiques que considerem més importants. 
         '''
-        weighted_similarity=0
+        weighted_disimilarity=0
         total_weight = 0
+
         # Definimos pesos de los atributos
-        # Ajustar pesos en función de los resultados
-        weights = {'Genero':3, 'Largura': 2, 'Formato': 1, 'Idioma': 1}  
+        weights = {'contiene':4, 'formato': 1, 'idioma': 2, 'largura_libro': 1,
+                   'clasificacion_edad':3, 'compone_saga':1, 'famoso':1, 'peso':1,
+                   'tipo_narrador':2}
+        
         for i, feature in enumerate(weights.items()):
             ele1 = ideal_features[i]
             ele2 = book_features[i]
-        
             # Calculamos similarity con pesos
             attr = feature[0]
-            weight = feature[1] # Extraemos el peso de la tupla feature
-            if attr == 'Largura':
-                if ele1 == ele2:
-                    weighted_similarity += weight
+            weight = feature[1]
+            # Afegim relacions de distancia entre certes modalitats
+            related_attr = {'largura_libro','clasificacion_edad','peso'}
+            if attr in related_attr: 
+                map = {'largura_libro':{'corto':0, 'normal':1, 'largo':2},
+                'clasificacion_edad':{'infantil':0, 'juvenil':1,'adulto':2},
+                'peso': {'ligero':0, 'intermedio':1,'pesado':2}}
+                diff = abs(map[attr][ele1] - map[attr][ele2])
+                weighted_disimilarity += weight*diff
             else:
-                if ele1 in ele2:
-                    weighted_similarity += weight
+                if type(ele2) != list:
+                    if ele1 != ele2:
+                        weighted_disimilarity += weight
+                else:
+                    if ele1 not in ele2:
+                        weighted_disimilarity += weight
             total_weight += weight
         
         # Normalizamos el resultado 
-        if total_weight != 0:
-            weighted_similarity /= total_weight
+        weighted_disimilarity /= total_weight
 
-        return weighted_similarity
+        return 1 - weighted_disimilarity
+    
+    def _infer_user_preferences(self,user):
+        '''
+        Rep l'usuari per al qual volem fer la recomanació. Recopila tota la info de
+        les recomanacions previes. Utilitzant aquesta informació infereix quins són
+        els atributs dels llibres que més li agraden. En el pas d'inferencia fa us 
+        de: Timestamp, Rating i Atributs dels llibres recomenats. 
+        '''
+        user_id = user.get_username()
+        # Obtenim tots els casos de l'usuari a partir de l'arbre
+        user_cases = # WARNING: Extreure les instancies de casos de l'ususari de l'arbre
+        user_db = {
+            'Book_features':[list(case.get_book().get_book_features()) for case in user_cases],
+            'Rating':[case.get_rating() for case in user_cases],
+            'Timestamp':[case.get_timestamp() for case in user_cases]
+        }
+        df = pd.DataFrame(user_db)
+        df['Normalized_Rating'] = df['Rating'].div(5)
+
+        decay_factor = 0.1  # Adjust this based on the desired decay rate
+
+        # Representem formula: e^(-decay_factor * time_differences) on time_differences 
+        # es la diferencia entre el timestamp més recent i timestamp en questió. 
+        df['Weight'] = np.exp(-(df['Timestamp'].max() - df['Timestamp']) * decay_factor) # Estarà entre 0 i 1.
+        df['Combined_Value'] = df['Normalized_Rating'] * df['Weight'] # Combinem els 2 valors
+
+        dict = {'contiene':{}, 'formato': {}, 'idioma': {}, 'largura_libro': {},
+                   'clasificacion_edad':{}, 'compone_saga':{}, 'famoso':{}, 'peso':{},
+                   'tipo_narrador':{}}
+
+        # Calcul de quines són les caracteristiques preferides a partir de sum(Combined value)/len(values) 
+        for i, feature in enumerate(dict.items()):
+            attr = feature[0]
+            for j in range(len(df)):
+                ele = df['Book_features'][j][i]                
+                if type(ele) == list:
+                    for e in ele:
+                        if e in dict[attr].keys():
+                            dict[attr][e].append(df['Combined_Value'][j])
+                        else:
+                            dict[attr][e] = [df['Combined_Value'][j]]
+                else:
+                    if ele in dict[attr].keys():
+                            dict[attr][ele].append(df['Combined_Value'][j])
+                    else:
+                        dict[attr][ele] = [df['Combined_Value'][j]]
+        user_preferences = []
+        for key in dict:
+            for feature in dict[key]:
+                values = dict[key][feature]
+                dict[key][feature] = sum(values)/len(values)
+            best = max(dict[key].items(), key=lambda item: item[1])[0]
+            user_preferences.append(best)
+
+        return user_preferences
 
     def ask_questions(self):
 

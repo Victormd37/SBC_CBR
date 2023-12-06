@@ -1,0 +1,414 @@
+,Unnamed: 0,titulo,contiene,formato,idioma,tema,largura_libro,valoracion,clasificacion_edad,compone_saga,famoso,peso,tipo_narrador
+0,0,harry potter and the philosopher's stone,"['fantasia', 'magia']","['papel', 'ebook']","['cat', 'eng', 'spa']","['ghosts', 'internats', 'schools']",normal,4.2720127,infantil,si,no,ligero,tercera_persona
+1,1,a court of mist and fury,"['fantasia', 'magia']","['papel', 'ebook']","['spa', 'eng']",['adaptations'],largo,3.9375,juvenil,si,si,intermedio,tercera_persona
+2,2,a game of thrones,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['seasons', 'wights', 'winter']",largo,4.245614,adulto,no,no,pesado,primera_persona
+3,3,harry potter and the deathly hallows,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['death', 'family', 'mort']",largo,4.291022,infantil,si,no,intermedio,primera_persona
+4,4,harry potter and the chamber of secrets,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['cousins', 'family', 'internat']",normal,4.1690545,adulto,no,si,intermedio,tercera_persona
+5,5,twilight,"['fantasia', 'romance']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['adaptations', 'amour', 'persistence']",normal,3.6482759,infantil,no,no,pesado,primera_persona
+6,6,harry potter and the prisoner of azkaban,['fantasia'],"['papel', 'ebook']","['eng', 'cat', 'spa']","['family', 'hechiceros', 'schools']",normal,4.2918553,infantil,no,no,intermedio,primera_persona
+7,7,the cruel prince,['fantasia'],['papel'],['eng'],['princes'],normal,4.031579,infantil,si,si,pesado,primera_persona
+8,8,the hobbit,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['characters', 'classics', 'schultheater']",normal,4.2700534,adulto,no,no,pesado,tercera_persona
+9,9,harry potter and the goblet of fire,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['family', 'friendship', 'hechiceros']",largo,4.398876,juvenil,no,no,ligero,tercera_persona
+10,10,the lightning thief,"['fantasia', 'magia']","['papel', 'ebook']","['eng', 'spa']","['adaptations', 'identity']",normal,4.355769,juvenil,si,si,pesado,primera_persona
+11,11,the alchemist,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['expeditions', 'literary', 'shepherds']",corto,3.679558,adulto,no,no,pesado,tercera_persona
+12,12,charlotte's web,"['fantasia', 'terror']","['papel', 'ebook']","['eng', 'spa']","['authors', 'english', 'swine']",corto,4.007752,infantil,no,no,intermedio,primera_persona
+13,13,harry potter and the order of the phoenix,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'cat', 'spa']","['family', 'hate', 'internat']",largo,4.352679,juvenil,no,no,intermedio,tercera_persona
+14,14,harry potter and the half-blood prince,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['family', 'warlocks', 'orphans']",largo,4.4068966,juvenil,si,si,intermedio,tercera_persona
+15,15,the handmaid's tale,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['brothels', 'theocracy', 'theonomy']",normal,3.8783784,adulto,si,no,intermedio,primera_persona
+16,16,charlie and the chocolate factory,"['fantasia', 'humor']","['papel', 'ebook']","['eng', 'spa']","['candy', 'chocolate', 'conducta']",corto,4.004878,juvenil,si,no,ligero,tercera_persona
+17,17,the great gatsby,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'historical', 'literary']",corto,4.0,adulto,si,no,pesado,primera_persona
+18,18,the giver,['fantasia'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['ethics', 'individuality', 'memory']",corto,4.0381355,juvenil,no,no,ligero,tercera_persona
+19,19,six of crows,"['fantasia', 'suspense']","['papel', 'ebook']",['eng'],['thriller'],normal,4.571429,infantil,no,no,ligero,primera_persona
+20,20,le petit prince,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['princes', 'childhood', 'friendship']",corto,4.3931623,adulto,si,si,ligero,primera_persona
+21,21,the fellowship of the ring,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['fear'],normal,4.326241,juvenil,no,no,intermedio,tercera_persona
+22,22,of mice and men,"['fantasia', 'ficcion_historica', 'suspense']","['papel', 'ebook']","['eng', 'cat', 'spa']","['cowboys', 'cowhands', 'examinations']",corto,3.9708738,juvenil,si,si,intermedio,primera_persona
+23,23,the lost hero,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['jason', 'olympians', 'the']",normal,4.5555553,juvenil,no,si,pesado,tercera_persona
+24,24,"the lion, the witch and the wardrobe","['fantasia', 'magia']","['papel', 'ebook']","['eng', 'spa']","['children', 'classics', 'christianity']",corto,4.1702127,juvenil,no,si,intermedio,primera_persona
+25,25,the invisible man,"['fantasia', 'terror']","['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['adaptations', 'french']",corto,3.8333333,juvenil,no,no,pesado,primera_persona
+26,26,the bfg,"['fantasia', 'humor']","['papel', 'ebook']","['eng', 'spa']","['dreamcatcher', 'humor', 'humour']",corto,4.2123895,adulto,no,si,ligero,primera_persona
+27,27,catching fire,"['fantasia', 'ciencia_ficcion']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['competition', 'insurgency']",normal,4.112245,juvenil,si,no,intermedio,primera_persona
+28,28,foundation,"['fantasia', 'ciencia_ficcion', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['historians', 'prophecy']",corto,4.086364,infantil,si,si,intermedio,tercera_persona
+29,29,a wrinkle in time,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['classics'],corto,3.9055119,juvenil,si,si,ligero,primera_persona
+30,30,james and the giant peach,"['fantasia', 'humor']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['crystals', 'humor', 'humorous']",corto,3.9514563,adulto,si,no,pesado,primera_persona
+31,31,fantastic mr fox,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['thieves'],corto,3.857143,juvenil,no,si,ligero,tercera_persona
+32,32,the sea of monsters,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'identity']",corto,4.495413,infantil,no,si,ligero,primera_persona
+33,33,alice's adventures in wonderland,"['fantasia', 'humor']","['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['courts', 'dreams', 'history']",corto,4.0666666,infantil,no,si,intermedio,tercera_persona
+34,34,the titan's curse,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['investigation'],normal,4.449541,juvenil,no,si,pesado,primera_persona
+35,35,dracula,"['fantasia', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['adaptations', 'british', 'dictionaries']",normal,4.035398,juvenil,no,si,intermedio,primera_persona
+36,36,the cat in the hat,"['fantasia', 'humor']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['american', 'chats', 'spanish']",corto,4.111111,infantil,no,no,intermedio,tercera_persona
+37,37,the wonderful wizard of oz,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['children', 'classics', 'history']",corto,3.954023,infantil,no,no,pesado,primera_persona
+38,38,good omens,"['fantasia', 'terror']","['papel', 'ebook']","['eng', 'spa', 'cat']","['apocalypse', 'humorous', 'prophecies']",normal,4.4262295,adulto,no,si,ligero,primera_persona
+39,39,howl's moving castle (howl's moving castle #1),['fantasia'],"['papel', 'ebook']","['eng', 'cat']",['castles'],normal,4.4935064,adulto,no,no,pesado,primera_persona
+40,40,cien años de soledad,"['fantasia', 'ficcion_historica']","['papel', 'ebook']","['spa', 'eng']",['texts'],normal,3.9347825,juvenil,no,si,intermedio,tercera_persona
+41,41,the midnight library,['fantasia'],['papel'],['eng'],['literary'],normal,4.0,adulto,si,si,ligero,tercera_persona
+42,42,moby dick,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['chasse', 'prohibition', 'shipwrecks']",normal,3.71,adulto,si,no,intermedio,primera_persona
+43,43,ignite me,"['fantasia', 'romance', 'ciencia_ficcion']","['papel', 'ebook', 'audiolibro']",['eng'],"['dictators', 'dictatorship']",normal,4.142857,adulto,si,si,pesado,primera_persona
+44,44,the son of neptune,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['prophecies', 'prophecy']",normal,4.230769,infantil,no,si,ligero,tercera_persona
+45,45,the three-body problem,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['history'],normal,3.9213483,infantil,si,si,ligero,tercera_persona
+46,46,the name of the wind,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['orphans'],largo,4.3116884,juvenil,si,no,ligero,tercera_persona
+47,47,the war of the worlds,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['adaptations', 'diseases', 'earth']",corto,3.7383177,adulto,no,no,pesado,tercera_persona
+48,48,throne of glass,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['investigation', 'princes']",normal,4.219512,infantil,no,no,pesado,tercera_persona
+49,49,percy jackson's greek gods,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['anthologies', 'classics', 'children']",normal,4.7,juvenil,si,si,pesado,primera_persona
+50,50,the phantom tollbooth,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['classics', 'orchestras', 'tollbooths']",corto,4.1573033,adulto,no,si,ligero,primera_persona
+51,51,northern lights,"['fantasia', 'terror']","['papel', 'ebook']","['eng', 'spa']",['children'],normal,3.9757576,infantil,no,no,pesado,primera_persona
+52,52,outlander,['fantasia'],"['papel', 'ebook']",['eng'],"['historical', 'history']",largo,4.151515,adulto,si,no,intermedio,tercera_persona
+53,53,the time machine,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'dictionaries', 'french']",corto,3.8666666,adulto,si,no,ligero,primera_persona
+54,54,the witches,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'grandmothers']",corto,4.2222223,juvenil,si,si,ligero,primera_persona
+55,55,the school for good and evil,['fantasia'],"['papel', 'ebook']",['eng'],['characters'],normal,4.65,adulto,no,no,intermedio,primera_persona
+56,56,the mark of athena,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['other', 'prophecy']",largo,4.5555553,adulto,si,no,pesado,primera_persona
+57,57,treasure island,"['fantasia', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['adaptations', 'classics', 'dictionaries']",corto,3.8307693,juvenil,no,si,ligero,tercera_persona
+58,58,american gods,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['americana'],normal,4.428571,juvenil,no,no,intermedio,tercera_persona
+59,59,the metamorphosis,['fantasia'],"['papel', 'ebook']","['spa', 'eng']","['afforestation', 'chinese', 'dictionaries']",corto,3.9166667,juvenil,no,si,intermedio,tercera_persona
+60,60,the gunslinger,"['fantasia', 'terror', 'suspense', 'magia']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['thrillers'],corto,4.2647057,juvenil,no,si,pesado,primera_persona
+61,61,the final empire,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['thieves'],largo,4.4444447,infantil,si,si,pesado,primera_persona
+62,62,circe,"['fantasia', 'ficcion_historica']",['papel'],['eng'],"['historical', 'literary', 'witchcraft']",normal,4.105263,juvenil,si,no,intermedio,tercera_persona
+63,63,the battle of the labyrinth,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['labyrinthes', 'mothers', 'prophecies']",normal,4.4590163,adulto,no,no,intermedio,primera_persona
+64,64,under the dome,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['thrillers'],largo,3.8636363,juvenil,no,si,ligero,primera_persona
+65,65,gulliver's travels,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'biography', 'chinese']",corto,3.7049181,infantil,si,si,intermedio,primera_persona
+66,66,new moon,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['schools'],normal,4.2340426,infantil,no,si,pesado,tercera_persona
+67,67,breaking dawn,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['marriage', 'schools']",largo,3.4,adulto,no,si,intermedio,tercera_persona
+68,68,into the wild,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['action'],corto,4.4603176,juvenil,si,no,ligero,tercera_persona
+69,69,the chronicles of narnia,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['classics', 'english', 'princes']",largo,4.2,adulto,si,si,pesado,tercera_persona
+70,70,a midsummer night's dream,"['fantasia', 'ficcion_historica', 'humor', 'romance']","['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'bibliography', 'comedies']",corto,3.6825397,juvenil,si,no,intermedio,primera_persona
+71,71,eragon,['fantasia'],"['papel', 'ebook']","['eng', 'spa']",['fighting'],normal,3.7594936,adulto,si,no,pesado,primera_persona
+72,72,alice's adventures in wonderland / through the looking glass,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['history', 'anthropomorphism', 'friendship']",corto,4.035714,infantil,no,no,pesado,primera_persona
+73,73,the prince,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['government', 'historiography', 'history']",corto,3.6333334,juvenil,si,no,ligero,primera_persona
+74,74,the return of the king,['fantasia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['fear', 'hope']",normal,4.338028,infantil,si,si,ligero,tercera_persona
+75,75,the call of the wild,"['fantasia', 'suspense']","['papel', 'ebook']","['spa', 'eng']","['history', 'wolves']",corto,3.8113208,juvenil,no,si,pesado,tercera_persona
+76,76,a clash of kings,['fantasia'],"['papel', 'ebook']","['eng', 'spa', 'cat']",['brothers'],largo,4.283784,juvenil,no,no,intermedio,primera_persona
+77,77,the last olympian,['fantasia'],"['papel', 'ebook']","['eng', 'spa']","['mothers', 'prophecies', 'prophecy']",normal,4.5384617,adulto,no,no,intermedio,tercera_persona
+78,78,nineteen eighty-four,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['authoritarianism', 'brainwashing', 'classics']",normal,4.25,juvenil,si,no,ligero,tercera_persona
+79,79,pride and prejudice,"['ficcion_historica', 'terror']","['papel', 'ebook']","['eng', 'spa']","['adaptations', 'courtship', 'family']",normal,4.109091,infantil,no,si,intermedio,primera_persona
+80,80,sapiens,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']","['historia', 'history']",normal,4.258929,adulto,si,si,intermedio,tercera_persona
+81,81,where the crawdads sing,['ficcion_historica'],"['papel', 'audiolibro']","['eng', 'spa']",['investigation'],normal,4.361111,adulto,no,si,ligero,tercera_persona
+82,82,the song of achilles,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['history', 'thetis']",normal,4.34375,juvenil,si,si,ligero,primera_persona
+83,83,the da vinci code,"['ficcion_historica', 'misterio', 'suspense']","['papel', 'ebook']","['eng', 'spa', 'cat']","['catholics', 'cryptographers', 'cryptography']",normal,3.894309,adulto,si,si,ligero,tercera_persona
+84,84,the adventures of sherlock holmes [12 stories],"['ficcion_historica', 'misterio']","['papel', 'ebook']","['eng', 'spa', 'cat']","['bibliography', 'classics', 'conclusions']",normal,4.115044,juvenil,si,no,ligero,primera_persona
+85,85,little women,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['adaptations', 'american', 'children']",normal,4.065934,juvenil,no,no,ligero,primera_persona
+86,86,wuthering heights,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'cousins', 'examinations']",normal,3.8119657,infantil,no,si,ligero,primera_persona
+87,87,the kite runner,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']",['competitions'],normal,4.111111,infantil,no,no,pesado,tercera_persona
+88,88,"frankenstein; or, the modern prometheus",['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']","['authors', 'examinations', 'reincarnation']",corto,3.883871,infantil,si,si,pesado,primera_persona
+89,89,and then there were none,"['ficcion_historica', 'humor', 'misterio', 'suspense']","['papel', 'ebook', 'audiolibro']","['spa', 'eng']","['historical', 'islands', 'traditional']",corto,4.2970295,infantil,no,no,pesado,tercera_persona
+90,90,beloved,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'literary', 'women']",normal,3.7818182,adulto,no,si,intermedio,primera_persona
+91,91,hamlet,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['adaptations', 'bibliography', 'britons']",corto,3.965812,juvenil,no,no,intermedio,primera_persona
+92,92,meditations,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['ethics', 'meditations', 'stoics']",corto,3.9404762,infantil,no,si,ligero,primera_persona
+93,93,things fall apart,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['british', 'christianity', 'classics']",corto,3.9807692,juvenil,si,si,pesado,primera_persona
+94,94,catch-22,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['american'],normal,4.1633987,juvenil,no,si,ligero,primera_persona
+95,95,the boy in the striped pyjamas,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['historical'],corto,3.9534883,juvenil,si,no,pesado,tercera_persona
+96,96,jane eyre,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'examinations', 'history']",normal,4.0970874,juvenil,si,si,ligero,tercera_persona
+97,97,a gentleman in moscow,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['history'],normal,3.8412697,adulto,si,no,intermedio,primera_persona
+98,98,the help,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['afronorteamericanos', 'historia', 'historical']",normal,4.3333335,infantil,no,no,intermedio,primera_persona
+99,99,all the light we cannot see,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['children', 'historia', 'historical']",normal,4.2909093,infantil,si,si,pesado,tercera_persona
+100,100,esperanza rising,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['history'],corto,3.9655173,infantil,no,si,intermedio,tercera_persona
+101,101,the duke and i,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']",['eng'],"['history', 'marriage']",normal,4.0,juvenil,no,no,pesado,primera_persona
+102,102,the grapes of wrath,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']",['california'],normal,3.9324324,infantil,si,si,intermedio,tercera_persona
+103,103,macbeth,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'history', 'scotland']",corto,3.9666667,adulto,si,no,ligero,tercera_persona
+104,104,heart of darkness,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['adaptations', 'chinese', 'dictionaries']",corto,3.4791667,adulto,si,no,ligero,tercera_persona
+105,105,the adventures of tom sawyer,"['ficcion_historica', 'humor']","['papel', 'ebook']","['eng', 'spa']","['adaptations', 'american', 'children']",corto,4.029126,juvenil,si,no,pesado,tercera_persona
+106,106,inside out & back again,['ficcion_historica'],"['papel', 'ebook']",['eng'],"['history', 'history']",corto,3.8695652,infantil,si,si,ligero,tercera_persona
+107,107,anna karenina,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['classics', 'history', 'literary']",largo,4.133333,infantil,no,no,ligero,tercera_persona
+108,108,east of eden,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['brothers', 'history', 'twins']",largo,4.04,juvenil,si,si,pesado,tercera_persona
+109,109,the scarlet letter,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['classics', 'examinations', 'french']",corto,3.1518986,adulto,no,no,pesado,tercera_persona
+110,110,sense and sensibility,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['courtship', 'gentry', 'history']",normal,3.64,infantil,si,si,ligero,tercera_persona
+111,111,siddhartha,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'dictionaries', 'french']",corto,3.9444444,infantil,si,no,ligero,tercera_persona
+112,112,emma,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['courtship', 'humorous']",normal,3.9411764,infantil,no,no,ligero,primera_persona
+113,113,gone with the wind,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['historia', 'historical', 'plantations']",largo,3.4473684,juvenil,si,si,pesado,tercera_persona
+114,114,americanah,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'literary']",normal,3.8108108,infantil,si,no,intermedio,primera_persona
+115,115,the count of monte cristo,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['historia', 'history', 'vengeance']",normal,4.350427,infantil,si,si,pesado,tercera_persona
+116,116,the clan of the cave bear,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['neanderthals'],normal,4.105263,juvenil,si,no,ligero,tercera_persona
+117,117,the bluest eye,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['conformity', 'literary', 'flashback']",corto,4.181818,infantil,no,no,intermedio,primera_persona
+118,118,death on the nile,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['asea', 'british', 'cruiseship']",corto,4.111111,adulto,no,si,ligero,primera_persona
+119,119,the crucible,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['history', 'witchcraft', 'theocracy']",corto,3.5833333,juvenil,si,si,intermedio,primera_persona
+120,120,the one and only ivan,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['treatment'],normal,4.4615383,infantil,no,no,ligero,tercera_persona
+121,121,the iliad of homer,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['examinations', 'translations']",normal,3.935484,adulto,no,si,pesado,tercera_persona
+122,122,the pillars of the earth,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['cathedrals', 'history', 'thrillers']",largo,4.142857,adulto,si,no,intermedio,primera_persona
+123,123,the murder of roger ackroyd,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['investigation', 'victim']",corto,4.2093024,infantil,no,no,intermedio,primera_persona
+124,124,"bud, not buddy",['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['afronorteamericanos', 'depresiones', 'historical']",corto,4.64,juvenil,si,no,intermedio,tercera_persona
+125,125,im westen nichts neues,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng']","['history', 'westfront']",corto,4.230769,adulto,si,si,intermedio,tercera_persona
+126,126,oliver twist,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['children', 'customs', 'history']",normal,4.2058825,adulto,si,si,ligero,tercera_persona
+127,127,perfume,['ficcion_historica'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['identity', 'olfactory']",corto,3.8,juvenil,no,si,pesado,primera_persona
+128,128,the age of innocence,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['marriage', 'women', 'age']",normal,3.5428572,infantil,no,si,intermedio,tercera_persona
+129,129,les misérables,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['history', 'freedom', 'redemption']",normal,4.4444447,adulto,si,si,ligero,primera_persona
+130,130,мастер и маргарита,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['history', 'atheism']",normal,4.212121,infantil,si,si,pesado,tercera_persona
+131,131,flatland,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['examinations', 'geometry', 'mathematics']",corto,3.7972972,infantil,si,no,pesado,tercera_persona
+132,132,for whom the bell tolls,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['americans', 'historia', 'history']",normal,3.3846154,juvenil,si,no,intermedio,tercera_persona
+133,133,atonement,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['family', 'history']",normal,3.7941177,adulto,no,si,intermedio,tercera_persona
+134,134,don quixote,"['ficcion_historica', 'humor']","['papel', 'ebook']","['spa', 'eng']","['bibliography', 'biography', 'characters']",normal,3.85,juvenil,no,no,pesado,tercera_persona
+135,135,the lost symbol,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']","['cryptographers', 'cryptographes', 'freemasonry']",largo,3.5671642,infantil,no,si,ligero,tercera_persona
+136,136,parable of the sower,['ficcion_historica'],"['papel', 'ebook']",['eng'],['literary'],normal,4.5,adulto,si,no,ligero,primera_persona
+137,137,"the complete sherlock holmes [4 novels, 56 stories]",['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['americans', 'classics', 'english']",largo,4.5555553,juvenil,no,no,intermedio,primera_persona
+138,138,time traveler's wife,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['death', 'foreshadowing', 'frostbite']",normal,4.0454545,juvenil,no,no,ligero,primera_persona
+139,139,el amor en los tiempos del cólera,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['courtship'],normal,4.051282,adulto,si,si,pesado,primera_persona
+140,140,kindred,['ficcion_historica'],"['papel', 'ebook']",['eng'],['historical'],corto,4.4545455,infantil,si,no,ligero,primera_persona
+141,141,il nome della rosa,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng', 'cat']","['historia', 'history', 'semiotics']",normal,4.127907,juvenil,no,no,pesado,tercera_persona
+142,142,refugee,['ficcion_historica'],"['papel', 'ebook']",['eng'],['historical'],normal,3.8846154,adulto,si,no,pesado,tercera_persona
+143,143,the night circus,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['night'],normal,4.3714285,adulto,no,no,intermedio,primera_persona
+144,144,lonesome dove,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['cowboys'],largo,4.3333335,juvenil,no,no,pesado,tercera_persona
+145,145,a farewell to arms,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['actors', 'biography', 'theater']",normal,3.642857,infantil,si,no,intermedio,primera_persona
+146,146,the lost world,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['atlantis', 'children', 'youth']",corto,4.08,adulto,si,no,intermedio,primera_persona
+147,147,wide sargasso sea,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['british'],corto,4.0,infantil,si,si,pesado,tercera_persona
+148,148,half of a yellow sun,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['history'],normal,4.32,adulto,si,si,ligero,tercera_persona
+149,149,war and peace,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'history']",largo,4.3333335,infantil,no,si,pesado,primera_persona
+150,150,persuasion,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['gentry', 'officers']",corto,4.16,juvenil,si,si,pesado,primera_persona
+151,151,the nightingale,['ficcion_historica'],"['papel', 'ebook']",['eng'],['history'],normal,4.7083335,infantil,no,no,ligero,tercera_persona
+152,152,कामसूत्र,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['amor', 'nonfiction', 'sex']",corto,4.111111,juvenil,no,si,ligero,primera_persona
+153,153,the jungle,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['chinese', 'dictionaries', 'history']",normal,3.8076923,juvenil,si,no,ligero,primera_persona
+154,154,ulysses,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']","['history', 'photography']",largo,3.3636363,infantil,no,si,pesado,tercera_persona
+155,155,little house on the prairie,['ficcion_historica'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['children', 'english', 'family']",normal,4.3846154,juvenil,no,si,pesado,tercera_persona
+156,156,invisible man,['ficcion_historica'],"['papel', 'ebook']","['eng', 'spa']",['classics'],normal,4.0,adulto,no,no,pesado,tercera_persona
+157,157,johnny tremain,['ficcion_historica'],"['papel', 'ebook']",['eng'],['history'],corto,3.6666667,infantil,no,no,ligero,primera_persona
+158,158,it,['terror'],"['papel', 'ebook']","['spa', 'eng']","['clownrewolves', 'ghosts', 'homosexuality']",largo,4.131188,infantil,no,no,pesado,primera_persona
+159,159,fahrenheit 451,"['terror', 'ciencia_ficcion']","['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['censorship', 'education']",corto,3.960606,juvenil,si,si,pesado,tercera_persona
+160,160,the shining,['terror'],"['papel', 'ebook']","['eng', 'spa']","['family', 'ghosts', 'authors']",normal,4.1415095,adulto,no,si,pesado,tercera_persona
+161,161,pet sematary,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['resurrection', 'death', 'flashback']",normal,4.031847,juvenil,no,no,pesado,primera_persona
+162,162,misery,"['terror', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['captives', 'literary', 'novelists']",normal,4.087912,infantil,si,no,ligero,primera_persona
+163,163,carrie,"['terror', 'suspense']","['papel', 'ebook']","['spa', 'eng']","['bullying', 'telepathy', 'thriller']",corto,4.0689654,juvenil,no,no,ligero,primera_persona
+164,164,american psycho,['terror'],"['papel', 'ebook']","['eng', 'spa']","['sex', 'torture']",normal,3.8688524,juvenil,si,no,ligero,tercera_persona
+165,165,the green mile,['terror'],"['papel', 'ebook']","['eng', 'spa']","['penitentiary', 'arsonists', 'empathy']",normal,4.32,juvenil,si,si,pesado,primera_persona
+166,166,the stand,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['thriller', 'thrillers', 'research']",largo,4.3333335,adulto,si,si,ligero,primera_persona
+167,167,flowers in the attic,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['children', 'doughnuts', 'gothic']",normal,3.9830508,infantil,si,no,intermedio,tercera_persona
+168,168,salem's lot,['terror'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']",['authors'],normal,4.1034484,juvenil,no,no,ligero,tercera_persona
+169,169,on writing,['terror'],"['papel', 'ebook']","['eng', 'spa']","['authorship', 'authors', 'biography']",corto,4.160714,adulto,no,no,pesado,tercera_persona
+170,170,the bazaar of bad dreams,['terror'],"['papel', 'ebook']",['eng'],['ethics'],largo,4.1,adulto,si,si,intermedio,tercera_persona
+171,171,fifty shades darker,"['terror', 'romance']","['papel', 'ebook']","['eng', 'spa']","['businesspeople', 'seduction']",normal,3.375,infantil,no,no,ligero,tercera_persona
+172,172,the haunting of hill house,['terror'],"['papel', 'ebook']","['eng', 'spa']",['haunted'],corto,4.0,adulto,no,no,ligero,tercera_persona
+173,173,"full dark, no stars",['terror'],"['papel', 'ebook']","['eng', 'spa']","['retribution', 'vengeance', 'pyorrhea']",normal,4.075,adulto,si,si,pesado,tercera_persona
+174,174,red dragon,"['terror', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['thriller', 'thrillers', 'homosexuality']",normal,4.214286,juvenil,no,si,ligero,tercera_persona
+175,175,the graveyard book,['terror'],"['papel', 'ebook']",['eng'],"['death', 'family', 'ghosts']",normal,4.2528734,adulto,no,si,ligero,primera_persona
+176,176,miss peregrine's home for peculiar children,['terror'],"['papel', 'ebook']","['eng', 'spa']","['grandfathers', 'islands']",normal,4.64,adulto,no,no,pesado,primera_persona
+177,177,night shift,['terror'],"['papel', 'ebook']","['spa', 'eng']","['heroin', 'psychiatrists', 'witchcraft']",normal,4.4545455,adulto,si,no,pesado,primera_persona
+178,178,mr. mercedes,"['terror', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['alcoholics', 'thriller']",normal,4.081081,adulto,no,no,intermedio,primera_persona
+179,179,the ocean at the end of the lane,['terror'],"['papel', 'ebook']","['eng', 'spa']",['memory'],corto,4.120482,juvenil,si,si,pesado,tercera_persona
+180,180,gerald's game,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['fear', 'incest']",normal,3.8076923,adulto,no,no,intermedio,primera_persona
+181,181,the dead zone,['terror'],"['papel', 'ebook']","['spa', 'eng']","['psychics', 'thrillers']",normal,4.1764708,adulto,si,si,ligero,primera_persona
+182,182,we have always lived in the castle,['terror'],"['papel', 'ebook', 'audiolibro']",['eng'],['investigation'],corto,4.3513513,infantil,si,si,pesado,tercera_persona
+183,183,different seasons,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['christmas', 'blackmail', 'friendship']",normal,4.5333333,infantil,si,no,ligero,primera_persona
+184,184,firestarter,['terror'],"['papel', 'ebook']","['eng', 'spa']",['children'],normal,3.9473684,adulto,no,si,intermedio,tercera_persona
+185,185,four past midnight,['terror'],"['papel', 'ebook']",['eng'],"['thriller', 'diction', 'speechwriting']",largo,3.9444444,adulto,no,si,pesado,tercera_persona
+186,186,christine,['terror'],"['papel', 'ebook']","['eng', 'spa']",['greasers'],normal,4.0571427,adulto,si,si,intermedio,primera_persona
+187,187,doctor sleep,['terror'],"['papel', 'ebook']","['spa', 'eng']",['psychics'],normal,4.214286,infantil,si,si,intermedio,primera_persona
+188,188,the witching hour,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['witchcraft'],largo,4.3,infantil,no,no,ligero,tercera_persona
+189,189,bunnicula,['terror'],"['papel', 'ebook']","['eng', 'spa']",['cartoons'],corto,4.5333333,infantil,no,si,pesado,primera_persona
+190,190,just after sunset,['terror'],"['papel', 'ebook']",['eng'],['mort'],normal,4.0833335,infantil,no,no,ligero,tercera_persona
+191,191,annihilation,['terror'],"['papel', 'ebook']",['eng'],"['exploration', 'literary', 'secrecy']",corto,3.6153846,juvenil,si,no,intermedio,tercera_persona
+192,192,the stepford wives,"['terror', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['robots', 'photographers', 'thriller']",corto,3.5555556,infantil,no,si,pesado,primera_persona
+193,193,needful things,['terror'],"['papel', 'ebook']","['eng', 'spa']",['consumers'],largo,4.0666666,juvenil,no,si,intermedio,tercera_persona
+194,194,the island of dr. moreau,['terror'],"['papel', 'ebook']","['eng', 'spa']","['ethics', 'islands']",corto,3.75,juvenil,no,no,pesado,primera_persona
+195,195,the subtle knife,['terror'],"['papel', 'ebook']","['eng', 'spa']","['children', 'classics']",normal,3.9879518,juvenil,no,si,intermedio,tercera_persona
+196,196,hearts in atlantis,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['hearts', 'psychics', 'thrillers']",largo,3.96,infantil,si,no,pesado,primera_persona
+197,197,the bachman books,['terror'],"['papel', 'ebook', 'audiolibro']",['eng'],"['competition', 'outlaws', 'torture']",largo,3.642857,juvenil,si,si,intermedio,tercera_persona
+198,198,everything's eventual,['terror'],"['papel', 'ebook']","['spa', 'eng']","['fishing', 'ghosts', 'headstones']",normal,3.8181818,adulto,si,si,intermedio,primera_persona
+199,199,the eyes of the dragon,"['terror', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['princes', 'thriller']",normal,4.521739,adulto,si,si,intermedio,primera_persona
+200,200,stuart little,['terror'],"['papel', 'ebook']","['eng', 'spa']","['adoption', 'souris', 'family']",corto,3.409091,adulto,no,si,pesado,primera_persona
+201,201,jaws,['terror'],"['papel', 'ebook']","['eng', 'spa']","['harpoons', 'thrillers']",normal,4.470588,infantil,si,no,ligero,primera_persona
+202,202,the drawing of the three,['terror'],"['papel', 'ebook']","['eng', 'spa']","['heroin', 'sociopaths']",normal,4.1594205,adulto,no,no,intermedio,primera_persona
+203,203,the amber spyglass,['terror'],"['papel', 'ebook']","['eng', 'spa']",['children'],normal,3.8481014,juvenil,si,si,ligero,tercera_persona
+204,204,dreamcatcher,['terror'],"['papel', 'ebook']","['eng', 'spa']","['fear', 'friendship', 'telepathy']",largo,3.5333333,juvenil,si,no,ligero,primera_persona
+205,205,wizard and glass,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['friendship', 'thrillers']",largo,4.1454544,juvenil,si,no,intermedio,tercera_persona
+206,206,goosebumps - say cheese and die!,['terror'],"['papel', 'ebook']","['eng', 'spa']","['camera', 'scary']",corto,4.0,infantil,si,si,ligero,primera_persona
+207,207,duma key,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['investigation', 'painters']",largo,4.022222,juvenil,no,no,ligero,primera_persona
+208,208,goosebumps - welcome to dead house,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['scary'],corto,4.08,juvenil,si,si,intermedio,tercera_persona
+209,209,bag of bones,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['authors', 'grandfathers', 'novelists']",largo,3.8181818,adulto,si,si,ligero,tercera_persona
+210,210,wolves of the calla,['terror'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']","['snitches', 'thrillers']",largo,4.25,adulto,si,si,pesado,primera_persona
+211,211,the girl who loved tom gordon,['terror'],"['papel', 'ebook']","['spa', 'eng']",['thrillers'],corto,3.8636363,infantil,no,no,intermedio,tercera_persona
+212,212,the illustrated man,['terror'],"['papel', 'ebook']","['eng', 'spa']",['children'],corto,4.107143,juvenil,no,si,ligero,tercera_persona
+213,213,the outsider,['terror'],"['papel', 'ebook']",['eng'],"['children', 'investigation']",normal,4.2727275,adulto,no,no,intermedio,tercera_persona
+214,214,petals on the wind,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['blackmail', 'doughnuts', 'incest']",normal,3.8,juvenil,si,si,intermedio,tercera_persona
+215,215,the passage,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['thrillers', 'apocalyptic']",largo,3.8888888,adulto,no,no,pesado,primera_persona
+216,216,le fantôme de l'opéra,['terror'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'chinese', 'composers']",corto,3.8125,infantil,si,no,intermedio,tercera_persona
+217,217,northanger abbey,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'cat', 'spa']","['appreciation', 'courtship', 'cousins']",corto,3.7391305,adulto,si,no,intermedio,tercera_persona
+218,218,rosemary's baby,['terror'],"['papel', 'ebook']","['eng', 'spa']","['luther', 'witchcraft']",corto,4.0,infantil,no,si,pesado,primera_persona
+219,219,my sweet audrina,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['secrecy', 'honeymoons']",normal,3.3333333,juvenil,si,si,intermedio,tercera_persona
+220,220,the amityville horror,['terror'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['biography', 'ghosts']",corto,2.7142856,infantil,si,no,pesado,primera_persona
+221,221,diary of a wimpy kid,['humor'],"['papel', 'ebook']","['eng', 'spa']","['child', 'family']",corto,4.1959186,infantil,no,no,pesado,primera_persona
+222,222,dog days,['humor'],"['papel', 'ebook']","['eng', 'spa']","['bullying', 'theft', 'vacations']",corto,4.479675,juvenil,si,si,ligero,tercera_persona
+223,223,double down,['humor'],"['papel', 'ebook']","['eng', 'spa']","['comedy', 'halloween', 'schools']",corto,4.4712644,infantil,no,si,ligero,primera_persona
+224,224,rodrick rules,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'cat', 'spa']","['brothers', 'child', 'schools']",corto,4.401786,adulto,no,si,intermedio,primera_persona
+225,225,cabin fever,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['christmas', 'fear']",corto,4.53125,adulto,no,si,pesado,primera_persona
+226,226,adventures of huckleberry finn,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['courtship', 'dictionaries', 'examinations']",normal,3.751773,juvenil,si,no,pesado,tercera_persona
+227,227,in cold blood,['humor'],"['papel', 'ebook']","['eng', 'spa']","['american', 'investigation']",normal,3.96875,juvenil,no,no,intermedio,primera_persona
+228,228,green eggs and ham,['humor'],"['papel', 'ebook']","['eng', 'spa']","['activities', 'classics', 'english']",corto,4.084112,juvenil,si,si,ligero,tercera_persona
+229,229,the a.b.c. murders,['humor'],"['papel', 'ebook']","['eng', 'spa']","['british', 'detective', 'humorous']",corto,4.139535,adulto,no,si,intermedio,primera_persona
+230,230,the long haul,['humor'],"['papel', 'ebook']","['eng', 'spa']",['vacations'],corto,4.3943663,infantil,no,si,intermedio,tercera_persona
+231,231,the deep end,['humor'],"['papel', 'ebook']","['eng', 'spa']",['family'],corto,4.6486487,adulto,si,no,pesado,primera_persona
+232,232,hard luck,['humor'],"['papel', 'ebook']","['eng', 'spa']","['bullying', 'chance', 'schools']",corto,4.032787,infantil,no,no,pesado,tercera_persona
+233,233,don't let the pigeon drive the bus!,['humor'],"['papel', 'ebook']","['eng', 'spa']","['bribery', 'frustration', 'pleading']",corto,4.3188405,adulto,no,si,ligero,primera_persona
+234,234,guess how much i love you,['humor'],"['papel', 'ebook']","['eng', 'spa']","['amor', 'classics', 'colors']",corto,4.387097,adulto,si,si,ligero,tercera_persona
+235,235,the deal,['humor'],"['papel', 'ebook']",['eng'],"['humorous', 'steamy']",normal,4.4210525,infantil,no,si,pesado,primera_persona
+236,236,the ugly truth,['humor'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['bullying', 'vacations']",corto,4.203704,adulto,si,no,pesado,primera_persona
+237,237,the last straw,['humor'],"['papel', 'ebook']","['eng', 'spa']","['brothers', 'schools', 'vacations']",corto,4.106383,infantil,no,no,pesado,tercera_persona
+238,238,the twits,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['children', 'treatment']",corto,3.860465,infantil,no,no,ligero,tercera_persona
+239,239,as good as dead,"['humor', 'suspense']","['papel', 'audiolibro']",['eng'],"['swears', 'thriller']",normal,4.6363635,juvenil,si,no,ligero,tercera_persona
+240,240,snow crash,['humor'],"['papel', 'ebook', 'audiolibro']",['eng'],['cyberspace'],normal,4.138158,adulto,si,no,ligero,primera_persona
+241,241,the colour of magic,['humor'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']","['dollhouses', 'rincewind']",corto,4.009901,adulto,si,no,pesado,primera_persona
+242,242,the getaway,['humor'],"['papel', 'ebook']","['eng', 'spa']",['vacations'],corto,4.5945945,adulto,no,no,ligero,primera_persona
+243,243,george's marvelous medicine,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['behaviour', 'children', 'grandmothers']",corto,3.6176472,adulto,no,si,pesado,primera_persona
+244,244,"one fish, two fish, red fish, blue fish",['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['classics', 'concepts']",corto,3.8297873,adulto,no,no,intermedio,primera_persona
+245,245,crazy rich asians,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['americans', 'fiancees', 'women']",normal,4.133333,infantil,si,no,ligero,primera_persona
+246,246,en man som heter ove,['humor'],"['papel', 'ebook']","['eng', 'spa']","['neighborhoods', 'neighbors', 'translation']",normal,4.1136365,adulto,si,no,pesado,tercera_persona
+247,247,fox in socks,['humor'],"['papel', 'ebook']","['eng', 'spa']","['children', 'concepts', 'recordings']",corto,3.9583333,adulto,no,no,ligero,tercera_persona
+248,248,the giving tree,['humor'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'family', 'generosity']",corto,4.2077923,juvenil,si,no,intermedio,tercera_persona
+249,249,through the looking-glass,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['chess', 'children', 'chinese']",corto,3.925,juvenil,si,si,ligero,primera_persona
+250,250,tales of a fourth grade nothing,['humor'],"['papel', 'ebook']",['eng'],"['brothers', 'family']",corto,4.0833335,juvenil,si,no,ligero,tercera_persona
+251,251,winnie-the-pooh,"['humor', 'misterio']","['papel', 'ebook']","['eng', 'spa']","['swine', 'toys', 'bears']",corto,4.0666666,juvenil,no,si,pesado,tercera_persona
+252,252,"no, david!",['humor'],"['papel', 'ebook']","['eng', 'spa']",['children'],corto,4.0,infantil,si,si,intermedio,primera_persona
+253,253,the wind in the willows,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['christmas', 'ethics', 'rivers']",corto,4.029412,infantil,no,si,ligero,tercera_persona
+254,254,where the sidewalk ends,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['classics'],corto,4.1076922,infantil,si,no,ligero,tercera_persona
+255,255,big nate in the zone,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['schools'],corto,4.3333335,adulto,si,no,intermedio,primera_persona
+256,256,mort,['humor'],"['papel', 'ebook']","['eng', 'spa']",['death'],corto,4.22,juvenil,si,no,pesado,primera_persona
+257,257,a confederacy of dunces,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['character', 'housing', 'mothers']",normal,3.75,juvenil,no,si,ligero,tercera_persona
+258,258,candide,['humor'],"['papel', 'ebook']","['eng', 'spa']","['chinese', 'classics', 'dictionaries']",corto,3.9285715,infantil,si,no,intermedio,primera_persona
+259,259,bridget jones's diary,['humor'],"['papel', 'ebook']","['spa', 'eng']","['humour', 'publishing']",normal,3.6875,juvenil,no,si,intermedio,tercera_persona
+260,260,superfudge,['humor'],"['papel', 'ebook']","['eng', 'spa']",['family'],corto,4.3,juvenil,si,si,ligero,primera_persona
+261,261,how the grinch stole christmas!,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['christmas'],corto,4.205128,infantil,no,no,ligero,tercera_persona
+262,262,infinite jest,['humor'],"['papel', 'ebook', 'audiolibro']",['eng'],"['addicts', 'entertainment']",largo,4.214286,infantil,no,no,intermedio,tercera_persona
+263,263,"danny, the champion of the world",['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['fathers'],corto,4.34375,juvenil,si,no,intermedio,primera_persona
+264,264,a bad case of stripes,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['individuality'],corto,4.7,juvenil,si,si,pesado,tercera_persona
+265,265,a dog's purpose,['humor'],"['papel', 'ebook']","['eng', 'spa']","['family', 'protectiveness']",normal,4.5,infantil,no,no,intermedio,primera_persona
+266,266,maniac magee,['humor'],"['papel', 'ebook', 'audiolibro']",['eng'],"['death', 'sports', 'athletes']",corto,4.117647,adulto,si,si,pesado,primera_persona
+267,267,pippi långstrump,['humor'],"['papel', 'ebook']","['eng', 'spa']",['cheerfulness'],corto,3.4705882,infantil,si,no,ligero,tercera_persona
+268,268,dork diaries,['humor'],['papel'],['eng'],"['family', 'party']",normal,4.625,infantil,si,no,intermedio,tercera_persona
+269,269,"life, the universe and everything",['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['sofas'],corto,4.1473684,infantil,no,no,ligero,primera_persona
+270,270,big nate strikes again,['humor'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['behavior', 'friendship', 'schools']",corto,3.952381,juvenil,si,no,pesado,tercera_persona
+271,271,the merchant of venice,['humor'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['bibliography', 'comedy', 'education']",corto,3.8823528,juvenil,no,no,pesado,tercera_persona
+272,272,new kid,['humor'],"['papel', 'ebook']",['eng'],"['comics', 'humour', 'schools']",corto,3.7,infantil,no,no,ligero,tercera_persona
+273,273,the mouse and the motorcycle,['humor'],"['papel', 'ebook']","['eng', 'spa']","['motorcycles', 'motorcycling', 'friendship']",corto,3.8214285,infantil,si,no,intermedio,primera_persona
+274,274,frog and toad together,['humor'],"['papel', 'ebook']","['eng', 'spa']","['toads', 'friendship', 'toads']",corto,4.071429,adulto,si,no,intermedio,primera_persona
+275,275,henry huggins,['humor'],"['papel', 'ebook']","['eng', 'spa']","['dictionaries', 'terminology']",corto,3.6,juvenil,si,no,pesado,primera_persona
+276,276,ella minnow pea,['humor'],"['papel', 'ebook', 'audiolibro']",['eng'],['islands'],corto,3.642857,adulto,no,si,ligero,tercera_persona
+277,277,"e natale, stilton! (#12)","['humor', 'misterio']","['papel', 'ebook', 'audiolibro']",['eng'],"['christmas', 'earmuffs', 'merry']",corto,4.2352943,infantil,no,si,pesado,tercera_persona
+278,278,keeper of the lost cities (keeper of the lost cities #1),['magia'],"['papel', 'ebook', 'audiolibro']",['eng'],"['identity', 'memory']",normal,4.7272725,adulto,no,si,pesado,primera_persona
+279,279,the girl who drank the moon,['magia'],"['papel', 'ebook']","['eng', 'spa']",['family'],normal,3.8095238,juvenil,si,si,intermedio,primera_persona
+280,280,the sword of summer,['magia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['action'],normal,4.25,juvenil,no,no,intermedio,tercera_persona
+281,281,prince caspian,['magia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['princes'],corto,4.0,adulto,no,no,pesado,tercera_persona
+282,282,the red pyramid,['magia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['other', 'secrecy']",normal,4.1764708,infantil,no,no,ligero,primera_persona
+283,283,the waste lands,['magia'],"['papel', 'ebook']","['eng', 'spa']",['thrillers'],normal,4.2272725,adulto,si,si,intermedio,primera_persona
+284,284,midnight's children,['magia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['history', 'relations', 'telepathy']",normal,3.875,adulto,si,si,ligero,tercera_persona
+285,285,harry potter (series) 1-7,['magia'],['papel'],['eng'],['schools'],largo,4.75,adulto,no,si,intermedio,tercera_persona
+286,286,heir of fire,['magia'],"['papel', 'ebook']","['spa', 'eng']",['identity'],normal,4.125,juvenil,no,no,intermedio,primera_persona
+287,287,fantastic beasts and where to find them,['magia'],"['papel', 'ebook']","['eng', 'spa']",['characters'],corto,3.8372092,juvenil,si,no,intermedio,primera_persona
+288,288,the silver chair,['magia'],"['papel', 'ebook']","['eng', 'spa']","['captives', 'princes']",corto,4.0,infantil,no,si,pesado,tercera_persona
+289,289,como agua para chocolate,['magia'],"['papel', 'ebook']","['spa', 'eng']","['family', 'food']",corto,3.4545455,infantil,no,si,pesado,primera_persona
+290,290,the great hunt,['magia'],"['papel', 'ebook']","['eng', 'spa']",['prophecies'],largo,4.114286,juvenil,si,si,pesado,tercera_persona
+291,291,queen of shadows,['magia'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['homecoming', 'identity', 'insurgency']",largo,4.8333335,juvenil,no,si,ligero,primera_persona
+292,292,children of blood and bone,['magia'],['papel'],"['eng', 'spa']",['princes'],normal,4.1666665,juvenil,no,no,intermedio,tercera_persona
+293,293,the poppy war,['magia'],['papel'],['eng'],['historical'],normal,3.7307692,infantil,si,si,pesado,tercera_persona
+294,294,the tales of beedle the bard,['magia'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']",['warlocks'],corto,3.9,infantil,si,no,ligero,tercera_persona
+295,295,artemis fowl,['magia'],"['papel', 'ebook']","['eng', 'spa']","['adaptations', 'children', 'computers']",corto,4.071429,juvenil,no,si,pesado,tercera_persona
+296,296,thinner,"['magia', 'terror']","['papel', 'ebook']","['eng', 'spa']",['horror'],normal,3.5416667,infantil,si,no,ligero,primera_persona
+297,297,die unendliche geschichte,['magia'],"['papel', 'ebook']","['spa', 'eng']",['wishes'],normal,4.2777777,juvenil,no,si,pesado,tercera_persona
+298,298,vampire academy,['magia'],"['papel', 'ebook']",['eng'],['schools'],normal,4.090909,adulto,si,si,intermedio,tercera_persona
+299,299,nightfall (keeper of the lost cities #6),['magia'],"['papel', 'audiolibro']",['eng'],"['memory', 'identity']",largo,4.8333335,juvenil,no,no,intermedio,primera_persona
+300,300,heartless,"['magia', 'ciencia_ficcion']","['papel', 'ebook']",['eng'],"['characters', 'courtship', 'schools']",normal,3.875,adulto,si,no,intermedio,primera_persona
+301,301,carry on,"['magia', 'romance']","['papel', 'ebook', 'audiolibro']",['eng'],"['colocataires', 'schools']",normal,4.5,infantil,no,no,pesado,tercera_persona
+302,302,twisted lies,"['misterio', 'suspense', 'romance']","['papel', 'audiolibro']",['eng'],['thriller'],normal,3.735294,adulto,no,no,intermedio,primera_persona
+303,303,the curious incident of the dog in the night-time,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['curious', 'night', 'swindon']",corto,4.0511365,juvenil,si,no,intermedio,primera_persona
+304,304,angels & demons,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['appreciation', 'cryptographers', 'educators']",normal,3.5932202,juvenil,si,si,intermedio,tercera_persona
+305,305,murder on the orient express,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['detective', 'humour', 'investigation']",corto,4.0365853,juvenil,si,si,pesado,primera_persona
+306,306,thirteen reasons why,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['bullying', 'death', 'schools']",normal,3.71875,infantil,si,no,pesado,tercera_persona
+307,307,gone girl,"['misterio', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['thrillers', 'wives', 'thrillers']",normal,3.680851,adulto,no,no,ligero,primera_persona
+308,308,преступление и наказание,['misterio'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']","['literary', 'remorse']",normal,4.2,juvenil,si,si,pesado,tercera_persona
+309,309,paper towns,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['investigation', 'neighbors', 'vengeance']",normal,3.875,juvenil,si,si,pesado,primera_persona
+310,310,atlas shrugged,['misterio'],"['papel', 'ebook']",['eng'],"['individuality', 'objectivity']",largo,3.2808988,infantil,si,si,pesado,tercera_persona
+311,311,the mysterious affair at styles,"['misterio', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['investigation', 'thriller']",corto,3.9791667,juvenil,no,no,intermedio,primera_persona
+312,312,inferno,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['cryptographers', 'cryptography', 'employees']",normal,3.6862745,adulto,si,no,ligero,tercera_persona
+313,313,the hound of the baskervilles,['misterio'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['tombs', 'tors']",corto,3.9411764,infantil,si,si,ligero,primera_persona
+314,314,a study in scarlet,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'detectives']",corto,3.857143,infantil,no,si,ligero,tercera_persona
+315,315,the secret garden,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['children', 'chinese', 'cousins']",corto,4.0,adulto,si,si,pesado,primera_persona
+316,316,everything i never told you,['misterio'],"['papel', 'ebook', 'audiolibro']",['eng'],"['death', 'literary', 'mort']",corto,4.0,juvenil,si,si,pesado,tercera_persona
+317,317,the price of salt,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['mothers'],corto,4.55,juvenil,si,si,ligero,primera_persona
+318,318,deception point,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['americans', 'thrillers']",normal,3.2564104,adulto,si,si,pesado,tercera_persona
+319,319,stormbreaker,"['misterio', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['computers', 'thriller']",corto,3.9629629,juvenil,si,si,intermedio,tercera_persona
+320,320,the boxcar children,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['cars', 'children', 'railroads']",corto,4.206897,infantil,si,no,ligero,primera_persona
+321,321,a time to kill,"['misterio', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['vengeance', 'investigation', 'thriller']",normal,3.9,juvenil,no,si,intermedio,tercera_persona
+322,322,memoirs of sherlock holmes [11 stories],['misterio'],"['papel', 'ebook']","['eng', 'spa']","['english', 'ancestors', 'asphyxiation']",corto,4.5,adulto,no,si,ligero,tercera_persona
+323,323,the red house mystery,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['investigation'],corto,4.25,juvenil,si,si,intermedio,primera_persona
+324,324,killing floor,"['misterio', 'suspense']","['papel', 'ebook', 'audiolibro']",['eng'],['thriller'],normal,3.7083333,infantil,no,no,ligero,tercera_persona
+325,325,carmilla,"['misterio', 'terror']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['horror'],corto,3.7666667,juvenil,no,no,intermedio,tercera_persona
+326,326,the rainmaker,"['misterio', 'suspense']","['papel', 'ebook']","['eng', 'spa']",['thriller'],normal,3.5882354,adulto,si,si,intermedio,primera_persona
+327,327,the girl on the train,['misterio'],"['papel', 'ebook', 'audiolibro']",['eng'],"['alcoholics', 'railroads']",normal,3.5357144,juvenil,no,si,intermedio,primera_persona
+328,328,the murder on the links,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['identity', 'investigation']",corto,3.5,infantil,si,si,ligero,tercera_persona
+329,329,the body in the library,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['british', 'detective', 'humour']",corto,3.7857144,juvenil,no,si,pesado,tercera_persona
+330,330,flickan som lekte med elden,['misterio'],"['papel', 'ebook']",['eng'],"['investigation', 'journalists']",largo,3.9733334,infantil,no,no,pesado,primera_persona
+331,331,the moonstone,['misterio'],"['papel', 'ebook']","['eng', 'spa']","['collins', 'death', 'dictionaries']",normal,4.0588236,adulto,no,no,pesado,tercera_persona
+332,332,dark places,"['misterio', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['children', 'family', 'thriller']",normal,4.178571,infantil,no,no,ligero,tercera_persona
+333,333,the house with a clock in its walls,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['halloween', 'clocks', 'tombs']",corto,4.428571,infantil,si,si,intermedio,tercera_persona
+334,334,grosso guaio a new york,['misterio'],"['papel', 'ebook', 'audiolibro']",['eng'],"['arson', 'brothers']",corto,4.1153846,juvenil,no,no,pesado,tercera_persona
+335,335,amulet,['misterio'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['charms'],corto,4.714286,infantil,no,si,pesado,tercera_persona
+336,336,the secret adversary,['misterio'],"['papel', 'ebook']","['eng', 'spa']",['youth'],corto,3.6666667,juvenil,si,no,ligero,primera_persona
+337,337,if tomorrow comes,"['misterio', 'suspense']","['papel', 'ebook']",['eng'],"['american', 'detectives', 'hardcover']",normal,4.230769,juvenil,no,no,intermedio,tercera_persona
+338,338,v for vendetta,['misterio'],"['papel', 'ebook', 'audiolibro']",['eng'],['anarchism'],corto,4.2394366,infantil,si,no,pesado,primera_persona
+339,339,the enemy,"['misterio', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['americans', 'thriller']",normal,4.0,adulto,no,no,ligero,primera_persona
+340,340,shatter me,['romance'],"['papel', 'ebook', 'audiolibro']",['eng'],"['dictators', 'dictatorship']",normal,4.052174,juvenil,no,si,intermedio,tercera_persona
+341,341,fifty shades of grey,['romance'],"['papel', 'ebook']","['eng', 'spa']",['businesspeople'],normal,3.8723404,juvenil,si,no,ligero,primera_persona
+342,342,the seven husbands of evelyn hugo,['romance'],['papel'],"['eng', 'spa']","['authorship', 'biographers', 'biography']",normal,4.181818,juvenil,si,no,pesado,primera_persona
+343,343,9-Nov,['romance'],"['papel', 'ebook']",['eng'],['novelists'],normal,4.328125,infantil,si,si,intermedio,tercera_persona
+344,344,lolita,['romance'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['pedophilia', 'stepfathers']",normal,4.0,juvenil,no,si,ligero,primera_persona
+345,345,they both die at the end,['romance'],"['papel', 'audiolibro']",['eng'],['death'],normal,4.152174,juvenil,no,si,ligero,primera_persona
+346,346,the spanish love deception,['romance'],"['papel', 'audiolibro']",['eng'],['contemporary'],normal,3.8846154,adulto,si,no,ligero,primera_persona
+347,347,if he had been with me,['romance'],"['papel', 'ebook']",['eng'],['family'],normal,4.051282,juvenil,no,no,pesado,primera_persona
+348,348,romeo and juliet,['romance'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['adaptations', 'bibliography', 'examinations']",corto,3.5826771,infantil,no,si,pesado,primera_persona
+349,349,you've reached sam,['romance'],['papel'],['eng'],"['family', 'friendship', 'healing']",normal,4.032787,infantil,no,no,intermedio,tercera_persona
+350,350,to all the boys i've loved before,['romance'],"['papel', 'ebook']",['eng'],"['amor', 'scandals']",normal,4.44,juvenil,no,si,pesado,tercera_persona
+351,351,divergent,['romance'],"['papel', 'ebook']",['eng'],"['family', 'identity', 'individuality']",normal,3.971831,juvenil,no,no,intermedio,tercera_persona
+352,352,i fell in love with hope,['romance'],['papel'],['eng'],['transformation'],normal,4.4736843,adulto,si,no,pesado,primera_persona
+353,353,confess,['romance'],"['papel', 'ebook', 'audiolibro']",['eng'],['secrecy'],normal,4.232143,juvenil,si,si,pesado,tercera_persona
+354,354,better than the movies,['romance'],['papel'],['eng'],"['family', 'friendship']",normal,3.8666666,infantil,no,no,pesado,tercera_persona
+355,355,me before you,['romance'],"['papel', 'ebook']","['eng', 'spa']","['emotions', 'paralytics', 'translations']",normal,4.18,juvenil,no,no,ligero,tercera_persona
+356,356,twisted games,['romance'],"['papel', 'audiolibro']",['eng'],['steamy'],normal,4.05,adulto,no,no,intermedio,tercera_persona
+357,357,the god of small things,['romance'],"['papel', 'ebook']","['eng', 'spa', 'cat']","['catholicism', 'cousins', 'family']",normal,3.7735848,juvenil,si,si,pesado,tercera_persona
+358,358,p.s. i still love you,['romance'],"['papel', 'ebook', 'audiolibro']",['eng'],['friendship'],normal,4.106383,juvenil,no,no,pesado,tercera_persona
+359,359,all the bright places,['romance'],"['papel', 'ebook', 'audiolibro']",['eng'],"['bullying', 'death']",normal,4.265306,juvenil,no,no,pesado,primera_persona
+360,360,all your perfects,['romance'],['papel'],['eng'],['secrecy'],normal,4.137931,infantil,no,no,ligero,tercera_persona
+361,361,call me by your name,['romance'],"['papel', 'ebook']",['eng'],"['authors', 'fear']",corto,4.0,adulto,no,no,intermedio,primera_persona
+362,362,"heartstopper, volume 2",['romance'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['schools'],normal,3.9642856,juvenil,si,no,pesado,primera_persona
+363,363,l'étranger,['romance'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['classics', 'death', 'french']",corto,4.075,infantil,si,no,pesado,tercera_persona
+364,364,eleanor & park,['romance'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['bullying', 'family', 'history']",normal,4.1153846,juvenil,no,no,ligero,primera_persona
+365,365,archer's voice,['romance'],['papel'],['eng'],['healing'],normal,3.7916667,juvenil,si,si,pesado,primera_persona
+366,366,a clockwork orange,['romance'],"['papel', 'ebook']","['spa', 'eng', 'cat']","['brainwashing', 'metafiction']",corto,4.05,juvenil,no,si,intermedio,tercera_persona
+367,367,the sun is also a star,['romance'],"['papel', 'ebook', 'audiolibro']",['eng'],"['deportation', 'newexperience']",normal,3.7142856,infantil,si,no,intermedio,primera_persona
+368,368,the selection (the selection #1),['romance'],"['papel', 'ebook']","['eng', 'spa']","['marriage', 'princes']",normal,4.2941175,infantil,si,si,pesado,primera_persona
+369,369,simon vs. the homo sapiens agenda,['romance'],"['papel', 'ebook']",['eng'],"['extortion', 'homosexuality', 'schools']",normal,4.4054055,adulto,no,no,intermedio,tercera_persona
+370,370,black ties and white lies,['romance'],['papel'],['eng'],['heartwarming'],normal,3.5454545,infantil,si,no,intermedio,tercera_persona
+371,371,destroy me,['romance'],['papel'],['eng'],"['healing', 'redemption']",corto,4.4,infantil,si,si,intermedio,tercera_persona
+372,372,eclipse,['romance'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['schools'],largo,3.5,infantil,no,no,intermedio,primera_persona
+373,373,rebecca,['romance'],"['papel', 'ebook']","['eng', 'spa']",['wives'],normal,4.4074073,juvenil,no,no,ligero,tercera_persona
+374,374,the elite (the selection #2),['romance'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['princes'],normal,4.142857,juvenil,si,no,intermedio,primera_persona
+375,375,brutal prince,['romance'],['papel'],['eng'],['redemption'],normal,3.9333334,juvenil,si,no,ligero,primera_persona
+376,376,giovanni's room,['romance'],"['papel', 'ebook']","['spa', 'eng']","['americans', 'classics', 'homosexuality']",corto,4.2222223,infantil,no,si,ligero,primera_persona
+377,377,restore me,['romance'],['papel'],['eng'],['dictatorship'],normal,4.5,adulto,no,no,pesado,tercera_persona
+378,378,brave new world,['ciencia_ficcion'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['brainwashing', 'classics', 'collectivism']",corto,3.915408,infantil,no,no,intermedio,primera_persona
+379,379,the art of war,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['classics', 'competition', 'eastern']",corto,4.081081,infantil,si,si,pesado,primera_persona
+380,380,the maze runner,['ciencia_ficcion'],"['papel', 'ebook', 'audiolibro']",['eng'],"['cooperation', 'memory']",normal,4.1752577,juvenil,no,si,ligero,tercera_persona
+381,381,"i, robot","['ciencia_ficcion', 'suspense']","['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['thriller', 'hyperspace', 'morality']",corto,4.225564,adulto,no,si,ligero,tercera_persona
+382,382,unravel me,['ciencia_ficcion'],"['papel', 'ebook', 'audiolibro']",['eng'],"['dictators', 'dictatorship']",normal,3.9642856,adulto,no,no,intermedio,primera_persona
+383,383,jurassic park,"['ciencia_ficcion', 'suspense']","['papel', 'ebook']","['eng', 'spa']","['procompsognathus', 'cloning']",normal,4.032787,juvenil,si,si,pesado,primera_persona
+384,384,flowers for algernon,['ciencia_ficcion'],"['papel', 'ebook']","['spa', 'eng']",['brain'],corto,4.2985077,infantil,no,si,intermedio,primera_persona
+385,385,contact,['ciencia_ficcion'],"['papel', 'ebook']","['spa', 'eng']","['astronomy', 'cosmology', 'exploration']",normal,4.183908,infantil,no,no,pesado,primera_persona
+386,386,mockingjay,['ciencia_ficcion'],"['papel', 'ebook']","['spa', 'eng']",['insurgency'],normal,3.6686747,infantil,si,no,intermedio,tercera_persona
+387,387,the road,['ciencia_ficcion'],"['papel', 'ebook', 'audiolibro']","['eng', 'cat']","['apocalypse', 'ethics']",corto,3.8636363,juvenil,si,si,ligero,tercera_persona
+388,388,neuromancer,['ciencia_ficcion'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']",['cyberspace'],normal,4.0,juvenil,si,si,pesado,primera_persona
+389,389,cinder,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['cybernetics', 'overpopulation', 'wealth']",normal,4.117647,adulto,si,no,ligero,primera_persona
+390,390,never let me go,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['clonage', 'cloning', 'literary']",corto,3.6470587,adulto,si,no,intermedio,primera_persona
+391,391,the martian chronicles,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']",['bibliography'],corto,4.025,adulto,si,si,intermedio,primera_persona
+392,392,fight club,['ciencia_ficcion'],"['papel', 'ebook']",['eng'],['boxing'],corto,4.027027,infantil,no,si,ligero,primera_persona
+393,393,2001,['ciencia_ficcion'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['computers', 'jupiter']",corto,4.1559634,adulto,no,no,intermedio,tercera_persona
+394,394,the adventures of captain underpants,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa', 'cat']",['schools'],corto,4.1764708,juvenil,no,si,intermedio,primera_persona
+395,395,1984 (adaptation),['ciencia_ficcion'],"['papel', 'ebook']",['eng'],['textbooks'],corto,4.6666665,juvenil,no,no,pesado,primera_persona
+396,396,red queen,['ciencia_ficcion'],"['papel', 'ebook']",['eng'],['princesses'],normal,4.142857,juvenil,no,no,pesado,primera_persona
+397,397,la nuit,['ciencia_ficcion'],"['papel', 'ebook']",['eng'],"['autobiography', 'biography', 'children']",corto,4.681818,infantil,no,no,pesado,primera_persona
+398,398,the glass castle,['ciencia_ficcion'],"['papel', 'ebook']","['eng', 'spa']","['alcoholism', 'biographies', 'biography']",normal,4.3636365,juvenil,si,no,ligero,tercera_persona
+399,399,scythe,['ciencia_ficcion'],['papel'],['eng'],"['competition', 'death']",normal,4.5,infantil,si,no,ligero,primera_persona
+400,400,lord of the flies,['suspense'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa']","['death', 'ethics', 'islands']",corto,3.6254418,adulto,si,no,intermedio,primera_persona
+401,401,the silent patient,['suspense'],['papel'],['eng'],['marriage'],normal,4.117647,juvenil,si,no,pesado,tercera_persona
+402,402,insomnia,"['suspense', 'terror']","['papel', 'ebook']","['eng', 'spa']",['horror'],largo,3.8695652,adulto,si,no,intermedio,primera_persona
+403,403,if we were villains,['suspense'],"['papel', 'ebook', 'audiolibro']",['eng'],['actors'],normal,4.2727275,juvenil,si,no,pesado,primera_persona
+404,404,behind closed doors,['suspense'],"['papel', 'ebook']",['eng'],"['marriage', 'secrecy', 'wives']",normal,3.4166667,infantil,no,no,pesado,tercera_persona
+405,405,sharp objects,['suspense'],"['papel', 'ebook']","['eng', 'spa']","['children', 'investigation', 'journalists']",normal,3.65,juvenil,no,si,pesado,tercera_persona
+406,406,dark matter,['suspense'],"['papel', 'ebook']",['eng'],"['reality', 'thrillers']",normal,4.1960783,adulto,si,no,pesado,tercera_persona
+407,407,the andromeda strain,['suspense'],"['papel', 'ebook']","['eng', 'spa']",['hyperventilation'],corto,3.7636364,adulto,si,no,ligero,tercera_persona
+408,408,white fang,['suspense'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['history', 'wolves']",corto,3.974359,adulto,si,si,intermedio,tercera_persona
+409,409,voyage au centre de la terre,['suspense'],"['papel', 'ebook']","['eng', 'spa']","['core', 'earth']",corto,4.0,juvenil,si,no,intermedio,tercera_persona
+410,410,the pearl,['suspense'],"['papel', 'ebook', 'audiolibro']","['eng', 'spa', 'cat']","['children', 'family', 'fishers']",corto,3.4827585,infantil,si,no,pesado,tercera_persona
+411,411,origin,['suspense'],"['papel', 'ebook']","['eng', 'spa']",['cryptographers'],largo,3.52,infantil,no,no,intermedio,tercera_persona
+412,412,digital fortress,['suspense'],"['papel', 'ebook', 'audiolibro']","['spa', 'eng']","['cryptographers', 'cryptographes', 'thrillers']",normal,3.4615386,adulto,si,si,ligero,primera_persona

@@ -26,17 +26,18 @@ class Book():
     def get_book_id(self):
         return self.book_id
     
-    
 
 class Case():
     # 3 first inputs are lists
-    def __init__(self,case_id, user_instance, atributes_pref, book_instance = None, purchased = None, drift_value = None):
+    def __init__(self,case_id, user_instance, atributes_pref, book_instance = None, purchased = None, rating = None, drift_value = None, timestamp = None):
         self.case_id = case_id
         self.user = user_instance
         self.atributes_pref = atributes_pref
         self.book = book_instance
+        self.rating = rating
         self.purchased = purchased
         self.drift_value = drift_value
+        self.timestamp = timestamp
     
     def get_user(self):
         '''
@@ -66,8 +67,14 @@ class Case():
         '''
         return self.atributes_pref
     
-    def get_book_atributes(self):
-        return self.book_atributes
+    def get_timestamp(self):
+        '''
+        Devuelve el timestamp en formato Unix: seconds that have elapsed since January 1, 1970 
+        '''
+        return self.timestamp
+
+    def get_rating(self):
+        return self.rating
     
     def set_book(self, book_inst):
         '''
