@@ -54,20 +54,10 @@ print(len(lista_instancias_casos))
 # # --------------------------------- Fem proves ------------------------------
 
 
-'''
-case1 = lista_instancias_casos[15]
-case2 = lista_instancias_casos[43]
-case3 = lista_instancias_casos[0]
-case4 = lista_instancias_casos[20]
-case5 = lista_instancias_casos[25]
-case6 = lista_instancias_casos[18]
+list_most_similar_cases = lista_instancias_casos[0:15]
+best_book = cbr._infer_user_preferences(list_most_similar_cases[0].get_user(), lista_instancias_casos[0:15])
+print(best_book)
 
-
-list_most_similar_cases = [case1, case2, case3, case4, case5, case6]
-actual_case = lista_instancias_casos[33]
-three_most_similar_cases_by_books = cbr.reuse(list_most_similar_cases, actual_case)
-print(three_most_similar_cases_by_books)
-'''
 
 # #print(cbr.index_tree.tree.hijos['Hombre'].valores)
 
