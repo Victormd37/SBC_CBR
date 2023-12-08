@@ -42,12 +42,18 @@ class CBR():
                 sim.append(self._custom_similarity_users(new_case,i)) #Buscamos la similaridad entre nuestro caso y un caso similar
             pares = zip(similar_cases,sim)
             pares_ordenados = sorted(pares, key=lambda x: x[1]) #Ordenamos los casos ascendentemente
-            ordered_similar_cases=pares_ordenados[:10] #Cojemos los 10 casos más similares
+            ordered_similar_cases =pares_ordenados[:10] #Cojemos los 10 casos más similares
         
         return ordered_similar_cases
 
     # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
     def reuse(self, most_similar_cases, actual_case): 
+        """
+        Rep els casos on l'ususari és més similar, inferim les preferencies especifiques de l'usuari en funció
+        de l'historial que tinguem seu i adaptem la solució. Per adaptar la solució, seleccionem aquells llibres 
+        que trobem en els casos més similars i calculem la seva similitud amb el cas ideal inferit. Finalment retornem 
+        els 3 llibres on la similaritat de llibre es major 
+        """
         ideal_book = self._infer_user_preferences(actual_case.get_user())
         final_similarities = []
         # We compute the similarity between ideal_book with books 
@@ -56,7 +62,7 @@ class CBR():
         for case,sim_users in most_similar_cases:
             book_atributes = list(case.get_book().get_book_features())
             similarity_book = self._custom_similarity_books(ideal_book, book_atributes)
-            final_similarities.append((similarity_book*sim_users, case, case.get_book().get_book_id()))
+            final_similarities.append((similarity_book, case, case.get_book().get_book_id()))
         sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
@@ -163,8 +169,16 @@ class CBR():
         de: Timestamp, Rating i Atributs dels llibres recomenats. 
         '''
         user_id = user.get_username()
-        # Obtenim tots els casos de l'usuari a partir de l'arbre
-        user_cases = # WARNING: Extreure les instancies de casos de l'ususari de l'arbre
+        # Obtenim tots els casos de la mateixa fulla de l'arbre a la que correspon l'usuari
+        
+        leaf_cases = self.index_tree.buscar_casos(user)
+        user_cases = [case for case in leaf_cases if case.get_user().get_username() == user_id]
+
+        # Si l'usuari es nou i no tenim historial li preguntem :
+        if len(user_cases) == 0:
+            user_prefs = self._ask_user_prefs()
+            return user_prefs
+        
         user_db = {
             'Book_features':[list(case.get_book().get_book_features()) for case in user_cases],
             'Rating':[case.get_rating() for case in user_cases],
@@ -188,18 +202,21 @@ class CBR():
         for i, feature in enumerate(dict.items()):
             attr = feature[0]
             for j in range(len(df)):
+                sign = 1
+                if df['Rating'][j] <= 3:
+                    sign = -1
                 ele = df['Book_features'][j][i]                
                 if type(ele) == list:
                     for e in ele:
                         if e in dict[attr].keys():
-                            dict[attr][e].append(df['Combined_Value'][j])
+                            dict[attr][e].append(sign*df['Combined_Value'][j])
                         else:
-                            dict[attr][e] = [df['Combined_Value'][j]]
+                            dict[attr][e] = [sign*df['Combined_Value'][j]]
                 else:
                     if ele in dict[attr].keys():
-                            dict[attr][ele].append(df['Combined_Value'][j])
+                        dict[attr][ele].append(sign*df['Combined_Value'][j])
                     else:
-                        dict[attr][ele] = [df['Combined_Value'][j]]
+                        dict[attr][ele] = [sign*df['Combined_Value'][j]]
         user_preferences = []
         for key in dict:
             for feature in dict[key]:
@@ -207,8 +224,15 @@ class CBR():
                 dict[key][feature] = sum(values)/len(values)
             best = max(dict[key].items(), key=lambda item: item[1])[0]
             user_preferences.append(best)
-
         return user_preferences
+    
+    def _ask_user_prefs(self):
+        """
+        Funció per preguntar a usuaris nous les seves preferències
+        """
+        user_prefs = []
+
+        return user_prefs
 
     def ask_questions(self):
 
