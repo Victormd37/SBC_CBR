@@ -203,7 +203,7 @@ class CBR():
             attr = feature[0]
             for j in range(len(df)):
                 sign = 1
-                if df['Rating'][j] <= 3:
+                if df['Rating'][j] <= 2:
                     sign = -1
                 ele = df['Book_features'][j][i]                
                 if type(ele) == list:
