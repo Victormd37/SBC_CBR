@@ -1,6 +1,7 @@
 import pandas as pd
 from index_tree import Tree
 from classes import User,Case,Book
+from datetime import datetime
 import numpy as np
 
 class CBR():
@@ -32,19 +33,22 @@ class CBR():
         En cas que al realitzar les preguntes no s'hagi trobat, es realitzaran les preguntes adients per trobar el perfil d'usuari
         i s'afegirà SEMPRE a la base d'usuaris.
         """
-        user = new_case.get_user().get_user_profile()
+        user = new_case.get_user()
+        username = new_case.get_user().get_username()
 
         similar_cases= self.index_tree.buscar_casos(user) #Recuperem els indexos dels n casos en una mateixa fulla
-
+        similar_cases = [elem for elem in similar_cases if elem.get_user().get_username() != username and elem.get_rating() > 3]  #eliminem els casos que pertanyen al propi usuari
+        sim = []
+        for i in similar_cases:
+            sim.append(self._custom_similarity_users(new_case,i)) #Buscamos la similaridad entre nuestro caso y un caso similar
+        pares = zip(similar_cases,sim)
+        pares_ordenados = sorted(pares, key=lambda x: x[1]) #Ordenamos los casos ascendentemente
         if len(similar_cases) > 10:
-            sim = []
-            for i in similar_cases:
-                sim.append(self._custom_similarity_users(new_case,i)) #Buscamos la similaridad entre nuestro caso y un caso similar
-            pares = zip(similar_cases,sim)
-            pares_ordenados = sorted(pares, key=lambda x: x[1]) #Ordenamos los casos ascendentemente
-            ordered_similar_cases =pares_ordenados[:10] #Cojemos los 10 casos más similares
+            similar_cases =pares_ordenados[:10] #Cojemos los 10 casos más similares
+        else:
+            similar_cases = pares_ordenados
         
-        return ordered_similar_cases
+        return similar_cases
 
     # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
     def reuse(self, most_similar_cases, actual_case): 
@@ -55,6 +59,7 @@ class CBR():
         els 3 llibres on la similaritat de llibre es major 
         """
         ideal_book = self._infer_user_preferences(actual_case.get_user())
+        actual_case.atributes_pref = ideal_book
         final_similarities = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
@@ -62,17 +67,78 @@ class CBR():
         for case,sim_users in most_similar_cases:
             book_atributes = list(case.get_book().get_book_features())
             similarity_book = self._custom_similarity_books(ideal_book, book_atributes)
-            final_similarities.append((similarity_book, case, case.get_book().get_book_id()))
+            final_similarities.append((similarity_book, case)) #Devolvemos una tupla con la similaridad, la instancia de caso
         sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
     
-    def revise(self):
-        pass
+    def revise(self, cases_list, new_case):
+        # first we calculate the timestamp since the day we had de cases database
+        date_today = datetime.now()
+        day_90 = datetime(2023, 12, 8) # ja canviarem aquesta data
+        difference_days = (date_today - day_90).days
+        timestamp = 90 + difference_days
+        new_cases = []
+        i = 0
+        for sim, case in cases_list:
+            n_case = Case(new_case.get_caseid()+i,new_case.get_user(), new_case.get_user_preferences())
+            conf = sim*100
+            print(f"Te recomendamos el libro {case.get_book().get_title()} con una confianza del {conf}%")
+            # demanem que es puntui la recomanació del llibre
+            try:
+                rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5)".format(case.get_book().get_title())))
+            except ValueError:
+                print("Por favor, ingresa una puntuación válida.")
+            # afegim a la instància cas
+            n_case.book = case.get_book()
+            n_case.rating = rating
+            n_case.timestamp = timestamp
+            new_cases.append(n_case)   
+            i += 1 
+        return new_cases
 
-    def retain(self):
+    def retain(self,cases):
         """ IMPORTANTE: Al añadir un caso sumar 1 a self.number_cases, si se quita un caso restar 1."""
-        pass
+        # arriben 3 instàncies de cas (ens quedem tots) (cases es una llista que els inclou)
+        # rep l'arbre ja que s'haurà d'anar actualitzant
+        # Comencem afegint tant a l'arbre (amb metode insertar caso) com a la base de dades tots els casos que arribin, mantenint coherent la variable num casos
+        # despres ja identificarem si cal eliminar casos, no quedar-se amb alguns perque son inutils o redundants...
+        # caldrà afegir el cas a la base de dades i a l'arbre, i afegir l'usuari a la base de dades 
+
+        for case in cases: 
+            """ Comencem afegint l'usuari d'aquell cas a la base de dades """
+            # Obtener el usuario del caso
+            user = case.get_user()
+
+            # Verificar si el usuario ya está en la base de datos
+            # Funciona si user es una instancia d'usuari, si es llista, canviar detall de user.get_username()
+            user_exists = any(u.get_username() == user.get_username() for u in self.users_inst)
+
+            # Si el usuario no está en la base de datos, añadirlo
+            if not user_exists:
+                # Convertir la información del usuario a una fila de DataFrame
+                user_row = user.to_dataframe_row()
+
+                # Añadir la fila a la base de datos de usuarios
+                self.users = pd.concat([self.users, user_row], ignore_index=True)
+                self.users_inst.append(user)  # Añadir la instancia del usuario a la lista de instancias
+
+            """ Ara hem d'afegir el nou cas a la base de dades i a l'arbre """
+
+            # Adaptem la info del cas i l'afegim a la base de dades
+            case_row = case.to_dataframe_row()
+            self.cases = pd.concat([self.cases, case_row], ignore_index=True)
+
+            # Afegim el cas a l'arbre
+            # Quan modifiquem classe insertar_caso per a que no calguin user prefs, no passar segon param 
+            self.index_tree.insertar_caso(case,case.get_user_preferences())
+            
+            # Augmentem el nombre de casos en 1, ja que n'acabem d'afegir un
+            self.number_cases += 1 
+        # identificar casos redundants i casos inutils (??) 
+        # metode auxiliar: mirar quins casos tenen timestamp més antic i eliminar-los 
+        # afegir tant en el pandas com en l'arbre
+        # emmagatzemar el nou i carregar-nos els antics
 
 
     def _build_index_tree(self):
