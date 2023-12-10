@@ -20,15 +20,15 @@ class User():
         Transforma la instancia de User a una fila de DataFrame para la base de datos de usuarios.
         """
         user_data = {
-            'Usuario': [self.get_username()],
-            'Genero': [self.get_user_profile()[0]],
-            'Edad': [self.get_user_profile()[1]],
-            'Clase social': [self.get_user_profile()[2]],
-            'Trabajo': [self.get_user_profile()[3]],
-            'Horas lectura': [self.get_user_profile()[4]],
-            'Musica': [self.get_user_profile()[5]],
-            'Tarde libre': [self.get_user_profile()[6]],
-            'Vacaciones': [self.get_user_profile()[7]]
+            'usuario': [self.get_username()],
+            'genero': [self.get_user_profile()[0]],
+            'edad': [self.get_user_profile()[1]],
+            'clase_social': [self.get_user_profile()[2]],
+            'trabajo': [self.get_user_profile()[3]],
+            'horas_lectura': [self.get_user_profile()[4]],
+            'musica': [self.get_user_profile()[5]],
+            'tarde_libre': [self.get_user_profile()[6]],
+            'vacaciones': [self.get_user_profile()[7]]
         }
 
         new_user = pd.DataFrame(user_data)

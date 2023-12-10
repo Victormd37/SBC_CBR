@@ -122,6 +122,7 @@ class CBR():
                 # Añadir la fila a la base de datos de usuarios
                 self.users = pd.concat([self.users, user_row], ignore_index=True)
                 self.users_inst.append(user)  # Añadir la instancia del usuario a la lista de instancias
+                print(self.users)
 
             """ Ara hem d'afegir el nou cas a la base de dades i a l'arbre """
 
