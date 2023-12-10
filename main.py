@@ -55,8 +55,9 @@ print(len(lista_instancias_casos))
 
 
 list_most_similar_cases = lista_instancias_casos[0:15]
-best_book = cbr._infer_user_preferences(list_most_similar_cases[0].get_user(), lista_instancias_casos[0:15])
-print(best_book)
+#best_book = cbr._infer_user_preferences(list_most_similar_cases[0].get_user(), lista_instancias_casos[0:15])
+#best_book = cbr._infer_user_preferences(list_most_similar_cases[0].get_user())
+#print(best_book)
 
 
 # #print(cbr.index_tree.tree.hijos['Hombre'].valores)
@@ -68,4 +69,9 @@ print(best_book)
 
 # #print(cbr.index_tree.buscar_casos({'Genero': 'Hombre','Edad': 'Adulto','Hobbies': 'Montaña'}))
 
-# #print(cbr.index_tree)
+print(cbr.index_tree)
+case = lista_instancias_casos[578]
+
+similar_cases = cbr.retrieve(case)
+for i in similar_cases:
+    print(i)
