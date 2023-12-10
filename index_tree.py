@@ -56,30 +56,30 @@ class Tree:
                 hijos = {}
                 for i in caracteristicas[best_c]:
                     new_users = users.loc[users[best_c] == i]
-                    l = new_users['Usuario_ID'].tolist()
-                    suma = (self.cases['Usuario_ID'].isin(l)).sum()
+                    l = new_users['Usuario'].tolist()
+                    suma = (self.cases['Usuario'].isin(l)).sum()
                     c = caracteristicas.copy()
                     c.pop(best_c)
                     hijos[f"{i}"] = self.crear_arbol(c, new_users, suma) #Cridem recursivament a la funció
                 arbol = self.TreeNode(valor, best_c, hijos)
             else:
-                l = users['Usuario_ID'].tolist()
-                casos = self.cases[self.cases['Usuario_ID'].isin(l)]
+                l = users['Usuario'].tolist()
+                casos = self.cases[self.cases['Usuario'].isin(l)]
                 lista_instancias_casos = []
                 for row in casos.index:
                     row_elements = casos.loc[row]
-                    instance = Case(row_elements[0], self.user_instances[row_elements[1]-1] 
-                                    ,row_elements[2:6], self.book_instances[row_elements[6]])
+                    instance = Case(row, self.user_instances[row_elements[0]] 
+                                ,row_elements[1:10], self.book_instances[row_elements[10]], rating=row_elements[11], timestamp=row)
                     lista_instancias_casos.append(instance)
                 arbol = self.TreeNode(lista_instancias_casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
         else:
-            l = users['Usuario_ID'].tolist()
-            casos = self.cases[self.cases['Usuario_ID'].isin(l)]
+            l = users['Usuario'].tolist()
+            casos = self.cases[self.cases['Usuario'].isin(l)]
             lista_instancias_casos = []
             for row in casos.index:
                 row_elements = casos.loc[row]
-                instance = Case(row_elements[0], self.user_instances[row_elements[1]-1] 
-                                ,row_elements[2:6], self.book_instances[row_elements[6]])
+                instance = Case(row, self.user_instances[row_elements[0]] 
+                                ,row_elements[1:10], self.book_instances[row_elements[10]], rating=row_elements[11],  timestamp=row)
                 lista_instancias_casos.append(instance)
             arbol = self.TreeNode(lista_instancias_casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
         return arbol
@@ -106,8 +106,8 @@ class Tree:
                 n_i = n/len(values) #Calculem l'òptim
                 best_char[key] = 0 #Assignem un valor de 0 que anirem incrementant si les particions generades s'allunyen de l'òptim
                 for v in values:
-                    l = users.loc[users[key] == v,['Usuario_ID']]['Usuario_ID'].tolist()
-                    suma = (self.cases['Usuario_ID'].isin(l)).sum()
+                    l = users.loc[users[key] == v,['Usuario']]['Usuario'].tolist()
+                    suma = (self.cases['Usuario'].isin(l)).sum()
                     best_char[key] += abs(n_i - suma) #Calculem el valor absulut entre l'òptim i la partició real.
                     
         if len(best_char) > 1: #Això prevé que només hi hagi un atribut disponible per fer el filtratge, ja que no podriem fer el minim.
@@ -126,12 +126,13 @@ class Tree:
         nodo.add_valor(caso)
         
     
-    def buscar_casos(self, new_case_atr):
-        """Donat els atributs del nou usuari es busquen els casos que es troben al node del arbre que cumpleix les característiques de l'usuari."""
+    def buscar_casos(self, user):
+        """Donat el nou usuari es busquen els casos que es troben al node del arbre que cumpleix les característiques de l'usuari."""
+        user_atr = user.get_user_profile()
         nodo = self.tree
         while not nodo.hijos == None:
             atr = nodo.get_feature() 
-            nodo = nodo.get_hijo_valor(new_case_atr[atr])
+            nodo = nodo.get_hijo_valor(user_atr[atr])
         return nodo.get_casos()
     
     def _crear_dict(self, nodo):
