@@ -58,7 +58,7 @@ class Case():
         self.rating = rating
         self.purchased = purchased
         self.drift_value = drift_value
-        self.timestamp = timestamp
+        self.timestamp = timestamp 
     
     def get_user(self):
         '''
