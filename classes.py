@@ -47,13 +47,13 @@ class Book():
     def get_book_id(self):
         return self.book_id
     
-    def get_book_title(self):
+    def get_title(self):
         return self.book_title
     
 
 class Case():
     # 3 first inputs are lists
-    def __init__(self,case_id, user_instance, atributes_pref, book_instance = None, purchased = None, rating = None, drift_value = None, timestamp = None):
+    def __init__(self,case_id, user_instance, atributes_pref=None, book_instance = None, purchased = None, rating = None, drift_value = None, timestamp = None):
         self.case_id = case_id
         self.user = user_instance
         self.atributes_pref = atributes_pref
