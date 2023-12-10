@@ -23,7 +23,7 @@ class CBR():
             self.books_inst.append(instance)
 
         self.number_cases = self.cases.shape[0] #Obtenim el nombre de casos actuals, anirem modificant si afegim o retirem casos
-        self.index_tree = self._build_index_tree()
+        self.index_tree = self._build_index_tree() 
 
     def retrieve(self, new_case):
         """
@@ -42,7 +42,7 @@ class CBR():
         for i in similar_cases:
             sim.append(self._custom_similarity_users(new_case,i)) #Buscamos la similaridad entre nuestro caso y un caso similar
         pares = zip(similar_cases,sim)
-        pares_ordenados = sorted(pares, key=lambda x: x[1]) #Ordenamos los casos ascendentemente
+        pares_ordenados = sorted(pares, key=lambda x: x[1], reverse=True) #Ordenamos los casos ascendentemente
         if len(similar_cases) > 10:
             similar_cases =pares_ordenados[:10] #Cojemos los 10 casos más similares
         else:
@@ -58,8 +58,8 @@ class CBR():
         que trobem en els casos més similars i calculem la seva similitud amb el cas ideal inferit. Finalment retornem 
         els 3 llibres on la similaritat de llibre es major 
         """
-        ideal_book = self._infer_user_preferences(actual_case.get_user())
-        actual_case.atributes_pref = ideal_book
+        ideal_book, ideal_book_dic = self._infer_user_preferences(actual_case.get_user())
+        actual_case.atributes_pref = ideal_book_dic
         final_similarities = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
@@ -131,7 +131,7 @@ class CBR():
 
             # Afegim el cas a l'arbre
             # Quan modifiquem classe insertar_caso per a que no calguin user prefs, no passar segon param 
-            self.index_tree.insertar_caso(case,case.get_user_preferences())
+            self.index_tree.insertar_caso(case,user.get_user_profile())
             
             # Augmentem el nombre de casos en 1, ja que n'acabem d'afegir un
             self.number_cases += 1 
@@ -202,6 +202,7 @@ class CBR():
         for i, feature in enumerate(weights.items()):
             ele1 = ideal_features[i]
             ele2 = book_features[i]
+            
             # Calculamos similarity con pesos
             attr = feature[0]
             weight = feature[1]
@@ -213,6 +214,7 @@ class CBR():
                 'peso': {'ligero':0, 'intermedio':1,'pesado':2}}
                 diff = abs(map[attr][ele1] - map[attr][ele2])
                 weighted_disimilarity += weight*diff
+                total_weight += weight*diff
             else:
                 if type(ele2) != list:
                     if ele1 != ele2:
@@ -220,8 +222,8 @@ class CBR():
                 else:
                     if ele1 not in ele2:
                         weighted_disimilarity += weight
-            total_weight += weight
-        
+                total_weight += weight
+
         # Normalizamos el resultado 
         weighted_disimilarity /= total_weight
 
@@ -259,6 +261,7 @@ class CBR():
         # es la diferencia entre el timestamp més recent i timestamp en questió. 
         df['Weight'] = np.exp(-(df['Timestamp'].max() - df['Timestamp']) * decay_factor) # Estarà entre 0 i 1.
         df['Combined_Value'] = df['Normalized_Rating'] * df['Weight'] # Combinem els 2 valors
+        print(df)
 
         dict = {'contiene':{}, 'formato': {}, 'idioma': {}, 'largura_libro': {},
                    'clasificacion_edad':{}, 'compone_saga':{}, 'famoso':{}, 'peso':{},
@@ -290,7 +293,13 @@ class CBR():
                 dict[key][feature] = sum(values)/len(values)
             best = max(dict[key].items(), key=lambda item: item[1])[0]
             user_preferences.append(best)
-        return user_preferences
+        # Creem un diccionari per que encaixi amb els altres mètodes 
+        user_preferences_dic = {}
+        for i in range(len(user_preferences)):
+            key = list(dict.keys())[i]
+            value = user_preferences[i]
+            user_preferences_dic[key] = value
+        return user_preferences, user_preferences_dic
     
     def _ask_user_prefs(self):
         """

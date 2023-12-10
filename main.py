@@ -80,7 +80,7 @@ print(s1)
 
 cbr = CBR(cases_db, users_db, books_db)
 
-print(cbr.index_tree)
+#print(cbr.index_tree)
 
 new_user = cbr.users_inst[14]
 new_case = Case(cbr.number_cases+1, new_user)
@@ -89,11 +89,14 @@ sim_cases = cbr.retrieve(new_case)
 
 print(sim_cases)
 
-best_books = cbr.reuse(sim_cases, new_case)
+best_cases = cbr.reuse(sim_cases, new_case)
 
-print(best_books)
+for i in range(3):
+    print(best_cases[i][1].get_book().get_book_features())
+    print(best_cases[i][1].get_user().get_username())
+
 print(new_case.get_user_preferences())
-new_cases = cbr.revise(best_books, new_case)
+new_cases = cbr.revise(best_cases, new_case)
 
 for i in new_cases:
     print(i.get_book().get_title(),i.get_rating(), i.get_timestamp())
