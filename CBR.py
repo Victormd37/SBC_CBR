@@ -59,6 +59,7 @@ class CBR():
         els 3 llibres on la similaritat de llibre es major 
         """
         ideal_book = self._infer_user_preferences(actual_case.get_user())
+        actual_case.atributes_pref = ideal_book
         final_similarities = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
@@ -66,29 +67,37 @@ class CBR():
         for case,sim_users in most_similar_cases:
             book_atributes = list(case.get_book().get_book_features())
             similarity_book = self._custom_similarity_books(ideal_book, book_atributes)
-            final_similarities.append((similarity_book, case, case.get_book().get_book_id()))
+            final_similarities.append((similarity_book, case)) #Devolvemos una tupla con la similaridad, la instancia de caso
         sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
     
-    def revise(self, cases_list):
+    def revise(self, cases_list, new_case):
         # first we calculate the timestamp since the day we had de cases database
         date_today = datetime.now()
         day_90 = datetime(2023, 12, 8) # ja canviarem aquesta data
         difference_days = (date_today - day_90).days
         timestamp = 90 + difference_days
-        for case in cases_list:
+        new_cases = []
+        i = 0
+        for sim, case in cases_list:
+            n_case = Case(new_case.get_caseid()+i,new_case.get_user(), new_case.get_user_preferences())
+            conf = sim*100
+            print(f"Te recomendamos el libro {case.get_book().get_title()} con una confianza del {conf}%")
             # demanem que es puntui la recomanació del llibre
             try:
                 rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5)".format(case.get_book().get_title())))
             except ValueError:
                 print("Por favor, ingresa una puntuación válida.")
             # afegim a la instància cas
-            case.rating = rating
-            case.timestamp = timestamp      
-        return cases_list
+            n_case.book = case.get_book()
+            n_case.rating = rating
+            n_case.timestamp = timestamp
+            new_cases.append(n_case)   
+            i += 1 
+        return new_cases
 
-    def retain(self,cases,tree):
+    def retain(self,cases):
         """ IMPORTANTE: Al añadir un caso sumar 1 a self.number_cases, si se quita un caso restar 1."""
         # arriben 3 instàncies de cas (ens quedem tots) (cases es una llista que els inclou)
         # rep l'arbre ja que s'haurà d'anar actualitzant
@@ -122,7 +131,7 @@ class CBR():
 
             # Afegim el cas a l'arbre
             # Quan modifiquem classe insertar_caso per a que no calguin user prefs, no passar segon param 
-            tree.insertar_caso(case,case.get_user_preferences())
+            self.index_tree.insertar_caso(case,case.get_user_preferences())
             
             # Augmentem el nombre de casos en 1, ja que n'acabem d'afegir un
             self.number_cases += 1 

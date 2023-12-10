@@ -56,15 +56,15 @@ class Tree:
                 hijos = {}
                 for i in caracteristicas[best_c]:
                     new_users = users.loc[users[best_c] == i]
-                    l = new_users['Usuario'].tolist()
-                    suma = (self.cases['Usuario'].isin(l)).sum()
+                    l = new_users['usuario'].tolist()
+                    suma = (self.cases['usuario'].isin(l)).sum()
                     c = caracteristicas.copy()
                     c.pop(best_c)
                     hijos[f"{i}"] = self.crear_arbol(c, new_users, suma) #Cridem recursivament a la funció
                 arbol = self.TreeNode(valor, best_c, hijos)
             else:
-                l = users['Usuario'].tolist()
-                casos = self.cases[self.cases['Usuario'].isin(l)]
+                l = users['usuario'].tolist()
+                casos = self.cases[self.cases['usuario'].isin(l)]
                 lista_instancias_casos = []
                 for row in casos.index:
                     row_elements = casos.loc[row]
@@ -73,8 +73,8 @@ class Tree:
                     lista_instancias_casos.append(instance)
                 arbol = self.TreeNode(lista_instancias_casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
         else:
-            l = users['Usuario'].tolist()
-            casos = self.cases[self.cases['Usuario'].isin(l)]
+            l = users['usuario'].tolist()
+            casos = self.cases[self.cases['usuario'].isin(l)]
             lista_instancias_casos = []
             for row in casos.index:
                 row_elements = casos.loc[row]
@@ -106,8 +106,8 @@ class Tree:
                 n_i = n/len(values) #Calculem l'òptim
                 best_char[key] = 0 #Assignem un valor de 0 que anirem incrementant si les particions generades s'allunyen de l'òptim
                 for v in values:
-                    l = users.loc[users[key] == v,['Usuario']]['Usuario'].tolist()
-                    suma = (self.cases['Usuario'].isin(l)).sum()
+                    l = users.loc[users[key] == v,['usuario']]['usuario'].tolist()
+                    suma = (self.cases['usuario'].isin(l)).sum()
                     best_char[key] += abs(n_i - suma) #Calculem el valor absulut entre l'òptim i la partició real.
                     
         if len(best_char) > 1: #Això prevé que només hi hagi un atribut disponible per fer el filtratge, ja que no podriem fer el minim.
