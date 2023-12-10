@@ -26,6 +26,9 @@ class Book():
     def get_book_id(self):
         return self.book_id
     
+    def get_book_title(self):
+        return self.book_title
+    
 
 class Case():
     # 3 first inputs are lists

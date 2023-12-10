@@ -1,6 +1,7 @@
 import pandas as pd
 from index_tree import Tree
 from classes import User,Case,Book
+from datetime import datetime
 import numpy as np
 
 class CBR():
@@ -67,8 +68,22 @@ class CBR():
         return sorted_books[0:3]
 
     
-    def revise(self):
-        pass
+    def revise(self, cases_list):
+        # first we calculate the timestamp since the day we had de cases database
+        date_today = datetime.now()
+        day_90 = datetime(2023, 12, 8) # ja canviarem aquesta data
+        difference_days = (date_today - day_90).days
+        timestamp = 90 + difference_days
+        for case in cases_list:
+            # demanem que es puntui la recomanació del llibre
+            try:
+                rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5)".format(case.get_book().get_title())))
+            except ValueError:
+                print("Por favor, ingresa una puntuación válida.")
+            # afegim a la instància cas
+            case.rating = rating
+            case.timestamp = timestamp      
+        return cases_list
 
     def retain(self):
         """ IMPORTANTE: Al añadir un caso sumar 1 a self.number_cases, si se quita un caso restar 1."""
