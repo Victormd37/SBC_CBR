@@ -85,9 +85,48 @@ class CBR():
             case.timestamp = timestamp      
         return cases_list
 
-    def retain(self):
+    def retain(self,cases,tree):
         """ IMPORTANTE: Al añadir un caso sumar 1 a self.number_cases, si se quita un caso restar 1."""
-        pass
+        # arriben 3 instàncies de cas (ens quedem tots) (cases es una llista que els inclou)
+        # rep l'arbre ja que s'haurà d'anar actualitzant
+        # Comencem afegint tant a l'arbre (amb metode insertar caso) com a la base de dades tots els casos que arribin, mantenint coherent la variable num casos
+        # despres ja identificarem si cal eliminar casos, no quedar-se amb alguns perque son inutils o redundants...
+        # caldrà afegir el cas a la base de dades i a l'arbre, i afegir l'usuari a la base de dades 
+
+        for case in cases: 
+            """ Comencem afegint l'usuari d'aquell cas a la base de dades """
+            # Obtener el usuario del caso
+            user = case.get_user()
+
+            # Verificar si el usuario ya está en la base de datos
+            # Funciona si user es una instancia d'usuari, si es llista, canviar detall de user.get_username()
+            user_exists = any(u.get_username() == user.get_username() for u in self.users_inst)
+
+            # Si el usuario no está en la base de datos, añadirlo
+            if not user_exists:
+                # Convertir la información del usuario a una fila de DataFrame
+                user_row = user.to_dataframe_row()
+
+                # Añadir la fila a la base de datos de usuarios
+                self.users = pd.concat([self.users, user_row], ignore_index=True)
+                self.users_inst.append(user)  # Añadir la instancia del usuario a la lista de instancias
+
+            """ Ara hem d'afegir el nou cas a la base de dades i a l'arbre """
+
+            # Adaptem la info del cas i l'afegim a la base de dades
+            case_row = case.to_dataframe_row()
+            self.cases = pd.concat([self.cases, case_row], ignore_index=True)
+
+            # Afegim el cas a l'arbre
+            # Quan modifiquem classe insertar_caso per a que no calguin user prefs, no passar segon param 
+            tree.insertar_caso(case,case.get_user_preferences())
+            
+            # Augmentem el nombre de casos en 1, ja que n'acabem d'afegir un
+            self.number_cases += 1 
+        # identificar casos redundants i casos inutils (??) 
+        # metode auxiliar: mirar quins casos tenen timestamp més antic i eliminar-los 
+        # afegir tant en el pandas com en l'arbre
+        # emmagatzemar el nou i carregar-nos els antics
 
 
     def _build_index_tree(self):
