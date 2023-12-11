@@ -85,10 +85,12 @@ class CBR():
             conf = sim*100
             print(f"Te recomendamos el libro {case.get_book().get_title()} con una confianza del {conf}%")
             # demanem que es puntui la recomanació del llibre
-            try:
-                rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5)".format(case.get_book().get_title())))
-            except ValueError:
-                print("Por favor, ingresa una puntuación válida.")
+            rating = 0
+            while rating not in range(1,5):
+                try:
+                    rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5)".format(case.get_book().get_title())))
+                except ValueError:
+                    print("Por favor, ingresa una puntuación válida.")
             # afegim a la instància cas
             n_case.book = case.get_book()
             n_case.rating = rating
