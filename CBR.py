@@ -86,7 +86,7 @@ class CBR():
             print(f"Te recomendamos el libro {case.get_book().get_title()} con una confianza del {conf}%")
             # demanem que es puntui la recomanació del llibre
             rating = 0
-            while rating not in range(1,5):
+            while rating not in range(1,6):
                 try:
                     rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5)".format(case.get_book().get_title())))
                 except ValueError:
@@ -309,6 +309,8 @@ class CBR():
         Funció per preguntar a usuaris nous les seves preferències
         """
         user_prefs = []
+        
+
 
         return user_prefs
 

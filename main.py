@@ -77,6 +77,10 @@ print(s1)
 #     print(i)
 
 # # --------------------------------- Prova sistema complet ------------------------------
+def main():
+    cbr = CBR(cases_db, users_db, books_db)
+    # Empezamos preguntando al usuario su username
+    pass
 
 cbr = CBR(cases_db, users_db, books_db)
 
