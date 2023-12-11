@@ -12,7 +12,6 @@ class User():
     def get_user_profile(self):
         '''
         Devuelve una lista con los atributos del perfil del usuario.
-        Los atributos multislot seran sublistas.
         '''
         return self.user_profile
     
@@ -21,15 +20,15 @@ class User():
         Transforma la instancia de User a una fila de DataFrame para la base de datos de usuarios.
         """
         user_data = {
-            'Usuario': [self.get_username()],
-            'Genero': [self.get_user_profile()[0]],
-            'Edad': [self.get_user_profile()[1]],
-            'Clase social': [self.get_user_profile()[2]],
-            'Trabajo': [self.get_user_profile()[3]],
-            'Horas lectura': [self.get_user_profile()[4]],
-            'Musica': [self.get_user_profile()[5]],
-            'Tarde libre': [self.get_user_profile()[6]],
-            'Vacaciones': [self.get_user_profile()[7]]
+            'usuario': [self.get_username()],
+            'genero': [self.get_user_profile()[0]],
+            'edad': [self.get_user_profile()[1]],
+            'clase_social': [self.get_user_profile()[2]],
+            'trabajo': [self.get_user_profile()[3]],
+            'horas_lectura': [self.get_user_profile()[4]],
+            'musica': [self.get_user_profile()[5]],
+            'tarde_libre': [self.get_user_profile()[6]],
+            'vacaciones': [self.get_user_profile()[7]]
         }
 
         new_user = pd.DataFrame(user_data)
@@ -53,13 +52,12 @@ class Book():
 
 class Case():
     # 3 first inputs are lists
-    def __init__(self,case_id, user_instance, atributes_pref=None, book_instance = None, purchased = None, rating = None, drift_value = None, timestamp = None):
+    def __init__(self,case_id, user_instance, atributes_pref=None, book_instance = None, rating = None, drift_value = None, timestamp = None):
         self.case_id = case_id
         self.user = user_instance
         self.atributes_pref = atributes_pref
         self.book = book_instance
         self.rating = rating
-        self.purchased = purchased
         self.drift_value = drift_value
         self.timestamp = timestamp 
     
@@ -93,7 +91,7 @@ class Case():
     
     def get_timestamp(self):
         '''
-        Devuelve el timestamp en formato Unix: seconds that have elapsed since January 1, 1970 
+        Devuelve el timestamp cuando se hizo la valoración
         '''
         return self.timestamp
 
@@ -112,19 +110,19 @@ class Case():
             """
             # si user es llista fer [0], si es instància així 
             case_data = {
-                'Usuario': [self.get_user().get_username()],
-                'Contiene': [self.get_user_preferences()[0]],
-                'Formato': [self.get_user_preferences()[1]],
-                'Idioma': [self.get_user_preferences()[2]],
-                'Largura_libro': [self.get_user_preferences()[3]],
-                'Clasificacion_edad': [self.get_user_preferences()[4]],
-                'Compone_saga': [self.get_user_preferences()[5]],
-                'Famoso': [self.get_user_preferences()[6]],
-                'Peso': [self.get_user_preferences()[7]],
-                'Tipo_narrador':[self.get_user_preferences()[8]],
-                'Libro': [self.get_book()],
-                'Valoracion': [self.get_rating()],
-                'Timestamp': [self.get_timestamp()]
+                'usuario': [self.get_user().get_username()],
+                'contiene': [self.get_user_preferences()['contiene']],
+                'formato': [self.get_user_preferences()['formato']],
+                'idioma': [self.get_user_preferences()['idioma']],
+                'largura_libro': [self.get_user_preferences()['largura_libro']],
+                'clasificacion_edad': [self.get_user_preferences()['clasificacion_edad']],
+                'compone_saga': [self.get_user_preferences()['compone_saga']],
+                'famoso': [self.get_user_preferences()['famoso']],
+                'peso': [self.get_user_preferences()['peso']],
+                'tipo_narrador':[self.get_user_preferences()['tipo_narrador']],
+                'libro': [self.get_book().get_book_id()],
+                'valoracion': [self.get_rating()],
+                'timestep': [self.get_timestamp()]
             }
 
             new_case = pd.DataFrame(case_data)
