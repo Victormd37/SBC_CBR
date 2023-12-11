@@ -86,6 +86,10 @@ cbr = CBR(cases_db, users_db, books_db)
 
 #print(cbr.index_tree)
 
+prefs = cbr._ask_user_prefs()
+print(prefs)
+
+
 new_user = cbr.users_inst[14]
 new_case = Case(cbr.number_cases+1, new_user)
 

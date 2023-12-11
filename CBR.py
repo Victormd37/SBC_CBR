@@ -3,6 +3,8 @@ from index_tree import Tree
 from classes import User,Case,Book
 from datetime import datetime
 import numpy as np
+from unidecode import unidecode
+
 
 class CBR():
 
@@ -247,8 +249,8 @@ class CBR():
 
         # Si l'usuari es nou i no tenim historial li preguntem :
         if len(user_cases) == 0:
-            user_prefs = self._ask_user_prefs()
-            return user_prefs
+            user_prefs, user_prefs_dic = self._ask_user_prefs()
+            return user_prefs, user_prefs_dic
         
         user_db = {
             'Book_features':[list(case.get_book().get_book_features()) for case in user_cases],
@@ -308,12 +310,66 @@ class CBR():
         """
         Funció per preguntar a usuaris nous les seves preferències
         """
-        user_prefs = []
+        user_prefs_dic = {'contiene':None, 'formato': None, 'idioma': None, 'largura_libro': None,
+                   'clasificacion_edad':None, 'compone_saga':None, 'famoso':None, 'peso':None,
+                   'tipo_narrador':None}
         
+        # Pregunta 1
+        print("Vas a la librería y te encuentras estas secciones, ¿en cuál de ellas invertirías más tiempo mirando libros?")
+        print("Opciones: Fantasia, Ficción Histórica, Terror, Humor, Magia, Misterio, Romance, Ciencia Ficción o Suspense")
+        user_prefs_dic['contiene'] = self._procesar_input(input("Respuesta: "))
 
+        # Pregunta 2
+        print("¿A qué clasificación de edad te gustaría que perteneciera tu libro?")
+        print("Opciones: Infantil, Juvenil, Adulto")
+        user_prefs_dic['clasificacion_edad'] = self._procesar_input(input("Respuesta: "))
 
-        return user_prefs
+        # Pregunta 3
+        print("¿Desde qué punto de vista quieres que se explique la historia?")
+        print("Opciones: Primera persona o Tercera persona")
+        user_prefs_dic['tipo_narrador'] = self._procesar_input(input("Respuesta: "))
 
+        # Pregunta 4
+        print("¿Quieres leer un libro que pertenezca a una saga ?")
+        print("Opciones: Si o No")
+        user_prefs_dic['compone_saga'] = self._procesar_input(input("Respuesta: "))
+
+        # Pregunta 5
+        print("¿Cuál consideras que debe ser la longitud ideal para tu libro?")
+        print("Opciones: Corta, Normal o Larga")
+        user_prefs_dic['largura_libro'] = self._procesar_input(input("Respuesta: "))
+
+        # Pregunta 6
+        print("¿En qué formato disfrutas más un libro?")
+        print("Opciones: Audiolibro, Papel o Ebook")
+        user_prefs_dic['formato'] = self._procesar_input(input("Respuesta: "))
+
+        # Pregunta 7
+        print("Teniendo en cuenta tu sitio habitual de lectura, ¿cuál es el peso del libro con el que te sentirías más cómodo/a?")
+        print("Opciones: Ligero, Intermedio o Pesado")
+        user_prefs_dic['peso'] = self._procesar_input(input("Respuesta: "))
+
+        # Pregunta 8
+        print("¿En qué idioma buscas leer?")
+        print("Opciones: Castellano, Inglés o Catalán")
+        user_prefs_dic['idioma'] = self._procesar_input(input("Respuesta: "))
+
+        # Pregunta 9
+        print("¿Prefieres una obra mundialmente conocida?")
+        print("Opciones: Si o No")
+        user_prefs_dic['famoso'] = self._procesar_input(input("Respuesta: "))
+
+        return list(user_prefs_dic.values()), user_prefs_dic
+
+    def _procesar_input(self, cadena):
+            '''
+            función que elimina mayusculas, tildes y espacios del input del usuario
+            '''
+            cadena_sin_tildes = unidecode(cadena)
+            cadena_en_minusculas = cadena_sin_tildes.lower()
+            cadena_con_guiones = cadena_en_minusculas.replace(' ', '_')
+            return cadena_con_guiones
+    
     def ask_questions(self):
 
         """
