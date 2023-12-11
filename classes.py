@@ -91,7 +91,7 @@ class Case():
     
     def get_timestamp(self):
         '''
-        Devuelve el timestamp en formato Unix: seconds that have elapsed since January 1, 1970 
+        Devuelve el timestamp cuando se hizo la valoración
         '''
         return self.timestamp
 

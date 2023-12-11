@@ -215,7 +215,7 @@ class CBR():
                 'peso': {'ligero':0, 'intermedio':1,'pesado':2}}
                 diff = abs(map[attr][ele1] - map[attr][ele2])
                 weighted_disimilarity += weight*diff
-                total_weight += weight*diff
+                total_weight += weight*2
             else:
                 if type(ele2) != list:
                     if ele1 != ele2:
