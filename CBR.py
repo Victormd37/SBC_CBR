@@ -74,9 +74,12 @@ class CBR():
         # by user's profile
         for case,sim_users in most_similar_cases:
             book_atributes = list(case.get_book().get_book_features())
-            similarity_book = self._custom_similarity_books(ideal_book, book_atributes)
+            # Matched attributes són aquelles coses del llibre que són iguals que al cas ideal
+            similarity_book, matched_attributes = self._custom_similarity_books(ideal_book, book_atributes)
             # Calculem similaritat combinada llibre, usuari i rating. 
-            final_similarities.append((similarity_book*0.6 + sim_users*0.2 + (case.get_rating/5)*0.2, case)) #Devolvemos una tupla con la similaridad, la instancia de caso
+            comb_sim = similarity_book*0.6 + sim_users*0.2 + (case.get_rating()/5)*0.2
+            # Devolvemos una tupla con la similaridad, la instancia de caso i matched attributes
+            final_similarities.append((comb_sim, case, matched_attributes)) 
         sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
@@ -89,15 +92,20 @@ class CBR():
         timestamp = 90 + difference_days
         new_cases = []
         i = 0
-        for sim, case in cases_list:
+        for sim, case, match_attr in cases_list:
             n_case = Case(new_case.get_caseid()+i,new_case.get_user(), new_case.get_user_preferences())
             conf = sim*100
-            print(f"Te recomendamos el libro {case.get_book().get_title()} con una confianza del {conf}%")
+            print()
+            print(f"Te recomendamos el libro '{case.get_book().get_title()}' con una confianza del {conf}%")
+            print()
+            justificacion = self._justify_recomendation(match_attr)
+            print(justificacion)
+            print()
             # demanem que es puntui la recomanació del llibre
             rating = 0
             while rating not in range(1,6):
                 try:
-                    rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5)".format(case.get_book().get_title())))
+                    rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5) ".format(case.get_book().get_title())))
                 except ValueError:
                     print("Por favor, ingresa una puntuación válida.")
             # afegim a la instància cas
@@ -205,6 +213,7 @@ class CBR():
         '''
         weighted_disimilarity=0
         total_weight = 0
+        matched_attributes = {}
 
         # Definimos pesos de los atributos
         weights = {'contiene':4, 'formato': 1, 'idioma': 2, 'largura_libro': 1,
@@ -225,21 +234,27 @@ class CBR():
                 'clasificacion_edad':{'infantil':0, 'juvenil':1,'adulto':2},
                 'peso': {'ligero':0, 'intermedio':1,'pesado':2}}
                 diff = abs(map[attr][ele1] - map[attr][ele2])
+                if diff == 0:
+                    matched_attributes[attr] = ele1
                 weighted_disimilarity += weight*diff
                 total_weight += weight*2
             else:
                 if type(ele2) != list:
                     if ele1 != ele2:
                         weighted_disimilarity += weight
+                    else:
+                       matched_attributes[attr] = ele1 
                 else:
                     if ele1 not in ele2:
                         weighted_disimilarity += weight
+                    else:
+                        matched_attributes[attr] = ele1 
                 total_weight += weight
 
         # Normalizamos el resultado 
         weighted_disimilarity /= total_weight
 
-        return 1 - weighted_disimilarity
+        return 1 - weighted_disimilarity, matched_attributes
     
     def _infer_user_preferences(self,user):
         '''
@@ -308,6 +323,47 @@ class CBR():
             user_preferences_dic[key] = value
         return user_preferences, user_preferences_dic
     
+    def _justify_recomendation(self, book_matched_attributes):
+        """
+        Función para justificar una recomendación basada en las preferencias del usuario.
+        """
+        justification = "Hemos recomendado este libro porque usuarios con características parecidas a ti lo han puntuado positivamente y porque: "
+        
+        # Verificar cada atributo y agregar la justificación correspondiente
+        if 'contiene' in book_matched_attributes:
+            justification += f" contiene el género {book_matched_attributes['contiene']},"
+        
+        if 'formato' in book_matched_attributes:
+            justification += f" se encuentra disponible en formato {book_matched_attributes['formato']},"
+        
+        if 'idioma' in book_matched_attributes:
+            justification += f" está escrito en {book_matched_attributes['idioma']},"
+
+        if 'largura_libro' in book_matched_attributes:
+            justification += f" tiene una longitud {book_matched_attributes['largura_libro']},"
+
+        if 'clasificacion_edad' in book_matched_attributes:
+            justification += f" pertenece a la classificación de edad {book_matched_attributes['clasificacion_edad']},"
+
+        if 'compone_saga' in book_matched_attributes:
+            if book_matched_attributes['compone_saga'] == 'si':
+                justification += " forma parte de una saga,"
+
+        if 'famoso' in book_matched_attributes:
+            if book_matched_attributes['famoso'] == 'si':
+                justification += " es una obra mundialmente conocida,"
+
+        if 'peso' in book_matched_attributes:
+            justification += f" tiene un peso {book_matched_attributes['peso']},"
+
+        if 'tipo_narrador' in book_matched_attributes:
+            justification += f" está narrado desde {book_matched_attributes['tipo_narrador']}."
+
+        justification += " "
+
+        return justification
+        
+    
     def _ask_user_prefs(self):
         """
         Funció per preguntar a usuaris nous les seves preferències
@@ -373,7 +429,6 @@ class CBR():
             return cadena_con_guiones
     
     def ask_questions(self):
-
         """
         Aquesta funció hauria de fer les preguntes necessaries per extreure:
             1. En cas que l'usuario no es trobi (preguntar username), extreure el perfil de l'usuari.
