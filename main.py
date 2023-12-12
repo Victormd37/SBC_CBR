@@ -117,7 +117,7 @@ sim_cases = cbr.retrieve(new_case)
 
 print(sim_cases)
 
-best_cases = cbr.reuse(sim_cases, new_case)
+best_cases = cbr.reuse(sim_cases, new_case, infer = True)
 
 for i in range(3):
     print(best_cases[i][1].get_book().get_book_features())
