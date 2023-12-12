@@ -84,13 +84,22 @@ def main():
 
 cbr = CBR(cases_db, users_db, books_db)
 
-#print(cbr.index_tree)
+print(cbr.index_tree)
 
-prefs = cbr._ask_user_prefs()
-print(prefs)
+# prefs = cbr._ask_user_prefs()
+# print(prefs)
 
+r = input("Has usado antes este recomendador? (Si/No)")
+if r == "Si":
+    print(len(cbr.users_inst))
+    n = int(input("Cuál es tu número de usuario? "))
+    if n < len(cbr.users_inst):
+        new_user = cbr.users_inst[n]
+    else:
+        print("El usuario no se encuentra en nuestra base de datos")
+        exit
 
-new_user = cbr.users_inst[14]
+#new_user = cbr.users_inst[14]
 new_case = Case(cbr.number_cases+1, new_user)
 
 sim_cases = cbr.retrieve(new_case)
