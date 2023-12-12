@@ -89,18 +89,29 @@ print(cbr.index_tree)
 # prefs = cbr._ask_user_prefs()
 # print(prefs)
 
-r = input("Has usado antes este recomendador? (Si/No)")
-if r == "Si":
-    print(len(cbr.users_inst))
-    n = int(input("Cuál es tu número de usuario? "))
-    if n < len(cbr.users_inst):
-        new_user = cbr.users_inst[n]
-    else:
-        print("El usuario no se encuentra en nuestra base de datos")
-        exit
+print('Bienvenido al recomendador de libros Bicho3, ahora somos 4!')
 
-#new_user = cbr.users_inst[14]
-new_case = Case(cbr.number_cases+1, new_user)
+r = input("Te has registrado anteriormente? (Si/No)").lower()
+if r == "Si":
+    num_usuario = float("inf")
+    while num_usuario not in range(0,len(users_db)):
+        try:
+            num_usuario = int(input("Introduzca su número de usuario: "))
+        except ValueError:
+            print("Usuario no encontrado en la base de datos. Porfavor introduzca su número de usuario: ")
+    print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
+    _,prefs =  cbr.ask_user_prefs()
+    new_case = Case(num_usuario,cbr.users_inst[num_usuario],prefs)
+            
+else:
+    num_usuario = len(len(users_db))+1
+    print(f'Sú número de usuario és el siguiente: {num_usuario}')
+    print('Para recomendarte el mejor libro, primero debemos saber un poco más de tí.')
+    new_case = cbr.ask_questions(num_usuario)
+    print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
+    _,prefs =  cbr.ask_user_prefs()
+    new_case(atributes_pref = prefs)
+         
 
 sim_cases = cbr.retrieve(new_case)
 
