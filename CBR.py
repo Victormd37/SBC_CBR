@@ -53,14 +53,20 @@ class CBR():
         return similar_cases
 
     # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
-    def reuse(self, most_similar_cases, actual_case): 
+
+    # Answers es un valor binari que ens diu si les prefs han estat respostes o han des ser inferides.
+    def reuse(self, most_similar_cases, actual_case, infer): 
         """
         Rep els casos on l'ususari és més similar, inferim les preferencies especifiques de l'usuari en funció
         de l'historial que tinguem seu i adaptem la solució. Per adaptar la solució, seleccionem aquells llibres 
         que trobem en els casos més similars i calculem la seva similitud amb el cas ideal inferit. Finalment retornem 
         els 3 llibres on la similaritat de llibre es major 
         """
-        ideal_book, ideal_book_dic = self._infer_user_preferences(actual_case.get_user())
+        if infer == True:
+            ideal_book, ideal_book_dic = self._infer_user_preferences(actual_case.get_user())
+        else: 
+            ideal_book, ideal_book_dic = self._ask_user_prefs()
+
         actual_case.atributes_pref = ideal_book_dic
         final_similarities = []
         # We compute the similarity between ideal_book with books 
@@ -69,7 +75,8 @@ class CBR():
         for case,sim_users in most_similar_cases:
             book_atributes = list(case.get_book().get_book_features())
             similarity_book = self._custom_similarity_books(ideal_book, book_atributes)
-            final_similarities.append((similarity_book, case)) #Devolvemos una tupla con la similaridad, la instancia de caso
+            # Calculem similaritat combinada llibre, usuari i rating. 
+            final_similarities.append((similarity_book*0.6 + sim_users*0.2 + (case.get_rating/5)*0.2, case)) #Devolvemos una tupla con la similaridad, la instancia de caso
         sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
@@ -246,11 +253,6 @@ class CBR():
         
         leaf_cases = self.index_tree.buscar_casos(user)
         user_cases = [case for case in leaf_cases if case.get_user().get_username() == user_id]
-
-        # Si l'usuari es nou i no tenim historial li preguntem :
-        if len(user_cases) == 0:
-            user_prefs, user_prefs_dic = self._ask_user_prefs()
-            return user_prefs, user_prefs_dic
         
         user_db = {
             'Book_features':[list(case.get_book().get_book_features()) for case in user_cases],
