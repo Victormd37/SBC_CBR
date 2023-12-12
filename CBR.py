@@ -154,7 +154,7 @@ class CBR():
         """
         char = {}
         for col in self.users.columns:
-            if col != 'Usuario':
+            if col != 'usuario':
                 char[col] = self.users[col].unique()
         return Tree(char,self.cases,self.users, self.users_inst, self.books_inst)
 
