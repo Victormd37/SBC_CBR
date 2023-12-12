@@ -249,7 +249,7 @@ class CBR():
 
         # Si l'usuari es nou i no tenim historial li preguntem :
         if len(user_cases) == 0:
-            user_prefs, user_prefs_dic = self._ask_user_prefs()
+            user_prefs, user_prefs_dic = self.ask_user_prefs()
             return user_prefs, user_prefs_dic
         
         user_db = {
@@ -306,7 +306,7 @@ class CBR():
             user_preferences_dic[key] = value
         return user_preferences, user_preferences_dic
     
-    def _ask_user_prefs(self):
+    def ask_user_prefs(self):
         """
         Funció per preguntar a usuaris nous les seves preferències
         """
@@ -370,7 +370,7 @@ class CBR():
             cadena_con_guiones = cadena_en_minusculas.replace(' ', '_')
             return cadena_con_guiones
     
-    def ask_questions(self):
+    def ask_questions(self,num_usuario):
 
         """
         Aquesta funció hauria de fer les preguntes necessaries per extreure:
@@ -381,4 +381,63 @@ class CBR():
         
         Retorna una instancia de CASE on només tenim el perfil d'usuari i les seves preferencies: Case(self.number_cases + 1, User_instance, Diccionari d'atributs)
         """
-        pass   
+
+        
+        # pregunta 1
+        print("¿Cuál es tu género?")
+        print("Opciones: Hombre, Mujer o Prefiero no decirlo")
+        genero = self._procesar_input(input("Respuesta: "))
+        
+        # pregunta 2
+        n = int(input("Introduzca su edad"))
+        if n > 25:
+            edad = 'Adulto'
+        else:
+            edad = 'Joven'
+                    
+        # pregunta 3
+        print("¿A qué clase social perteneces?")
+        print("Opciones: Alta, Media o Baja")
+        clase_social = self._procesar_input(input("Respuesta: "))
+        
+        # pregunta 4
+        print("¿Cuál es tu situación laboral alctual?")
+        print("Opciones: Trabajador, Estudiante, Jubilado o Nada")
+        trabajo = self._procesar_input(input("Respuesta: "))
+        
+        # pregunta 5
+        h = int(input("¿Cuántas horas le dedicas a la lectura a la semana"))
+        if h > 13:
+            horas_lectura = 'muchas'
+        elif n > 5:
+            horas_lectura = 'normal'
+        else: 
+            horas_lectura = 'pocas'
+            
+        # pregunta 6
+        print("¿Qué tipo de música escuchas?")
+        print("Opciones: Reggeatón, Techno, Pop, Cláscia, Rap, Heavy Metal")
+        musica = self._procesar_input(input("Respuesta: "))
+        
+        # pregunta 7
+        print("¿Dónde irías una tarde libre?")
+        print("Opciones: Bar, Playa, Montaña o Sofá")
+        tarde = self._procesar_input(input("Respuesta: "))
+        
+        # pregunta 8
+        print("¿A qué tipo de sitio te irías de vacaciones?")
+        print("Opciones: Aventura, Moderno o Clásico")
+        vacaciones = self._procesar_input(input("Respuesta: "))
+                    
+        
+        instance = User(num_usuario, [genero, edad, clase_social,trabajo,horas_lectura,musica,tarde,vacaciones])
+        self.users_inst.append(instance)
+        self.number_cases = num_usuario
+        new_case = Case(num_usuario,instance)
+
+
+
+        return new_case
+           
+    
+    

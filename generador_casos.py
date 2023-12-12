@@ -135,25 +135,19 @@ def generar_casos(atributos_casos,num_usuarios,instancias_usuarios,lista_atribut
 def asignar_libro(libros,df,num_caso):
     libro = False
     lista_libros = [l for l in libros['titulo']]
-    while not libro:
-        for col in df.columns[1:]:
-            nueva_lista_libros = []
-            # miramos cada libro
-            for libro in range(len(lista_libros)):
-                # añadimos contador por si ya no se cumple una restricción, dejar de iterar
-                if libros[col][libro].startswith('['):
-                    if df[col][num_caso] in eval(libros[col][libro]):
-                        nueva_lista_libros.append(lista_libros[libro])
-                else:
-                    if df[col][num_caso] in libros[col][libro]:
-                        nueva_lista_libros.append(lista_libros[libro])      
-            if len(lista_libros) - len(nueva_lista_libros) == len(lista_libros): # no nos hemos quedado con ningún libro
-                libro = random.choices(lista_libros)[0]
-            elif col == 'tipo_narrador': #llegamos a la última
-                libro = random.choices(nueva_lista_libros)[0]
+    for col in df.columns[1:]:
+        nueva_lista_libros = []
+        # miramos cada libro
+        for libro in range(len(lista_libros)):
+            if libros[col][libro].startswith('['):
+                if df[col][num_caso] in eval(libros[col][libro]):
+                    nueva_lista_libros.append(lista_libros[libro])
             else:
-                lista_libros = nueva_lista_libros  
- 
+                if df[col][num_caso] in libros[col][libro]:
+                    nueva_lista_libros.append(lista_libros[libro])      
+        if len(lista_libros) - len(nueva_lista_libros) != len(lista_libros):
+            lista_libros = nueva_lista_libros # no nos hemos quedado con ningún libro
+    libro = random.choices(lista_libros)[0]
     libro_id = libros.loc[libros['titulo'] == libro, 'Unnamed: 0'].values[0] #devolvemos el índice
     return libro_id
 
