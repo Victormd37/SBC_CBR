@@ -55,19 +55,16 @@ class CBR():
     # most_similar_cases ha de ser una llista amb aquelles instancies de casos més similars
 
     # Answers es un valor binari que ens diu si les prefs han estat respostes o han des ser inferides.
-    def reuse(self, most_similar_cases, actual_case, infer): 
+    def reuse(self, most_similar_cases, actual_case): 
         """
         Rep els casos on l'ususari és més similar, inferim les preferencies especifiques de l'usuari en funció
         de l'historial que tinguem seu i adaptem la solució. Per adaptar la solució, seleccionem aquells llibres 
         que trobem en els casos més similars i calculem la seva similitud amb el cas ideal inferit. Finalment retornem 
         els 3 llibres on la similaritat de llibre es major 
         """
-        if infer == True:
-            ideal_book, ideal_book_dic = self._infer_user_preferences(actual_case.get_user())
-        else: 
-            ideal_book, ideal_book_dic = self._ask_user_prefs()
-
-        actual_case.atributes_pref = ideal_book_dic
+        if actual_case.get_user_preferences() == None:
+            ideal_book = self._infer_user_preferences(actual_case.get_user())
+            actual_case.atributes_pref = ideal_book
         final_similarities = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
@@ -75,7 +72,7 @@ class CBR():
         for case,sim_users in most_similar_cases:
             book_atributes = list(case.get_book().get_book_features())
             # Matched attributes són aquelles coses del llibre que són iguals que al cas ideal
-            similarity_book, matched_attributes = self._custom_similarity_books(ideal_book, book_atributes)
+            similarity_book, matched_attributes = self._custom_similarity_books(actual_case.get_user_preferences(), book_atributes)
             # Calculem similaritat combinada llibre, usuari i rating. 
             comb_sim = similarity_book*0.6 + sim_users*0.2 + (case.get_rating()/5)*0.2
             # Devolvemos una tupla con la similaridad, la instancia de caso i matched attributes
@@ -320,13 +317,8 @@ class CBR():
                 dict[key][feature] = sum(values)/len(values)
             best = max(dict[key].items(), key=lambda item: item[1])[0]
             user_preferences.append(best)
-        # Creem un diccionari per que encaixi amb els altres mètodes 
-        user_preferences_dic = {}
-        for i in range(len(user_preferences)):
-            key = list(dict.keys())[i]
-            value = user_preferences[i]
-            user_preferences_dic[key] = value
-        return user_preferences, user_preferences_dic
+            
+        return user_preferences
     
     def _justify_recomendation(self, book_matched_attributes):
         """
@@ -399,7 +391,7 @@ class CBR():
 
         # Pregunta 5
         print("¿Cuál consideras que debe ser la longitud ideal para tu libro?")
-        print("Opciones: Corta, Normal o Larga")
+        print("Opciones: Corto, Normal o Largo")
         user_prefs_dic['largura_libro'] = self._procesar_input(input("Respuesta: "))
 
         # Pregunta 6
@@ -422,7 +414,7 @@ class CBR():
         print("Opciones: Si o No")
         user_prefs_dic['famoso'] = self._procesar_input(input("Respuesta: "))
 
-        return list(user_prefs_dic.values()), user_prefs_dic
+        return list(user_prefs_dic.values())
 
     def _procesar_input(self, cadena):
             '''
