@@ -109,17 +109,18 @@ class Case():
             Transforma la instancia de User a una fila de DataFrame para la base de datos de usuarios.
             """
             # si user es llista fer [0], si es instància així 
+            pref = self.get_user_preferences()
             case_data = {
                 'usuario': [self.get_user().get_username()],
-                'contiene': [self.get_user_preferences()['contiene']],
-                'formato': [self.get_user_preferences()['formato']],
-                'idioma': [self.get_user_preferences()['idioma']],
-                'largura_libro': [self.get_user_preferences()['largura_libro']],
-                'clasificacion_edad': [self.get_user_preferences()['clasificacion_edad']],
-                'compone_saga': [self.get_user_preferences()['compone_saga']],
-                'famoso': [self.get_user_preferences()['famoso']],
-                'peso': [self.get_user_preferences()['peso']],
-                'tipo_narrador':[self.get_user_preferences()['tipo_narrador']],
+                'contiene': [pref[0]],
+                'formato': [pref[1]],
+                'idioma': [pref[2]],
+                'largura_libro': [pref[3]],
+                'clasificacion_edad': [pref[4]],
+                'compone_saga': [pref[5]],
+                'famoso': [pref[6]],
+                'peso': [pref[7]],
+                'tipo_narrador':[pref[8]],
                 'libro': [self.get_book().get_book_id()],
                 'valoracion': [self.get_rating()],
                 'timestep': [self.get_timestamp()]
