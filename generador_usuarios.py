@@ -1,6 +1,8 @@
 import pandas as pd
 import random
 
+random.seed(33)
+
 genero = ['hombre', 'mujer', 'prefiero_no_decirlo']
 edad = ['joven', 'adulto']
 clase_social = ['baja', 'media', 'alta']
