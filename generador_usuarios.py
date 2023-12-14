@@ -146,7 +146,7 @@ for n in range(100):
     m = musica_usuario(musica,g,e)
     t_l = random.choices(tarde_libre)[0] 
     v = random.choices(vacaciones)[0] 
-    lista.extend([n,g,e,c_s,tr,h_l,m,v ])
+    lista.extend([n,g,e,c_s,tr,h_l,m,t_l,v])
 
     for i in range(len(lista)):
         datos_usuario[atributos[i]] = lista[i]
