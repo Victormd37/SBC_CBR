@@ -8,7 +8,7 @@ edad = ['joven', 'adulto']
 clase_social = ['baja', 'media', 'alta']
 trabajo = ['nada', 'estudiante', 'trabajador', 'jubilado']
 horas_lectura = ['pocas', 'normal', 'muchas']
-musica = ['pop', 'techno', 'reggeatón','clasica','rap','heavy_metal']
+musica = ['pop', 'techno', 'reggeaton','clasica','rap','heavy_metal']
 tarde_libre = ['bar', 'playa', 'montaña', 'sofa']
 vacaciones = ['moderno', 'clasico', 'aventura']
 
