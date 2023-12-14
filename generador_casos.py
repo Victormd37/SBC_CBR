@@ -4,8 +4,8 @@ import random
 
 random.seed(33)
 
-usuarios = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_usuarios.csv')
-libros = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/my_data_books_new.csv')
+usuarios = pd.read_csv('df_usuarios.csv')
+libros = pd.read_csv('my_data_books_new.csv')
 
 
 def obtener_categorias(dataset, categoria = str):
@@ -194,7 +194,7 @@ df['libro'] = float('nan')
 for caso in range(len(df)):
     l_u = libros_usuario(df,caso)
     nuevo_libro =  asignar_libro(libros,df,caso,l_u)
-    df.at[caso, 'libro'] = nuevo_libro
+    df.at[caso, 'libro'] = int(nuevo_libro)
 
 
 lista_valoraciones= []
@@ -218,7 +218,7 @@ for caso in range(len(df)):
         lista_timesteps.append(random.choices(rangos, pesos)[0])        
 df['timestep'] = lista_timesteps
 
-df.to_csv("C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_casos.csv", index=False)
+df.to_csv("df_casos.csv", index=False)
 
 
 
