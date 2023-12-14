@@ -104,6 +104,12 @@ class Case():
         '''
         self.book = book_inst
 
+    def set_atributes(self, atr):
+        '''
+        Permite añadir las preferencias del usuario
+        '''
+        self.atributes_pref = atr
+
     def to_dataframe_row(self):
             """
             Transforma la instancia de User a una fila de DataFrame para la base de datos de usuarios.

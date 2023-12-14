@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 import random
 
+np.random.seed(33)
 random.seed(33)
 
-usuarios = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_usuarios.csv')
-libros = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/my_data_books_new.csv')
+usuarios = pd.read_csv('df_usuarios.csv')
+libros = pd.read_csv('my_data_books_new.csv')
 
 
 def obtener_categorias(dataset, categoria = str):
@@ -218,7 +219,7 @@ for caso in range(len(df)):
         lista_timesteps.append(random.choices(rangos, pesos)[0])        
 df['timestep'] = lista_timesteps
 
-df.to_csv("C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_casos.csv", index=False)
+df.to_csv("df_casos.csv", index=False)
 
 
 

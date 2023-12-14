@@ -478,9 +478,9 @@ class CBR():
         # pregunta 2
         n = int(input("Introduzca su edad"))
         if n > 25:
-            edad = 'Adulto'
+            edad = 'adulto'
         else:
-            edad = 'Joven'
+            edad = 'joven'
                     
         # pregunta 3
         print("¿A qué clase social perteneces?")
@@ -515,12 +515,13 @@ class CBR():
         print("¿A qué tipo de sitio te irías de vacaciones?")
         print("Opciones: Aventura, Moderno o Clásico")
         vacaciones = self._procesar_input(input("Respuesta: "))
-                    
         
-        instance = User(num_usuario, [genero, edad, clase_social,trabajo,horas_lectura,musica,tarde,vacaciones])
+        dicc = [{"genero": genero, "edad": edad, "clase_social": clase_social, "trabajo": trabajo, "horas_de_lectura_a_la_semana": horas_lectura, "musica": musica, "tarde_libre": tarde, "vacaciones": vacaciones}]
+        prof = pd.DataFrame(dicc)
+        instance = User(num_usuario, prof.loc[0])
+        print(instance.get_user_profile())
         self.users_inst.append(instance)
-        self.number_cases = num_usuario
-        new_case = Case(num_usuario,instance)
+        new_case = Case(self.number_cases,instance)
 
 
 

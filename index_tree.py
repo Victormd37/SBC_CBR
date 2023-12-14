@@ -18,6 +18,7 @@ class Tree:
         def add_valor(self, valor):
             """Afegeix un nou índex a un node (aquest node será una fulla i l'index el d'un nou cas afegit en la fase de retain)"""
             self.valores += [valor]
+            print(self.valores)
 
         def remove_valor(self, valor):
             """Elimina un cas especificat d'una fulla"""
@@ -66,7 +67,7 @@ class Tree:
                     for row in casos.index:
                         row_elements = casos.loc[row]
                         instance = Case(row, self.user_instances[row_elements[0]] 
-                                    ,row_elements[1:10].tolist(), self.book_instances[row_elements[10]], rating=row_elements[11], timestamp=row_elements[12])
+                                    ,row_elements[1:10].tolist(), self.book_instances[int(row_elements[10])], rating=row_elements[11], timestamp=row_elements[12])
                         lista_instancias_casos.append(instance)
                     arbol = self.TreeNode(lista_instancias_casos)
                 else:
@@ -84,7 +85,7 @@ class Tree:
                 for row in casos.index:
                     row_elements = casos.loc[row]
                     instance = Case(row, self.user_instances[row_elements[0]] 
-                                ,row_elements[1:10].tolist(), self.book_instances[row_elements[10]], rating=row_elements[11], timestamp=row_elements[12])
+                                ,row_elements[1:10].tolist(), self.book_instances[int(row_elements[10])], rating=row_elements[11], timestamp=row_elements[12])
                     lista_instancias_casos.append(instance)
                 arbol = self.TreeNode(lista_instancias_casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
         else:
@@ -136,6 +137,7 @@ class Tree:
     
     def insertar_caso(self, caso, user_atr):
         """Donat la INSTANCIA d'un cas que es vol insertar i els atributs de l'usuari d'aquell cas s'inserta en el node corresponent."""
+        print("Puto gay")
         nodo = self.tree
         while not nodo.hijos == None:
             atr = nodo.get_feature() 
@@ -154,9 +156,12 @@ class Tree:
         """Donat el nou usuari es busquen els casos que es troben al node del arbre que cumpleix les característiques de l'usuari."""
         user_atr = user.get_user_profile()
         nodo = self.tree
+        print(nodo.hijos)
         while not nodo.hijos == None:
-            atr = nodo.get_feature() 
+            atr = nodo.get_feature()
+            print(atr)
             nodo = nodo.get_hijo_valor(user_atr[atr])
+            print(nodo)
         return nodo.get_casos()
     
     def _crear_dict(self, nodo):

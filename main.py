@@ -22,60 +22,6 @@ columns_to_convert = ['contiene', 'formato', 'idioma']
 for column in columns_to_convert:
     books_db[column] = books_db[column].apply(convert_string_to_list)
 
-
-#cbr = CBR(cases_db, users_db, books_db)
-
-
-'''
-print(cbr.index_tree)
-
-user = users_db.loc[4]
-print(user)
-case = cases_db.loc[24]
-caso = Case(51, User(user[0], user[1:]), case[2:6])
-
-s = cbr.retrieve(caso)
-s1 =[instancia.get_caseid() for instancia in s]
-print(s)
-print(s1)
-'''
-# # Creem instancies, ho posem en llistes tot per provar
-# # Convertim bases de dades en llistes d'instancies
-# print(len(cbr.books_inst))
-# lista_instancias_casos = []
-# for row in range(len(cases_db)):
-#     row_elements = cases_db.loc[row]
-#     instance = Case(row, cbr.users_inst[row_elements[0]] 
-#                     ,row_elements[1:10], cbr.books_inst[row_elements[10]], rating = row_elements[11],timestamp= row)
-#     lista_instancias_casos.append(instance)
-
-# print(len(lista_instancias_casos))
-
-# # # --------------------------------- Fem proves ------------------------------
-
-
-# list_most_similar_cases = lista_instancias_casos[0:15]
-# #best_book = cbr._infer_user_preferences(list_most_similar_cases[0].get_user(), lista_instancias_casos[0:15])
-# #best_book = cbr._infer_user_preferences(list_most_similar_cases[0].get_user())
-# #print(best_book)
-
-
-# # #print(cbr.index_tree.tree.hijos['Hombre'].valores)
-
-# # #cbr.index_tree.insertar_caso(9,{'Genero': 'Mujer','Edad': 'Adulto','Hobbies': 'Playa'})
-
-# # #print(cbr.index_tree.tree.hijos['Hombre'].valores)
-# # #print(cbr.index_tree.tree.hijos['Mujer'].hijos['Playa'].valores)
-
-# # #print(cbr.index_tree.buscar_casos({'Genero': 'Hombre','Edad': 'Adulto','Hobbies': 'Montaña'}))
-
-# print(cbr.index_tree)
-# case = lista_instancias_casos[578]
-
-# similar_cases = cbr.retrieve(case)
-# for i in similar_cases:
-#     print(i)
-
 # # --------------------------------- Prova sistema complet ------------------------------
 def main():
     cbr = CBR(cases_db, users_db, books_db)
@@ -101,20 +47,20 @@ if r == "si":
             print("Usuario no encontrado en la base de datos. Porfavor introduzca su número de usuario: ")
     print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
     prefs =  cbr.ask_user_prefs()
-    new_case = Case(num_usuario,cbr.users_inst[num_usuario],prefs)
+    new_case = Case(cbr.number_cases,cbr.users_inst[num_usuario],prefs)
             
 else:
-    num_usuario = len(len(users_db))+1
+    num_usuario = len(users_db)+1
     print(f'Sú número de usuario és el siguiente: {num_usuario}')
     print('Para recomendarte el mejor libro, primero debemos saber un poco más de tí.')
     new_case = cbr.ask_questions(num_usuario)
     print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
     prefs =  cbr.ask_user_prefs()
     print(new_case.atributes_pref)
-    new_case(atributes_pref = prefs)
+    new_case.set_atributes(prefs)
     print(new_case.atributes_pref)
          
-
+#new_case = Case(101,cbr.users_inst[33],['fantasia', 'papel', 'castellano', 'normal', 'juvenil', 'si', 'si', 'intermedio', 'primera_persona'])
 sim_cases = cbr.retrieve(new_case)
 
 print(sim_cases)
