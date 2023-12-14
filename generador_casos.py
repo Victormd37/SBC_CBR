@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import random
 
+np.random.seed(33)
 random.seed(33)
 
 usuarios = pd.read_csv('df_usuarios.csv')
@@ -194,7 +195,7 @@ df['libro'] = float('nan')
 for caso in range(len(df)):
     l_u = libros_usuario(df,caso)
     nuevo_libro =  asignar_libro(libros,df,caso,l_u)
-    df.at[caso, 'libro'] = int(nuevo_libro)
+    df.at[caso, 'libro'] = nuevo_libro
 
 
 lista_valoraciones= []
