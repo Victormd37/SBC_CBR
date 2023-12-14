@@ -116,12 +116,34 @@ class CBR():
     def retain(self,cases):
         """ IMPORTANTE: Al añadir un caso sumar 1 a self.number_cases, si se quita un caso restar 1."""
         # arriben 3 instàncies de cas (ens quedem tots) (cases es una llista que els inclou)
-        # rep l'arbre ja que s'haurà d'anar actualitzant
-        # Comencem afegint tant a l'arbre (amb metode insertar caso) com a la base de dades tots els casos que arribin, mantenint coherent la variable num casos
-        # despres ja identificarem si cal eliminar casos, no quedar-se amb alguns perque son inutils o redundants...
-        # caldrà afegir el cas a la base de dades i a l'arbre, i afegir l'usuari a la base de dades 
 
         for case in cases: 
+
+            ''' Vigilar redundància'''
+            # buscar casos idèntics o amb usuaris similars i mateix llibre i quedar-nos amb el que tingui timestamp més recent (el nou cas)
+            # buscar casos redundants iterant sobre els casos emmagatzemats en la mateixa fulla 
+            # el que farem serà partir d'una base de dades en la que suposem que no hi ha casos redundants i aleshores, cada cop que anem a afegir un nou cas, anar a la fulla on li tocaria anar a aquell cas i buscar si el fet d'afegir aquest nou cas crearia redundància en aquella fulla
+            # accedint a l'arbre podem arribar a obtenir els casos d'una fulla com a instància 
+            # cridar els mètodes que calculen la similaritat i aplicarem thresholds en aquests valors per determinar quins casos van fora
+            # cada cop que eliminem un cas, aquest s'ha d'esborrar tant de l'arbre com del dataset
+
+            # Veiem els casos que hi ha a la fulla on anirà emmagatzemat per vigilar si crearem redundància en afegir-lo 
+            cases_leaf = self.index_tree.buscar_casos(case.get_user())
+
+            # Preparem una llista en la que guardarem tots aquells casos antics que causin conflicte de redundància amb el nou
+            cases_to_delete = []
+
+            # Comparem el cas nou amb cadascun dels presents ja a la fulla 
+            for case_old in cases_leaf: 
+                similarity_users = self._custom_similarity_users(case,case_old)
+
+                # Si els usuaris són molt similars (o idèntics) i el llibre recomanat és el mateix, ens quedem amb aquell que tingui el timestamp més recent
+                if similarity_users >= 0.8 and case.get_book().get_title() == case_old.get_book().get_title() :
+
+                    # Eliminem directament l'antic ja que els casos nous sempre tindran un timestamp igual o major als ja presents al dataset
+                    cases_to_delete.append(case_old)
+            
+            # Afegim el cas nou sempre i després esborrarem els que hagin causat redundància, si n'hi ha 
             """ Comencem afegint l'usuari d'aquell cas a la base de dades """
             # Obtener el usuario del caso
             user = case.get_user()
@@ -151,11 +173,22 @@ class CBR():
             self.index_tree.insertar_caso(case,user.get_user_profile())
             
             # Augmentem el nombre de casos en 1, ja que n'acabem d'afegir un
-            self.number_cases += 1 
-        # identificar casos redundants i casos inutils (??) 
-        # metode auxiliar: mirar quins casos tenen timestamp més antic i eliminar-los 
-        # afegir tant en el pandas com en l'arbre
-        # emmagatzemar el nou i carregar-nos els antics
+            self.number_cases += 1
+            
+            # Si s'ha trobat casos similars al nou cas afegit en la base de dades, els eliminarem ja que són antics
+            if len(cases_to_delete)>0:
+
+                """ Ara cal eliminar els casos amb els que ha causat redundància """
+                for case_delete in cases_to_delete:
+                    # L'eliminem primer del dataset 
+                    row_to_delete = case_delete.to_dataframe_row()
+                    index_to_delete = self.cases[self.cases.isin(row_to_delete).all(axis=1)].index
+                    self.cases = self.cases.drop(index_to_delete)
+
+                    # I seguidament de l'arbre
+                    self.index_tree.eliminar_caso(case_delete,case_delete.get_user().get_user_profile())
+
+                    self.number_cases -= 1
 
 
     def _build_index_tree(self):
