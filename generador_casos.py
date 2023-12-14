@@ -5,7 +5,7 @@ import random
 
 usuarios = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_usuarios.csv')
 libros = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/my_data_books_new.csv')
-#autores = pd.read_csv('my_data_autors_new.csv')
+
 
 def obtener_categorias(dataset, categoria = str):
     lista = []
@@ -132,30 +132,26 @@ def generar_casos(atributos_casos,num_usuarios,instancias_usuarios,lista_atribut
             
     return df
 
-def asignar_libro(libros,df,num_caso):
+def asignar_libro(libros,df,num_caso,l_u):
     libro = False
-    lista_libros = [l for l in libros['titulo']]
-    while not libro:
-        for col in df.columns[1:]:
-            nueva_lista_libros = []
-            # miramos cada libro
-            for libro in range(len(lista_libros)):
-                # añadimos contador por si ya no se cumple una restricción, dejar de iterar
-                if libros[col][libro].startswith('['):
-                    if df[col][num_caso] in eval(libros[col][libro]):
-                        nueva_lista_libros.append(lista_libros[libro])
-                else:
-                    if df[col][num_caso] in libros[col][libro]:
-                        nueva_lista_libros.append(lista_libros[libro])      
-            if len(lista_libros) - len(nueva_lista_libros) == len(lista_libros): # no nos hemos quedado con ningún libro
-                libro = random.choices(lista_libros)[0]
-            elif col == 'tipo_narrador': #llegamos a la última
-                libro = random.choices(nueva_lista_libros)[0]
+    primera_lista_libros = [l for l in libros['Unnamed: 0']]
+    lista_libros = [libro for libro in primera_lista_libros if libro not in l_u]
+    for col in df.columns[1:-1]:
+        nueva_lista_libros = []
+        # miramos cada libro
+        for libro in lista_libros:
+            if df.at[caso, col] .startswith('['):
+                if df[col][num_caso] in eval(libros[col][libro]):
+                    nueva_lista_libros.append(libro)
             else:
-                lista_libros = nueva_lista_libros  
- 
-    libro_id = libros.loc[libros['titulo'] == libro, 'Unnamed: 0'].values[0] #devolvemos el índice
-    return libro_id
+                if df.at[caso, col] in libros[col][libro]:
+                    nueva_lista_libros.append(libro)      
+        if len(lista_libros) - len(nueva_lista_libros) != len(lista_libros):
+            lista_libros = nueva_lista_libros# no nos hemos quedado con ningún libro
+                
+    libro = random.choices(lista_libros)[0]
+    
+    return libro
 
 
 def asignar_valoración(libros,df,num_caso):
@@ -167,6 +163,12 @@ def asignar_valoración(libros,df,num_caso):
 
 def peso_random(x):
     return  1 / ((x + 1) ** 2.4) 
+
+
+def libros_usuario(df,caso):
+    num_usuario = df.at[caso, 'usuario']
+    l_u = df.loc[df['usuario'] == num_usuario, 'libro'].tolist()
+    return l_u
 
 atributos_casos = ['usuario','contiene', 'formato', 'idioma', 'tema', 'largura_libro', 'clasificacion_edad','compone_saga','famoso', 'peso', 'tipo_narrador']
 
@@ -186,10 +188,13 @@ for u in range(len(usuarios)):
     
 df = generar_casos(atributos_casos,len(usuarios),instancias_usuarios,lista_atributos_casos)
 
-lista_libros = []
+
+df['libro'] = float('nan')
 for caso in range(len(df)):
-    lista_libros.append(asignar_libro(libros,df,caso))
-df['libro'] = lista_libros
+    l_u = libros_usuario(df,caso)
+    nuevo_libro =  asignar_libro(libros,df,caso,l_u)
+    df.at[caso, 'libro'] = nuevo_libro
+
 
 lista_valoraciones= []
 for caso in range(len(df)):
@@ -213,6 +218,7 @@ for caso in range(len(df)):
 df['timestep'] = lista_timesteps
 
 df.to_csv("C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_casos.csv", index=False)
+
 
 
 
