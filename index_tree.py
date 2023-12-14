@@ -18,6 +18,11 @@ class Tree:
         def add_valor(self, valor):
             """Afegeix un nou índex a un node (aquest node será una fulla i l'index el d'un nou cas afegit en la fase de retain)"""
             self.valores += [valor]
+
+        def remove_valor(self, valor):
+            """Elimina un cas especificat d'una fulla"""
+            self.valores.remove(valor)
+
         def get_casos(self):
             """Retorna els indexos de tots els casos que es troben en una mateixa fulla"""
             return self.valores
@@ -136,7 +141,14 @@ class Tree:
             atr = nodo.get_feature() 
             nodo = nodo.get_hijo_valor(user_atr[atr])
         nodo.add_valor(caso)
-        
+
+    def eliminar_caso(self, caso, user_atr):
+        """Donat la INSTANCIA d'un cas que es vol eliminar i els atributs de l'usuari d'aquell cas s'elimina del node corresponent."""
+        nodo = self.tree
+        while not nodo.hijos == None:
+            atr = nodo.get_feature() 
+            nodo = nodo.get_hijo_valor(user_atr[atr])
+        nodo.remove_valor(caso)
     
     def buscar_casos(self, user):
         """Donat el nou usuari es busquen els casos que es troben al node del arbre que cumpleix les característiques de l'usuari."""
