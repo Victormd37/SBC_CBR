@@ -27,7 +27,7 @@ class CBR():
         self.number_cases = self.cases.shape[0] #Obtenim el nombre de casos actuals, anirem modificant si afegim o retirem casos
         self.index_tree = self._build_index_tree() 
 
-    def retrieve(self, new_case):
+    def retrieve(self, new_case, num_cases_retrieve):
         """
         New_case: Instancia de Case (no te tots els atributs encara).
         Aquest new_case encara no esta a la base de casos pero pot ser que el Usuari si que es trobi a la base d'usuaris.
@@ -45,8 +45,8 @@ class CBR():
             sim.append(self._custom_similarity_users(new_case,i)) #Buscamos la similaridad entre nuestro caso y un caso similar
         pares = zip(similar_cases,sim)
         pares_ordenados = sorted(pares, key=lambda x: x[1], reverse=True) #Ordenamos los casos ascendentemente
-        if len(similar_cases) > 10:
-            similar_cases =pares_ordenados[:10] #Cojemos los 10 casos más similares
+        if len(similar_cases) > num_cases_retrieve:
+            similar_cases =pares_ordenados[:num_cases_retrieve] #Cojemos los 10 casos más similares
         else:
             similar_cases = pares_ordenados
         
@@ -64,6 +64,7 @@ class CBR():
         """
         if actual_case.get_user_preferences() == None:
             ideal_book = self._infer_user_preferences(actual_case.get_user())
+            print(ideal_book)
             actual_case.atributes_pref = ideal_book
         final_similarities = []
         # We compute the similarity between ideal_book with books 
