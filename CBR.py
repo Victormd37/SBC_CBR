@@ -102,7 +102,7 @@ class CBR():
             rating = 0
             while rating not in range(1,6):
                 try:
-                    rating = float(input("Puntúa la recomendación obtenida del libro '{}' (1-5) ".format(case.get_book().get_title())))
+                    rating = int(input("Puntúa la recomendación obtenida del libro '{}' (1-5) ".format(case.get_book().get_title())))
                 except ValueError:
                     print("Por favor, ingresa una puntuación válida.")
             # afegim a la instància cas
@@ -165,7 +165,6 @@ class CBR():
                 # Añadir la fila a la base de datos de usuarios
                 self.users = pd.concat([self.users, user_row], ignore_index=True)
                 self.users_inst.append(user)  # Añadir la instancia del usuario a la lista de instancias
-                print(self.users)
 
             """ Ara hem d'afegir el nou cas a la base de dades i a l'arbre """
 
@@ -387,7 +386,6 @@ class CBR():
                     else:
                         dict[attr][ele] = [timestamps_modalities[ele][index]*df['Normalized_Rating'][j]]
         user_preferences = []
-        print(dict)
         for key in dict:
             for feature in dict[key]:
                 values = dict[key][feature]
@@ -569,6 +567,36 @@ class CBR():
 
 
         return new_case
-           
     
+    def inici_usuari(self):
+
+        print('Bienvenido al recomendador de libros Bicho3, ahora somos 4!')
+        r = input("Te has registrado anteriormente? (Si/No)").lower()
+        if r == "si":
+            num_usuario = float("inf")
+            while num_usuario not in range(0,len(self.users_inst)):
+                try:
+                    num_usuario = int(input("Introduzca su número de usuario: "))
+                except ValueError:
+                    print("Usuario no encontrado en la base de datos. Porfavor introduzca su número de usuario: ")
+            a = input("Quieres contarnos cuales son tus preferencias? o prefieres que las infiramos en función de tu historial? Opciones: 1,2")
+            if a == "1":
+                print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
+                prefs =  self.ask_user_prefs()
+            else:
+                prefs = None
+            return Case(self.number_cases,self.users_inst[num_usuario],prefs)
+                    
+        else:
+            num_usuario = len(self.users_inst)+1
+            print(f'Sú número de usuario és el siguiente: {num_usuario}')
+            print('Para recomendarte el mejor libro, primero debemos saber un poco más de tí.')
+            new_case = self.ask_questions(num_usuario)
+            print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
+            prefs =  self.ask_user_prefs()
+            new_case.set_atributes(prefs)
+            return new_case
+    def save_databases(self):
+        self.cases.to_csv('df_casos_new', index=False)
+        self.users.to_csv('df_users_new', index=False)
     
