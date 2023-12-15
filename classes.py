@@ -25,7 +25,7 @@ class User():
             'edad': [self.get_user_profile()[1]],
             'clase_social': [self.get_user_profile()[2]],
             'trabajo': [self.get_user_profile()[3]],
-            'horas_lectura': [self.get_user_profile()[4]],
+            'horas_lectura_a_la_semana': [self.get_user_profile()[4]],
             'musica': [self.get_user_profile()[5]],
             'tarde_libre': [self.get_user_profile()[6]],
             'vacaciones': [self.get_user_profile()[7]]
