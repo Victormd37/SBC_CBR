@@ -4,7 +4,6 @@ import pandas as pd
 
 
 # ------------------ Carreguem dataset i inicialitzem instancies -----------------
-
 cases_db = pd.read_csv("df_casos.csv")
 users_db = pd.read_csv("df_usuarios.csv")
 books_db = pd.read_csv("my_data_books_new.csv")
