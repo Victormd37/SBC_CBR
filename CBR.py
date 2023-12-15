@@ -336,46 +336,65 @@ class CBR():
         df = pd.DataFrame(user_db)
         df['Normalized_Rating'] = df['Rating'].div(5)
 
-        decay_factor = 0.1  # Adjust this based on the desired decay rate
-
-        # Representem formula: e^(-decay_factor * time_differences) on time_differences 
-        # es la diferencia entre el timestamp més recent i timestamp en questió. 
-        df['Weight'] = np.exp(-(df['Timestamp'].max() - df['Timestamp']) * decay_factor) # Estarà entre 0 i 1.
-        df['Combined_Value'] = df['Normalized_Rating'] * df['Weight'] # Combinem els 2 valors
-        print(df)
-
         dict = {'contiene':{}, 'formato': {}, 'idioma': {}, 'largura_libro': {},
                    'clasificacion_edad':{}, 'compone_saga':{}, 'famoso':{}, 'peso':{},
                    'tipo_narrador':{}}
+        
+        timestamps_modalities = {}
+        for row in range(len(df)):
+            for ele in df.iloc[row]['Book_features']:
+                if type(ele) == list:
+                    for e in ele:
+                        if e in timestamps_modalities.keys():
+                            timestamps_modalities[e].append(df.iloc[row]['Timestamp'])
+                        else:
+                            timestamps_modalities[e] = [df.iloc[row]['Timestamp']]
+                else:
+                    if ele in timestamps_modalities.keys():
+                            timestamps_modalities[ele].append(df.iloc[row]['Timestamp'])
+                    else:
+                        timestamps_modalities[ele] = [df.iloc[row]['Timestamp']]
+
+        print(timestamps_modalities)
+
+        for key in timestamps_modalities:
+            total = sum(timestamps_modalities[key])
+            weights = [value/total for value in timestamps_modalities[key]]
+            timestamps_modalities[key] = weights
+        
+        print(timestamps_modalities)
+
+        counter_modalities = {mod:0 for mod in timestamps_modalities.keys()}
 
         # Calcul de quines són les caracteristiques preferides a partir de sum(Combined value)/len(values) 
         for i, feature in enumerate(dict.items()):
             attr = feature[0]
             for j in range(len(df)):
-                sign = 1
-                if df['Rating'][j] <= 2:
-                    sign = -1
                 ele = df['Book_features'][j][i]                
                 if type(ele) == list:
                     for e in ele:
+                        counter_modalities[e] += 1
+                        index = counter_modalities[e] -1
                         if e in dict[attr].keys():
-                            dict[attr][e].append(sign*df['Combined_Value'][j])
+                            dict[attr][e].append(timestamps_modalities[e][index]*df['Normalized_Rating'][j])
                         else:
-                            dict[attr][e] = [sign*df['Combined_Value'][j]]
+                            dict[attr][e] = [timestamps_modalities[e][index]*df['Normalized_Rating'][j]]
                 else:
+                    counter_modalities[ele] += 1
+                    index = counter_modalities[ele] -1
                     if ele in dict[attr].keys():
-                        dict[attr][ele].append(sign*df['Combined_Value'][j])
+                        dict[attr][ele].append(timestamps_modalities[ele][index]*df['Normalized_Rating'][j])
                     else:
-                        dict[attr][ele] = [sign*df['Combined_Value'][j]]
+                        dict[attr][ele] = [timestamps_modalities[ele][index]*df['Normalized_Rating'][j]]
         user_preferences = []
-        print(df)
+        print(dict)
         for key in dict:
             for feature in dict[key]:
                 values = dict[key][feature]
-                dict[key][feature] = sum(values)/len(values)
+                dict[key][feature] = sum(values)
             best = max(dict[key].items(), key=lambda item: item[1])[0]
             user_preferences.append(best)
-            
+        print(dict)
         return user_preferences
     
     def _justify_recomendation(self, book_matched_attributes):

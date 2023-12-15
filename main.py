@@ -69,10 +69,11 @@ print(sim_cases)
 
 best_cases = cbr.reuse(sim_cases, new_case)
 
+'''
 for i in range(3):
     print(best_cases[i][1].get_book().get_book_features())
     print(best_cases[i][1].get_user().get_username())
-
+'''
 print(new_case.get_user_preferences())
 new_cases = cbr.revise(best_cases, new_case)
 
