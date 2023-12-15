@@ -115,7 +115,13 @@ class CBR():
 
     def retain(self,cases):
         """ IMPORTANTE: Al añadir un caso sumar 1 a self.number_cases, si se quita un caso restar 1."""
-        # arriben 3 instàncies de cas (ens quedem tots) (cases es una llista que els inclou)
+        # Arriben 3 instàncies de cas (ens quedem tots) (cases es una llista que els inclou)
+        # Mirem quin es el timestamp dels casos que arriben perque posteriorment potser ens fa falta per eliminar casos inútils 
+        # Els 3 casos que arriben tindran el mateix timestamp, per tant, prenent-ne el de un ja és suficient 
+        new_timestamp = cases[0].get_timestamp()
+        
+        # Obtenim l'usuari del cas, tots els casos que arribin seran del mateix usuari:
+        user = cases[0].get_user()
 
         for case in cases: 
 
@@ -144,9 +150,8 @@ class CBR():
                     cases_to_delete.append(case_old)
             
             # Afegim el cas nou sempre i després esborrarem els que hagin causat redundància, si n'hi ha 
+            
             """ Comencem afegint l'usuari d'aquell cas a la base de dades """
-            # Obtener el usuario del caso
-            user = case.get_user()
 
             # Verificar si el usuario ya está en la base de datos
             # Funciona si user es una instancia d'usuari, si es llista, canviar detall de user.get_username()
@@ -189,6 +194,25 @@ class CBR():
                     self.index_tree.eliminar_caso(case_delete,case_delete.get_user().get_user_profile())
 
                     self.number_cases -= 1
+
+        """ Revisem si hi ha casos inútils per l'usuari del que han arribat els casos """
+        # Casos inútils serien aquells molt antics, per exemple que superin un cert període de temps de diferència amb la data dels nous casos
+        
+        leaf_cases = self.index_tree.buscar_casos(user)
+        user_cases = [case for case in leaf_cases if case.get_user().get_username() == user]
+
+        # Mirarem si hi ha casos d'un usuari que superin els 4 mesos (120 dies) de diferència amb els nous casos i, si n'hi ha, els eliminarem
+        for case_time in user_cases: 
+            if new_timestamp - case_time.get_timestamp() > 120:
+                # L'eliminem primer del dataset 
+                row_to_delete = case_time.to_dataframe_row()
+                index_to_delete = self.cases[self.cases.isin(row_to_delete).all(axis=1)].index
+                self.cases = self.cases.drop(index_to_delete)
+                
+                # I seguidament de l'arbre
+                self.index_tree.eliminar_caso(case_time,case_time.get_user().get_user_profile())
+
+                self.number_cases -= 1
 
 
     def _build_index_tree(self):
