@@ -368,6 +368,7 @@ class CBR():
                     else:
                         dict[attr][ele] = [sign*df['Combined_Value'][j]]
         user_preferences = []
+        print(df)
         for key in dict:
             for feature in dict[key]:
                 values = dict[key][feature]
@@ -544,7 +545,6 @@ class CBR():
         prof = pd.DataFrame(dicc)
         instance = User(num_usuario, prof.loc[0])
         print(instance.get_user_profile())
-        self.users_inst.append(instance)
         new_case = Case(self.number_cases,instance)
 
 

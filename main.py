@@ -32,8 +32,6 @@ cbr = CBR(cases_db, users_db, books_db)
 
 print(cbr.index_tree)
 
-# prefs = cbr._ask_user_prefs()
-# print(prefs)
 
 print('Bienvenido al recomendador de libros Bicho3, ahora somos 4!')
 
@@ -45,8 +43,12 @@ if r == "si":
             num_usuario = int(input("Introduzca su número de usuario: "))
         except ValueError:
             print("Usuario no encontrado en la base de datos. Porfavor introduzca su número de usuario: ")
-    print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
-    prefs =  cbr.ask_user_prefs()
+    a = input("Quieres contarnos cuales son tus preferencias? o prefieres que las infiramos en función de tu historial? Opciones: 1,2")
+    if a == "1":
+        print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
+        prefs =  cbr.ask_user_prefs()
+    else:
+        prefs = None
     new_case = Case(cbr.number_cases,cbr.users_inst[num_usuario],prefs)
             
 else:
