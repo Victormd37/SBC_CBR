@@ -104,6 +104,8 @@ def horas_lectura_usuario(horas_lectura,g,e,tr):
                 h_l = random.choices(horas_lectura, weights=pesos, k=1)[0]    
     return h_l 
 
+musica = ['pop', 'techno', 'reggeaton','clasica','rap','heavy_metal']
+
 
 def musica_usuario(musica, g,e):
     if g == 'hombre':
@@ -118,7 +120,7 @@ def musica_usuario(musica, g,e):
             pesos =  [0.4,0.15,0.3,0.05,0.05,0.05]
             m = random.choices(musica, weights=pesos, k=1)[0] 
         else:
-            pesos =  [0.35,0.15,0.5,0.35,0.05,0.05]
+            pesos =  [0.35,0.15,0.05,0.35,0.05,0.05]
             m = random.choices(musica, weights=pesos, k=1)[0] 
     else:
         if e == 'joven':

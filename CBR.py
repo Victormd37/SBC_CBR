@@ -512,7 +512,7 @@ class CBR():
         tarde = self._procesar_input(input("Respuesta: "))
         
         # pregunta 8
-        print("¿A qué tipo de sitio te irías de vacaciones?")
+        print("¿Qué tipo de vacaciones te gusta más?")
         print("Opciones: Aventura, Moderno o Clásico")
         vacaciones = self._procesar_input(input("Respuesta: "))
                     
