@@ -326,11 +326,6 @@ class CBR():
         
         leaf_cases = self.index_tree.buscar_casos(user)
         user_cases = [case for case in leaf_cases if case.get_user().get_username() == user_id]
-
-        # Si l'usuari es nou i no tenim historial li preguntem :
-        if len(user_cases) == 0:
-            user_prefs, user_prefs_dic = self.ask_user_prefs()
-            return user_prefs, user_prefs_dic
         
         user_db = {
             'Book_features':[list(case.get_book().get_book_features()) for case in user_cases],
@@ -359,15 +354,11 @@ class CBR():
                     else:
                         timestamps_modalities[ele] = [df.iloc[row]['Timestamp']]
 
-        print(timestamps_modalities)
-
         for key in timestamps_modalities:
             total = sum(timestamps_modalities[key])
             weights = [value/total for value in timestamps_modalities[key]]
             timestamps_modalities[key] = weights
         
-        print(timestamps_modalities)
-
         counter_modalities = {mod:0 for mod in timestamps_modalities.keys()}
 
         # Calcul de quines són les caracteristiques preferides a partir de sum(Combined value)/len(values) 
@@ -390,6 +381,7 @@ class CBR():
                         dict[attr][ele].append(timestamps_modalities[ele][index]*df['Normalized_Rating'][j])
                     else:
                         dict[attr][ele] = [timestamps_modalities[ele][index]*df['Normalized_Rating'][j]]
+
         user_preferences = []
         for key in dict:
             for feature in dict[key]:
@@ -397,7 +389,7 @@ class CBR():
                 dict[key][feature] = sum(values)
             best = max(dict[key].items(), key=lambda item: item[1])[0]
             user_preferences.append(best)
-        print(dict)
+        
         return user_preferences
     
     def _justify_recomendation(self, book_matched_attributes):
