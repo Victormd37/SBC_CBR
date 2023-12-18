@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 import random
 
+np.random.seed(33)
 random.seed(33)
 
-usuarios = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_usuarios.csv')
-libros = pd.read_csv('C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/my_data_books_new.csv')
+usuarios = pd.read_csv('df_usuarios.csv')
+libros = pd.read_csv('my_data_books_new.csv')
 
 
 def obtener_categorias(dataset, categoria = str):
@@ -34,6 +35,7 @@ def genero(num_usuario,instancias_usuarios,lista_atributos_casos):
         # comprobamos la edad
         if instancias_usuarios[num_usuario][1] == 'joven':
             pesos = [0.15,0.1,0.25,0.05,0.05,0.1,0.1,0.05,0.15]
+            ['fantasia', 'magia', 'romance', 'terror', 'humor', 'suspense', 'ficcion_historica', 'ciencia_ficcion', 'misterio']
             g = random.choices(opciones, weights=pesos, k=1)[0]  
         else:
             pesos = [0.1,0.05,0.15,0.05,0.1,0.25,0.15,0.05,0.1]  
@@ -61,14 +63,14 @@ def formato(num_usuario,instancias_usuarios,lista_atributos_casos):
         pesos =  [0.65,0.25,0.1]
         f = random.choices(opciones, weights=pesos, k=1)[0]  
     else:
-        pesos =  [0.9,0.07,0.03]
+        pesos =  [0.8,0.15,0.05]
         f = random.choices(opciones, weights=pesos, k=1)[0]
     return f
 
 def idioma(num_usuario, instancias_usuarios, lista_atributos_casos):
     opciones = lista_atributos_casos
-    # comprobamos clase social
-    if instancias_usuarios[num_usuario][4] == 'muchas':
+    # comprobamos la clase social
+    if instancias_usuarios[num_usuario][2] == 'alta':
         pesos =  [0.15,0.5,0.35]
         i = random.choices(opciones, weights=pesos, k=1)[0]  
     elif instancias_usuarios[num_usuario][2] == 'normal':
@@ -81,11 +83,11 @@ def idioma(num_usuario, instancias_usuarios, lista_atributos_casos):
 
 def largura_libro(num_usuario, instancias_usuarios, lista_atributos_casos):
     opciones = lista_atributos_casos
-    # comprobamos clase social
-    if instancias_usuarios[num_usuario][2] == 'alta':
+    # comprobamos horas de lectura
+    if instancias_usuarios[num_usuario][4] == 'muchas':
         pesos =  [0.2,0.4,0.4]
         l = random.choices(opciones, weights=pesos, k=1)[0]  
-    elif instancias_usuarios[num_usuario][2] == 'normal':
+    elif instancias_usuarios[num_usuario][4] == 'normal':
         pesos =  [0.3,0.2,0.5]
         l = random.choices(opciones, weights=pesos, k=1)[0]  
     else:
@@ -100,7 +102,7 @@ def clasificacion_edad(num_usuario, instancias_usuarios, lista_atributos_casos):
         pesos =  [0.1,0.35,0.55]
         ce = random.choices(opciones, weights=pesos, k=1)[0]  
     else:
-        pesos =  [0.55,0.1,0.35]
+        pesos =  [0.6,0.05,0.35]
         ce = random.choices(opciones, weights=pesos, k=1)[0]
     return ce
 
@@ -218,7 +220,7 @@ for caso in range(len(df)):
         lista_timesteps.append(random.choices(rangos, pesos)[0])        
 df['timestep'] = lista_timesteps
 
-df.to_csv("C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_casos.csv", index=False)
+df.to_csv("df_casos.csv", index=False)
 
 
 
