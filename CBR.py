@@ -493,8 +493,6 @@ class CBR():
             función que elimina mayusculas, tildes y espacios del input del usuario
             '''
             cadena_sin_tildes = unidecode(cadena)
-            if cadena_sin_tildes == "montana":
-                cadena_sin_tildes = "montaña"
             cadena_en_minusculas = cadena_sin_tildes.lower()
             cadena_con_guiones = cadena_en_minusculas.replace(' ', '_')
             return cadena_con_guiones
@@ -551,6 +549,8 @@ class CBR():
         print("¿Dónde irías una tarde libre?")
         print("Opciones: Bar, Playa, Montaña o Sofá")
         tarde = self._procesar_input(input("Respuesta: "))
+        if tarde == "montana":
+            tarde = "montaña"
         
         # pregunta 8
         print("Qué tipo de vacaciones te gusta más")
