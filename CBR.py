@@ -563,7 +563,7 @@ class CBR():
         print("Opciones: Aventura, Moderno o Clásico")
         vacaciones = self._procesar_input(input("Respuesta: "))
         
-        dicc = [{"genero": genero, "edad": edad, "clase_social": clase_social, "trabajo": trabajo, "horas_de_lectura_a_la_semana": horas_lectura, "musica": musica, "tarde_libre": tarde, "vacaciones": vacaciones}]
+        dicc = [{"genero": genero, "edad": edad, "clase_social": clase_social, "trabajo": trabajo, "horas_lectura_a_la_semana": horas_lectura, "musica": musica, "tarde_libre": tarde, "vacaciones": vacaciones}]
         prof = pd.DataFrame(dicc)
         instance = User(num_usuario, prof.loc[0])
         print(instance.get_user_profile())
