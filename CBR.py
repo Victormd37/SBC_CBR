@@ -493,6 +493,8 @@ class CBR():
             función que elimina mayusculas, tildes y espacios del input del usuario
             '''
             cadena_sin_tildes = unidecode(cadena)
+            if cadena_sin_tildes == "montana":
+                cadena_sin_tildes = "montaña"
             cadena_en_minusculas = cadena_sin_tildes.lower()
             cadena_con_guiones = cadena_en_minusculas.replace(' ', '_')
             return cadena_con_guiones
