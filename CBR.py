@@ -67,6 +67,7 @@ class CBR():
             print(ideal_book)
             actual_case.atributes_pref = ideal_book
         final_similarities = []
+        books = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
         # by user's profile
@@ -77,7 +78,10 @@ class CBR():
             # Calculem similaritat combinada llibre, usuari i rating. 
             comb_sim = similarity_book*0.6 + sim_users*0.2 + (case.get_rating()/5)*0.2
             # Devolvemos una tupla con la similaridad, la instancia de caso i matched attributes
-            final_similarities.append((comb_sim, case, matched_attributes)) 
+            book = case.get_book().get_book_id()
+            if book not in books:
+                books.append(book)
+                final_similarities.append((comb_sim, case, matched_attributes)) 
         sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
