@@ -37,9 +37,63 @@ def avaluacio():
         avarage_conf_val = sum(confidence_values)/len(confidence_values)
         mean_confidence_values.append(avarage_conf_val)
     print(mean_confidence_values)
+    return mean_confidence_values
 
-avaluacio()
+mean_confidence_values = avaluacio()
 
 
+import matplotlib.pyplot as plt
 
+# Datos
+etiquetas = [10, 20, 30]
+valores = mean_confidence_values
 
+# Ancho de las barras (puedes ajustar este valor según tus preferencias)
+ancho_barras = 8
+
+# Crear gráfico de barras con barras más anchas
+plt.bar(etiquetas, valores, width=ancho_barras)
+
+# Establecer etiquetas personalizadas en el eje x
+plt.xticks(etiquetas)
+
+# Añadir etiquetas y título
+plt.xlabel('Límite Retrieve')
+plt.ylabel('Confidence Value Medio')
+plt.title('Análisis de Calidad')
+
+for etiqueta, valor in zip(etiquetas, valores):
+    plt.text(etiqueta, valor, f'{valor:.2f}', ha='center', va='bottom')
+
+# Mostrar el gráfico
+plt.show()
+
+# Avaluem satisfacció
+
+media1 = 4.54
+
+media2 = 4.38
+
+media3 = 3.61
+
+etiquetas = ['media 1', 'media 2', 'media 3']
+valores = [media1, media2, media3]
+# Ancho de las barras (puedes ajustar este valor según tus preferencias)
+ancho_barras = 8
+
+# Crear gráfico de barras con barras más anchas
+plt.bar(etiquetas, valores, width=ancho_barras)
+
+# Establecer etiquetas personalizadas en el eje x
+plt.xticks(etiquetas)
+
+# Añadir etiquetas y título
+plt.xlabel('Límite Retrieve')
+plt.ylabel('Confidence Value Medio')
+plt.title('Análisis de Calidad')
+
+for etiqueta, valor in zip(etiquetas, valores):
+    plt.text(etiqueta, valor, f'{valor:.2f}', ha='center', va='bottom')
+
+# Mostrar el gráfico
+plt.show()
