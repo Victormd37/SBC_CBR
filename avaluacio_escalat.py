@@ -80,4 +80,27 @@ def main_modificar_arbre():
     plt.xlabel('Número de Casos')
     plt.show()
 
-main_sense_modificar()
+
+cbr = CBR(casos_extra, users_extra, books_db)
+cases_instance = []
+for i in range(len(casos_extra)):
+    row_elements = casos_extra.loc[i]
+    instance = Case(i, cbr.users_inst[row_elements[0]] 
+                                        ,row_elements[1:10].tolist(), cbr.books_inst[int(row_elements[10])], rating=row_elements[11], timestamp=row_elements[12])
+    cases_instance.append(instance)
+
+start = time.time()
+sim = []
+for i in cases_instance:
+    for j in cases_instance:
+        sim.append(cbr._custom_similarity_users(i,j)) #Buscamos la similaridad entre nuestro caso y un caso similar
+    end = time.time()
+    print(end-start)
+pares = zip(cases_instance,sim)
+pares_ordenados = sorted(pares, key=lambda x: x[1], reverse=True)
+end = time.time()
+print(end-start)
+    
+
+#main_sense_modificar()
+#main_modificar_arbre()
