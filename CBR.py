@@ -605,6 +605,6 @@ class CBR():
             new_case.set_atributes(prefs)
             return new_case
     def save_databases(self):
-        self.cases.to_csv('df_casos_new', index=False)
-        self.users.to_csv('df_users_new', index=False)
+        self.cases.to_csv('df_casos_new.csv', index=False)
+        self.users.to_csv('df_usuarios_new.csv', index=False)
     
