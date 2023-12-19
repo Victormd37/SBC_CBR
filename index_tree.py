@@ -41,7 +41,7 @@ class Tree:
         self.tree = self.crear_arbol(caracteristicas, self.users)
         
 
-    def crear_arbol(self, caracteristicas, users, valor = None):
+    def crear_arbol(self, caracteristicas, users):
         """
         Aquesta funció és l'encarregada de crear l'arbre indexat a partir dels casos i les característiques
         del perfil d'usuari.
@@ -76,7 +76,7 @@ class Tree:
                         c = caracteristicas.copy()
                         c.pop(best_c)
                         hijos[f"{i}"] = self.crear_arbol(c, new_users) #Cridem recursivament a la funció
-                    arbol = self.TreeNode(valor, best_c, hijos)
+                    arbol = self.TreeNode(None, best_c, hijos)
             else:
                 l = users['usuario'].tolist()
                 casos = self.cases[self.cases['usuario'].isin(l)]
@@ -94,7 +94,7 @@ class Tree:
             for row in casos.index:
                 row_elements = casos.loc[row]
                 instance = Case(row, self.user_instances[row_elements[0]] 
-                                ,row_elements[1:10].tolist(), self.book_instances[row_elements[10]], rating=row_elements[11],  timestamp=row_elements[12])
+                                ,row_elements[1:10].tolist(), self.book_instances[int(row_elements[10])], rating=row_elements[11],  timestamp=row_elements[12])
                 lista_instancias_casos.append(instance)
             arbol = self.TreeNode(lista_instancias_casos) #Si arribem a un node fulla, aprofitem i afegim directament els indexos dels casos
         return arbol
