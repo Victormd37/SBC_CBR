@@ -97,7 +97,7 @@ class CBR():
     def revise(self, cases_list, new_case):
         # first we calculate the timestamp since the day we had de cases database
         date_today = datetime.now()
-        day_90 = datetime(2023, 12, 8) # ja canviarem aquesta data
+        day_90 = datetime(2023, 12, 19) # ja canviarem aquesta data
         difference_days = (date_today - day_90).days
         timestamp = 90 + difference_days
         new_cases = []

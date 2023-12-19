@@ -136,7 +136,7 @@ df = pd.DataFrame(columns=atributos)
 datos_usuario = {}
 for atr in atributos:
     datos_usuario[atr] = None
-for n in range(1000):
+for n in range(100):
     lista = []
     g = genero_usuario(genero)
     e = random.choices(edad)[0]
@@ -152,4 +152,4 @@ for n in range(1000):
         datos_usuario[atributos[i]] = lista[i]
     df = pd.concat([df, pd.DataFrame([datos_usuario])], ignore_index=True)
 
-df.to_csv("df_usuarios_extra.csv", index=False)
+df.to_csv("df_usuarios_new.csv", index=False)
