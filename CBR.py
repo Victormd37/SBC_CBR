@@ -62,10 +62,18 @@ class CBR():
         que trobem en els casos més similars i calculem la seva similitud amb el cas ideal inferit. Finalment retornem 
         els 3 llibres on la similaritat de llibre es major 
         """
-        if actual_case.get_user_preferences() == None:
+        if actual_case.get_user().get_username() < len(self.users_inst):
             ideal_book = self._infer_user_preferences(actual_case.get_user())
-            print(ideal_book)
-            actual_case.atributes_pref = ideal_book
+            actual_pref = actual_case.get_user_preferences()
+            if actual_pref == None:
+                print("cucu")
+                actual_case.atributes_pref = ideal_book
+            else:
+                for i in range(len(actual_pref)):
+                    if actual_pref[i] == None:
+                        actual_pref[i] = ideal_book[i]
+                        print(ideal_book[i])
+                actual_case.atributes_pref = actual_pref
         final_similarities = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
@@ -90,6 +98,7 @@ class CBR():
         timestamp = 90 + difference_days
         new_cases = []
         i = 0
+        print(new_case.get_caseid())
         for sim, case, match_attr in cases_list:
             n_case = Case(new_case.get_caseid()+i,new_case.get_user(), new_case.get_user_preferences())
             conf = sim*100
@@ -322,11 +331,6 @@ class CBR():
         
         leaf_cases = self.index_tree.buscar_casos(user)
         user_cases = [case for case in leaf_cases if case.get_user().get_username() == user_id]
-
-        # Si l'usuari es nou i no tenim historial li preguntem :
-        if len(user_cases) == 0:
-            user_prefs, user_prefs_dic = self.ask_user_prefs()
-            return user_prefs, user_prefs_dic
         
         user_db = {
             'Book_features':[list(case.get_book().get_book_features()) for case in user_cases],
@@ -514,29 +518,29 @@ class CBR():
 
         
         # pregunta 1
-        print("¿Cuál es tu género?")
+        print("¿Cuál es tu género? ")
         print("Opciones: Hombre, Mujer o Prefiero no decirlo")
         genero = self._procesar_input(input("Respuesta: "))
         
         # pregunta 2
-        n = int(input("Introduzca su edad"))
+        n = int(input("Introduzca su edad "))
         if n > 25:
             edad = 'adulto'
         else:
             edad = 'joven'
                     
         # pregunta 3
-        print("¿A qué clase social perteneces?")
+        print("¿A qué clase social perteneces? ")
         print("Opciones: Alta, Media o Baja")
         clase_social = self._procesar_input(input("Respuesta: "))
         
         # pregunta 4
-        print("¿Cuál es tu situación laboral alctual?")
+        print("¿Cuál es tu situación laboral alctual? ")
         print("Opciones: Trabajador, Estudiante, Jubilado o Nada")
         trabajo = self._procesar_input(input("Respuesta: "))
         
         # pregunta 5
-        h = int(input("¿Cuántas horas le dedicas a la lectura a la semana"))
+        h = int(input("¿Cuántas horas le dedicas a la lectura a la semana? "))
         if h > 13:
             horas_lectura = 'muchas'
         elif n > 5:
@@ -545,21 +549,21 @@ class CBR():
             horas_lectura = 'pocas'
             
         # pregunta 6
-        print("¿Qué tipo de música escuchas?")
+        print("¿Qué tipo de música escuchas? ")
         print("Opciones: Reggeatón, Techno, Pop, Cláscia, Rap, Heavy Metal")
         musica = self._procesar_input(input("Respuesta: "))
         
         # pregunta 7
-        print("¿Dónde irías una tarde libre?")
+        print("¿Dónde irías una tarde libre? ")
         print("Opciones: Bar, Playa, Montaña o Sofá")
         tarde = self._procesar_input(input("Respuesta: "))
         
         # pregunta 8
-        print("¿A qué tipo de sitio te irías de vacaciones?")
+        print("¿A qué tipo de sitio te irías de vacaciones? ")
         print("Opciones: Aventura, Moderno o Clásico")
         vacaciones = self._procesar_input(input("Respuesta: "))
         
-        dicc = [{"genero": genero, "edad": edad, "clase_social": clase_social, "trabajo": trabajo, "horas_de_lectura_a_la_semana": horas_lectura, "musica": musica, "tarde_libre": tarde, "vacaciones": vacaciones}]
+        dicc = [{"genero": genero, "edad": edad, "clase_social": clase_social, "trabajo": trabajo, "horas_lectura_a_la_semana": horas_lectura, "musica": musica, "tarde_libre": tarde, "vacaciones": vacaciones}]
         prof = pd.DataFrame(dicc)
         instance = User(num_usuario, prof.loc[0])
         print(instance.get_user_profile())
@@ -589,7 +593,7 @@ class CBR():
             return Case(self.number_cases,self.users_inst[num_usuario],prefs)
                     
         else:
-            num_usuario = len(self.users_inst)+1
+            num_usuario = len(self.users_inst)
             print(f'Sú número de usuario és el siguiente: {num_usuario}')
             print('Para recomendarte el mejor libro, primero debemos saber un poco más de tí.')
             new_case = self.ask_questions(num_usuario)
