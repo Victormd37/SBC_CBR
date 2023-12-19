@@ -152,4 +152,4 @@ for n in range(100):
         datos_usuario[atributos[i]] = lista[i]
     df = pd.concat([df, pd.DataFrame([datos_usuario])], ignore_index=True)
 
-df.to_csv("C:/Users/dancv/Desktop/cuatri5/SBC/Práctica2/SBC_CBR/df_usuarios.csv", index=False)
+df.to_csv("df_usuarios_new.csv", index=False)
