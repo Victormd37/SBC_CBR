@@ -421,7 +421,7 @@ class CBR():
             justification += f" tiene una longitud {book_matched_attributes['largura_libro']},"
 
         if 'clasificacion_edad' in book_matched_attributes:
-            justification += f" pertenece a la classificación de edad {book_matched_attributes['clasificacion_edad']},"
+            justification += f" pertenece a la clasificación de edad {book_matched_attributes['clasificacion_edad']},"
 
         if 'compone_saga' in book_matched_attributes:
             if book_matched_attributes['compone_saga'] == 'si':
@@ -562,7 +562,7 @@ class CBR():
             tarde = "montaña"
         
         # pregunta 8
-        print("Qué tipo de vacaciones te gusta más")
+        print("¿Qué tipo de vacaciones te gusta más? ")
         print("Opciones: Aventura, Moderno o Clásico")
         vacaciones = self._procesar_input(input("Respuesta: "))
         
@@ -587,7 +587,7 @@ class CBR():
                     num_usuario = int(input("Introduzca su número de usuario: "))
                 except ValueError:
                     print("Usuario no encontrado en la base de datos. Porfavor introduzca su número de usuario: ")
-            a = input("Quieres contarnos cuales son tus preferencias? o prefieres que las infiramos en función de tu historial? Opciones: 1,2")
+            a = input("Quieres contarnos cuáles son tus preferencias? O prefieres que las infiramos en función de tu historial? Opciones: 1,2")
             if a == "1":
                 print('Ahora queremos saber qué caracterísitcas quieres que contenga el libro que estás buscando:')
                 prefs =  self.ask_user_prefs()
@@ -605,6 +605,6 @@ class CBR():
             new_case.set_atributes(prefs)
             return new_case
     def save_databases(self):
-        self.cases.to_csv('df_casos_new', index=False)
-        self.users.to_csv('df_users_new', index=False)
+        self.cases.to_csv('df_casos_new.csv', index=False)
+        self.users.to_csv('df_usuarios_new.csv', index=False)
     
