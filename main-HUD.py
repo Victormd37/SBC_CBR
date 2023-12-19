@@ -72,7 +72,11 @@ def preguntar_pref():
             else: 
                 u_prof[key] = 'pocas'
         else:
-            u_prof[key] = cbr._procesar_input(value.get())
+            k = cbr._procesar_input(value.get())
+            if k == 'montana':
+                u_prof[key] = 'montaña'
+            else:
+                u_prof[key] = k
     combos = [Combo, Combo2, Combo5, Combo6, Combo7]
     for i in combos:
         i.current(0)
@@ -80,7 +84,7 @@ def preguntar_pref():
     entrada_edad.delete(0, tk.END)
     entrada_lectura.delete(0, tk.END)
     prof = pd.DataFrame([u_prof])
-    instance = User(len(cbr.users_inst)+1, prof.loc[0])
+    instance = User(len(cbr.users_inst), prof.loc[0])
     print(instance.get_user_profile())
     pref.pack(fill= "both", expand=1)
     # Agrega aquí la lógica para cambiar de pestaña o realizar otras acciones
@@ -102,7 +106,8 @@ def recomendar():
             else:
                 return
         else:
-           user_prefs[key] = cbr._procesar_input(value.get())
+            user_prefs[key] = cbr._procesar_input(value.get())
+           
     for i in combos:
         i.current(0)
     global best_cases
