@@ -5,7 +5,7 @@ import random
 np.random.seed(33)
 random.seed(33)
 
-usuarios = pd.read_csv('df_usuarios.csv')
+usuarios = pd.read_csv('df_usuarios_extra.csv')
 libros = pd.read_csv('my_data_books_new.csv')
 
 
@@ -219,7 +219,7 @@ for caso in range(len(df)):
         lista_timesteps.append(random.choices(rangos, pesos)[0])        
 df['timestep'] = lista_timesteps
 
-df.to_csv("df_casos.csv", index=False)
+df.to_csv("df_casos_extra.csv", index=False)
 
 
 
