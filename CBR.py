@@ -75,6 +75,7 @@ class CBR():
                         print(ideal_book[i])
                 actual_case.atributes_pref = actual_pref
         final_similarities = []
+        books = []
         # We compute the similarity between ideal_book with books 
         # characteristics recomended in the most similar cases retrieved 
         # by user's profile
@@ -85,7 +86,10 @@ class CBR():
             # Calculem similaritat combinada llibre, usuari i rating. 
             comb_sim = similarity_book*0.6 + sim_users*0.2 + (case.get_rating()/5)*0.2
             # Devolvemos una tupla con la similaridad, la instancia de caso i matched attributes
-            final_similarities.append((comb_sim, case, matched_attributes)) 
+            book = case.get_book().get_book_id()
+            if book not in books:
+                books.append(book)
+                final_similarities.append((comb_sim, case, matched_attributes)) 
         sorted_books = sorted(final_similarities, key=lambda x: x[0], reverse=True)
         return sorted_books[0:3]
 
@@ -359,15 +363,11 @@ class CBR():
                     else:
                         timestamps_modalities[ele] = [df.iloc[row]['Timestamp']]
 
-        print(timestamps_modalities)
-
         for key in timestamps_modalities:
             total = sum(timestamps_modalities[key])
             weights = [value/total for value in timestamps_modalities[key]]
             timestamps_modalities[key] = weights
         
-        print(timestamps_modalities)
-
         counter_modalities = {mod:0 for mod in timestamps_modalities.keys()}
 
         # Calcul de quines són les caracteristiques preferides a partir de sum(Combined value)/len(values) 
@@ -390,6 +390,7 @@ class CBR():
                         dict[attr][ele].append(timestamps_modalities[ele][index]*df['Normalized_Rating'][j])
                     else:
                         dict[attr][ele] = [timestamps_modalities[ele][index]*df['Normalized_Rating'][j]]
+
         user_preferences = []
         for key in dict:
             for feature in dict[key]:
@@ -397,7 +398,7 @@ class CBR():
                 dict[key][feature] = sum(values)
             best = max(dict[key].items(), key=lambda item: item[1])[0]
             user_preferences.append(best)
-        print(dict)
+        
         return user_preferences
     
     def _justify_recomendation(self, book_matched_attributes):
@@ -557,9 +558,11 @@ class CBR():
         print("¿Dónde irías una tarde libre? ")
         print("Opciones: Bar, Playa, Montaña o Sofá")
         tarde = self._procesar_input(input("Respuesta: "))
+        if tarde == "montana":
+            tarde = "montaña"
         
         # pregunta 8
-        print("¿A qué tipo de sitio te irías de vacaciones? ")
+        print("Qué tipo de vacaciones te gusta más")
         print("Opciones: Aventura, Moderno o Clásico")
         vacaciones = self._procesar_input(input("Respuesta: "))
         

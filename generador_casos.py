@@ -62,14 +62,14 @@ def formato(num_usuario,instancias_usuarios,lista_atributos_casos):
         pesos =  [0.65,0.25,0.1]
         f = random.choices(opciones, weights=pesos, k=1)[0]  
     else:
-        pesos =  [0.9,0.07,0.03]
+        pesos =  [0.8,0.15,0.05]
         f = random.choices(opciones, weights=pesos, k=1)[0]
     return f
 
 def idioma(num_usuario, instancias_usuarios, lista_atributos_casos):
     opciones = lista_atributos_casos
     # comprobamos clase social
-    if instancias_usuarios[num_usuario][4] == 'muchas':
+    if instancias_usuarios[num_usuario][2] == 'alta':
         pesos =  [0.15,0.5,0.35]
         i = random.choices(opciones, weights=pesos, k=1)[0]  
     elif instancias_usuarios[num_usuario][2] == 'normal':
@@ -83,10 +83,10 @@ def idioma(num_usuario, instancias_usuarios, lista_atributos_casos):
 def largura_libro(num_usuario, instancias_usuarios, lista_atributos_casos):
     opciones = lista_atributos_casos
     # comprobamos clase social
-    if instancias_usuarios[num_usuario][2] == 'alta':
+    if instancias_usuarios[num_usuario][4] == 'muchas':
         pesos =  [0.2,0.4,0.4]
         l = random.choices(opciones, weights=pesos, k=1)[0]  
-    elif instancias_usuarios[num_usuario][2] == 'normal':
+    elif instancias_usuarios[num_usuario][4] == 'normal':
         pesos =  [0.3,0.2,0.5]
         l = random.choices(opciones, weights=pesos, k=1)[0]  
     else:
@@ -101,7 +101,7 @@ def clasificacion_edad(num_usuario, instancias_usuarios, lista_atributos_casos):
         pesos =  [0.1,0.35,0.55]
         ce = random.choices(opciones, weights=pesos, k=1)[0]  
     else:
-        pesos =  [0.55,0.1,0.35]
+        pesos =  [0.6,0.05,0.35]
         ce = random.choices(opciones, weights=pesos, k=1)[0]
     return ce
 
@@ -220,7 +220,6 @@ for caso in range(len(df)):
 df['timestep'] = lista_timesteps
 
 df.to_csv("df_casos.csv", index=False)
-
 
 
 

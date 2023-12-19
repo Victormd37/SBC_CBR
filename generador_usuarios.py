@@ -118,7 +118,7 @@ def musica_usuario(musica, g,e):
             pesos =  [0.4,0.15,0.3,0.05,0.05,0.05]
             m = random.choices(musica, weights=pesos, k=1)[0] 
         else:
-            pesos =  [0.35,0.15,0.5,0.35,0.05,0.05]
+            pesos =  [0.35,0.15,0.05,0.35,0.05,0.05]
             m = random.choices(musica, weights=pesos, k=1)[0] 
     else:
         if e == 'joven':
