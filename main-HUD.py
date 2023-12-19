@@ -8,8 +8,8 @@ from datetime import datetime
 
 # ------------------ Carreguem dataset i inicialitzem instancies -----------------
 
-cases_db = pd.read_csv("df_casos.csv")
-users_db = pd.read_csv("df_usuarios.csv")
+cases_db = pd.read_csv("df_casos_new.csv")
+users_db = pd.read_csv("df_usuarios_new.csv")
 books_db = pd.read_csv("my_data_books_new.csv")
 
 books_db = books_db.drop(['tema', 'valoracion'], axis='columns')
