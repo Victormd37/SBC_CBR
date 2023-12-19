@@ -66,13 +66,11 @@ class CBR():
             ideal_book = self._infer_user_preferences(actual_case.get_user())
             actual_pref = actual_case.get_user_preferences()
             if actual_pref == None:
-                print("cucu")
                 actual_case.atributes_pref = ideal_book
             else:
                 for i in range(len(actual_pref)):
                     if actual_pref[i] == None:
                         actual_pref[i] = ideal_book[i]
-                        print(ideal_book[i])
                 actual_case.atributes_pref = actual_pref
         final_similarities = []
         books = []
